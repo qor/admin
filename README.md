@@ -1,4 +1,5 @@
-## QOR Admin
+## Raava Admin
+Forked from [qoe/admin](https://github.com/qor/admin)
 
 Instantly create a beautiful, cross platform, configurable Admin Interface and API for managing your data in minutes.
 
@@ -27,7 +28,7 @@ import (
   "net/http"
   "github.com/jinzhu/gorm"
   _ "github.com/mattn/go-sqlite3"
-  "github.com/qor/admin"
+  admin "github.com/TykTechnologies/raava-admin"
 )
 
 // Create a GORM-backend model
@@ -87,10 +88,10 @@ adm.GetRouter().PrintRoutes()
 QOR was developed before go mod was introduced. So it still support go path while finding its template files. The priority is
 
 1. check vendor, if not found
-2. check $GOPATH/src/github.com/qor/admin/views, if still not found
-3. load view path from $GOPATH/pkg/mod/github.com/qor/admin@v0.x/views. the version would be detected automatically by you go.sum file
+2. check $GOPATH/src/github.com/TykTechnologies/raava-admin/views, if still not found
+3. load view path from $GOPATH/pkg/mod/github.com/TykTechnologies/raava-admin@v0.x/views. the version would be detected automatically by you go.sum file
 
-So if you want to use the template under the pkg/mod, make sure $GOPATH/src/github.com/qor/admin is absent.
+So if you want to use the template under the pkg/mod, make sure $GOPATH/src/github.com/TykTechnologies/raava-admin is absent.
 
 ## License
 

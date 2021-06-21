@@ -6,10 +6,10 @@ import (
 	"errors"
 	"testing"
 
+	admin "github.com/TykTechnologies/raava-admin"
+	. "github.com/TykTechnologies/raava-admin/tests/dummy"
 	"github.com/jinzhu/gorm"
 	"github.com/jinzhu/now"
-	"github.com/qor/admin"
-	. "github.com/qor/admin/tests/dummy"
 	qorTestUtils "github.com/qor/qor/test/utils"
 	"github.com/theplant/testingutils"
 )

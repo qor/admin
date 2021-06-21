@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/qor/admin/tests/dummy"
+	. "github.com/TykTechnologies/raava-admin/tests/dummy"
 )
 
 func TestCreateRecord(t *testing.T) {

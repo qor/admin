@@ -1,5 +1,5 @@
 ## Raava Admin
-Forked from [qoe/admin](https://github.com/qor/admin)
+Forked from [qor/admin](https://github.com/qor/admin)
 
 Instantly create a beautiful, cross platform, configurable Admin Interface and API for managing your data in minutes.
 

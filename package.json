@@ -8,10 +8,27 @@
         "type": "git",
         "url": "https://github.com/qor/qor.git"
     },
-    "keywords": ["qor", "cms", "go"],
+    "keywords": [
+        "qor",
+        "cms",
+        "go"
+    ],
     "devDependencies": {
-        "@babel/core": "^7.3.4",
-        "@babel/preset-env": "^7.3.4",
-        "gulp-babel": "8.0.0"
+        "@babel/core": "^7.14.6",
+        "@babel/preset-env": "^7.14.5",
+        "event-stream": "^4.0.1",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-eslint": "^5.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-uglify": "^3.0.2"
+    },
+    "dependencies": {
+        "gulp-cli": "^2.0.1"
     }
 }

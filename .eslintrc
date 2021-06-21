@@ -27,14 +27,9 @@
         "constructor-super": "error",
         "valid-typeof": "error",
         "no-console": 0,
+        "no-useless-escape": 0,
         "no-debugger": 0,
-        "indent": [
-            0,
-            4
-        ],
-        "semi": [
-            2,
-            "always"
-        ]
+        "indent": [0, 4],
+        "semi": [2, "always"]
     }
 }

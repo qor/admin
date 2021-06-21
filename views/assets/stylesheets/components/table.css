@@ -1,0 +1,52 @@
+.tyk-table__wrapper {
+	overflow-y: hidden; /* fixes the overflow of a long table  */
+	width: 100%;
+}
+
+.qor-table::before {
+	content: none;
+}
+
+.qor-table-container {
+	display: flex;
+	padding: 20px;
+}
+
+.qor-table.is-sortable > thead > tr > th {
+	text-decoration: none;
+	text-align: left;
+	border-radius: var(--default-border-radius);
+}
+
+.qor-table thead th {
+	background-color: var(--white);
+}
+
+.qor-table tbody tr.is-selected {
+	background-color: var(--primary-light);
+}
+
+.qor-table {
+	/* border: 1px solid var(--default-light); */
+	margin: 0;
+	box-shadow: none;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	background-color: var(--default-light);
+}
+.tyk-table td {
+	border-bottom: none;
+}
+
+.qor-table.is-sortable>thead>tr>th[data-order-by] {
+	text-decoration: none;
+}
+
+.tyk-table > thead th i {
+	padding-left: 5px;
+}
+
+.mdl-data-table__cell--non-numeric.qor-table__actions {
+	width: 40px !important;
+}

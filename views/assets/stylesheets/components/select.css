@@ -1,0 +1,23 @@
+.select2-container--default .select2-selection--multiple,
+.select2-container--default .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+  font-family: "OpenSans-Regular";
+  font-size: var(--size-sm);
+  line-height: 19px;
+  border: var(--default-border);
+  background-color: var(--white);
+  color: var(--primary-dark);
+  display: block;
+  height: 39px;
+  padding: 4px 10px 10px 10px;
+  transition: all .2s linear;
+  width: 100%;
+  border-radius: var(--default-border-radius);
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+	font-family: 'OpenSans-Regular';
+}

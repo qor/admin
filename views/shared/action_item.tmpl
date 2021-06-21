@@ -16,16 +16,16 @@
 
 {{if (and $action.URL (eq $action.Method "GET"))}}
   {{if (or (eq $action.URLOpenType "bottomsheet") (eq $action.URLOpenType "slideout"))}}
-    <a class="{{if ne (print .Mode) "menu_item"}}mdl-button mdl-button--colored mdl-button--raised qor-action-button{{end}} qor-action-button--link" data-url="{{template "url" .}}" data-open-type="{{$action.URLOpenType}}">
+    <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md qor-action-button{{end}} qor-action-button--link" data-url="{{template "url" .}}" data-open-type="{{$action.URLOpenType}}">
       {{t (printf "%v.actions.%v" $resource.ToParam $action.Label) $action.Label}}
     </a>
   {{else}}
-    <a class="{{if ne (print .Mode) "menu_item"}}mdl-button mdl-button--colored mdl-button--raised qor-action-button{{end}} qor-action-button--link" href="{{template "url" .}}" {{if $action.URLOpenType}}data-open-type="{{$action.URLOpenType}}"{{end}}>
+    <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md qor-action-button{{end}} qor-action-button--link" href="{{template "url" .}}" {{if $action.URLOpenType}}data-open-type="{{$action.URLOpenType}}"{{end}}>
       {{t (printf "%v.actions.%v" $resource.ToParam $action.Label) $action.Label}}
     </a>
   {{end}}
 {{else}}
-  <a class="{{if ne (print .Mode) "menu_item"}}mdl-button mdl-button--colored mdl-button--raised {{end -}} qor-action-button" type="button"
+  <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md {{end -}} qor-action-button" type="button"
     data-url="{{template "url" .}}"
     data-error-no-item="{{t "qor_admin.actions.please_select_an_item" "Please select at least one item"}}"
     {{if $action.URLOpenType}}

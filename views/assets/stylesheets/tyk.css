@@ -1,81 +1,103 @@
+@import './components/sidebar.css';
+@import './components/header.css';
+@import './components/table.css';
+@import './components/input.css';
+@import './components/select.css';
+@import './components/rich-editor.css';
+
 /*
 	Global Variables
 */
 
 :root {
   --primary-dark: #505071;
+  --primary-success: #00d9ba;
+  --primary-light: #EDEDF9;
+  --default-light: #C3C3E5;
+  --primary-info : #82BBC6;
   --white: #fff;
+  --background-dark: #43435B;
+  --size-xs: 12px;
+  --size-sm: 14px;
+  --size-md: 16px;
+  --size-lg: 18px;
+  --size-xl: 24px;
+  --default-border: 3px solid #C3C3E5; /* Standard is 2px but it looks thinner whereas 3px looks like the standard one */
+  --default-border-radius: 18px;
 }
 
 /* End */
 
 /*
-	Header 
+	General Overrides
 */
 
-.qor-layout .mdl-layout__header,
-.qor-layout .mdl-layout__tab-bar,
-.qor-slideout__header {
-	background-color: var(--primary-dark);
+body {
+	height: 100vh;
 }
 
-.content-header {
+.qor-page__header + .qor-page__body {
+	padding-top: 0 !important;
+}
+
+.mdl-layout__container {
+	position: relative;
+	height: 100%;
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	border-bottom: 1px solid #C3C3E5;
-	padding: 15px 24px;
-	margin-bottom: 5px;
 }
 
-.qor-page__header {
-	position: static;
-	width: 100%;
-	padding: 10px 8px;
+.qor-field {
+	padding-block: 10px;
 }
 
-.mdl-layout__header-row {
-	justify-content: space-between;
-	padding-right: 50px;
+.qor-fieldset {
+	padding-block: 0;
 }
 
-.mdl-layout__header-row__container {
-	display: flex;
-	align-items: center;
+.qor-field__block {
+	padding-bottom: 0;
 }
 
-.mdl-layout__header-row__container > * {
-	padding-right: 10px;
-}
-
-.mdl-layout__header-row__container > a {
-	font-size: 16px;
-	color: var(--white);
-}
-
-.mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
-	width: 100%;
-	margin-left: 0;
-}
-
-.btn-add {
-	margin-left: auto;
-}
-
-.mdl-layout__drawer {
-	margin-top: 65px;
-}
-
-.qor-layout__sidebar >.sidebar-body {
+.qor-field .mdl-textfield__label {
 	top: 0;
 }
 
-.qor-page__header+.qor-page__body {
-	padding-top: 0;
+.qor-button__icon-add,
+.qor-fieldset__add-promotion,
+button.qor-fieldset__add {
+	font-size: var(--size-xs);
+	font-family: 'OpenSans-Semibold'
 }
 
-.qor-slideout__body > .content-header {
-	display: none;
+.qor-button__icon-add:after,
+.qor-fieldset__add-promotion:after,
+button.qor-fieldset__add:after {
+	content: "+";
+	font-family: "tykon" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-size: 10px;
+}
+
+.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+	border: 2px solid var(--primary-light);
+}
+
+.qor-layout .mdl-layout__content {
+	padding-left: 270px;
+}
+
+.tyk-message {
+	width: 100%;
+}
+
+.mdl-dialog__actions > * {
+	height: auto;
 }
 
 .logo {
@@ -84,6 +106,22 @@
   width: 140px;
   height: 64px;
   background: url(../images/logo.svg) no-repeat center center;
+}
+
+.qor-form__actions {
+	text-align: right;
+}
+
+.qor-fieldset {
+	border: var(--default-border);
+	border-radius: 18px;
+	box-shadow: none;
+}
+
+.mdl-button--primary.mdl-button--primary {
+	color: var(--primary-dark);
+	font-family: 'Opensans-SemiBold';
+	text-decoration: underline;
 }
 
 /*

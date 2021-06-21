@@ -1,0 +1,72 @@
+.qor-layout .mdl-layout__drawer {
+	position: fixed;
+	height: 97%;
+}
+
+.qor-menu {
+	padding: 0 5px;
+}
+
+.qor-layout__sidebar {
+	background-color: var(--primary-light);
+}
+
+.qor-menu > li > a {
+	color: var(--primary-dark);
+	border-radius: var(--default-border-radius);
+}
+
+.qor-menu > li > ul > li > a {
+	padding: 10px 16px 10px 40px;
+}
+
+.qor-menu > li > ul > li > a:hover {
+	background-color: var(--white);
+}
+
+
+
+#qor-menu-item--main > a:first-of-type {
+	font-family: 'OpenSans-Bold';
+	font-size: var(--size-md);
+	padding: 15px 40px;
+}
+
+.qor-menu>li>a:focus,
+.qor-menu>li>a:hover {
+	background-color: var(--primary-light);
+}
+
+
+#qor-menu-item--sub > a:first-of-type {
+	font-family: 'OpenSans-Regular';
+	font-size: var(--size-sm);
+	margin: 3px 0;
+}
+
+.mdl-layout__drawer {
+	margin-top: 65px;
+}
+
+.qor-layout__sidebar >.sidebar-body {
+	top: 0;
+}
+
+.qor-slideout__body > .content-header {
+	display: none;
+}
+
+.qor-menu > .active:hover > a,
+.qor-menu > .active:hover>a:focus,
+.qor-menu > .active:hover>a:hover,
+.qor-menu > .active>a,
+.qor-menu > .active>a:focus,
+.qor-menu > .active>a:hover {
+	color: var(--primary-success);
+	background-color: var(--white);
+	border-radius: var(--default-border-radius);
+}
+
+.mdl-layout__drawer {
+	width: 270px;
+}

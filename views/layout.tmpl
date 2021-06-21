@@ -20,6 +20,8 @@
     {{stylesheet_tag "tyk-ui"}}
     {{load_admin_stylesheets}}
     {{load_theme_stylesheets}}
+    {{stylesheet_tag "tyk-ui"}}
+    {{stylesheet_tag "tyk"}}
     {{javascript_tag "vendors"}}
   </head>
 
@@ -32,11 +34,18 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header qor-layout">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          {{$actions := load_actions "header" }}
-          {{if $actions}}
-            {{$actions}}
-          {{end}}
-        </div>
+          <a href="/admin" class="logo"></a>
+          <div class="mdl-layout__header-row__container">
+            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View Documentation <i class=\"tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
+            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View live portal <i class=\"tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
+            {{if .CurrentUser}}
+              <div>
+                <h5>{{.CurrentUser.DisplayName}}</h5>
+              </div>
+            {{end}}
+            <a href="{{logout_url}}" title="{{t "qor_admin.account.logout" "logout"}}" alt="{{t "qor_admin.account.logout" "logout"}}"><i class="tyk-icon tykon tykon-profile"></i></a>
+            <!--<a class="mdl-button mdl-js-button mdl-button--icon" href="{{logout_url}}" title="{{t "qor_admin.account.logout" "logout"}}" alt="{{t "qor_admin.account.logout" "logout"}}"><i class="material-icons">exit_to_app</i></a> -->
+          </div>
       </header>
 
       <div class="mdl-layout__drawer">
@@ -44,6 +53,17 @@
       </div>
 
       <main class="mdl-layout__content qor-page" id="content">
+        <div class="content-header">
+          {{$actions := load_actions "header" }}
+            {{if $actions}}
+              {{$actions}}
+            {{end}}
+          {{if has_create_permission .Resource}}
+            <a class="mdl-button mdl-button--primary btn-add" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
+              Add
+            </a>
+          {{end}}
+        </div>
         {{.Content}}
       </main>
     </div>
@@ -55,8 +75,6 @@
       QOR_Translations.cancelButton = '{{t "qor_admin.form.cancel" "Cancel"}}'
       QOR_Translations.serverError = '{{t "qor_admin.form.serverError" "Server error, please try again later!"}}'
       QOR_Translations.slideoutCloseWarning = '{{t "qor_admin.slideout.close_warning" "You have unsaved changes on this slideout. If you close this slideout, you will lose all unsaved changes. Are you sure you want to close the slideout?"}}'
-      QOR_Translations.slideoutCheckHTMLTagsError = '{{t "qor_admin.slideout.checkTagsError" "The rich editor HTML tags do not close properly!"}}'
-
     </script>
     {{javascript_tag "qor_admin_default"}}
     {{load_admin_javascripts}}

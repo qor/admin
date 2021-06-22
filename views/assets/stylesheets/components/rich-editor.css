@@ -1,0 +1,72 @@
+.redactor-box.redactor-styles-on {
+	border: var(--default-border);
+	border-radius: var(--default-border-radius);
+	box-shadow: none;
+}
+
+.redactor-toolbar {
+	border-bottom: var(--default-border);
+}
+
+.redactor-box.redactor-styles-on .redactor-toolbar {
+	padding: 10px 15px;
+}
+
+.redactor-air a,
+.redactor-toolbar a {
+	box-shadow: none;
+	border: var(--default-border);
+	color: var(--primary-dark);
+}
+
+.redactor-air a:hover,
+.redactor-toolbar a:hover {
+	background-color: var(--default-light);
+}
+
+.redactor-styles figure,
+.redactor-styles h1,
+.redactor-styles h2,
+.redactor-styles h3,
+.redactor-styles h4,
+.redactor-styles h5,
+.redactor-styles h6,
+.redactor-styles p {
+	font-family: 'OpenSans-Semibold' !important;
+}
+
+.redactor-source,
+.redactor-source:focus,
+.redactor-source:hover,
+.redactor-source-view .redactor-toolbar {
+	background: var(--white);
+}
+
+.redactor-source-view,
+.redactor-source-view.redactor-styles-on {
+	border: var(--default-border) !important;
+}
+
+.redactor-source-view .redactor-toolbar a {
+	background: var(--white);
+}
+
+.redactor-toolbar a.redactor-button-active {
+	background: var(--default-light);
+}
+
+.redactor-toolbar a.redactor-button-disabled {
+	border: var(--default-border);
+	cursor: not-allowed;
+	color: var(--primary-dark);
+}
+
+.redactor-source-view .redactor-toolbar a:hover {
+	background: var(--default-light);
+}
+
+.redactor-air a.redactor-button-disabled:hover,
+.redactor-toolbar a.redactor-button-disabled:hover {
+	cursor: not-allowed;
+}
+

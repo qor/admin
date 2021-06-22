@@ -1,81 +1,45 @@
+@import './components/sidebar.css';
+@import './components/header.css';
+@import './components/table.css';
+@import './components/input.css';
+@import './components/select.css';
+@import './components/rich-editor.css';
+@import './components/buttons.css';
+@import './common/layout.css';
+@import './common/form.css';
+
 /*
 	Global Variables
 */
 
 :root {
   --primary-dark: #505071;
+  --primary-success: #00d9ba;
+  --primary-light: #EDEDF9;
+  --primary-info : #82BBC6;
+  --primary-danger : #FF6C7D;
+  --default-light: #C3C3E5;
   --white: #fff;
+  --background-dark: #43435B;
+  --background-base: #E1E1E1;
+  --size-xs: 12px;
+  --size-sm: 14px;
+  --size-md: 16px;
+  --size-lg: 18px;
+  --size-xl: 24px;
+  --default-border: 3px solid #C3C3E5; /* Standard is 2px but it looks thinner whereas 3px looks like the standard one */
+  --default-border-radius: 18px;
 }
 
 /* End */
 
 /*
-	Header 
+	General Overrides
 */
 
-.qor-layout .mdl-layout__header,
-.qor-layout .mdl-layout__tab-bar,
-.qor-slideout__header {
-	background-color: var(--primary-dark);
-}
-
-.content-header {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	border-bottom: 1px solid #C3C3E5;
-	padding: 15px 24px;
-	margin-bottom: 5px;
-}
-
-.qor-page__header {
-	position: static;
-	width: 100%;
-	padding: 10px 8px;
-}
-
-.mdl-layout__header-row {
-	justify-content: space-between;
-	padding-right: 50px;
-}
-
-.mdl-layout__header-row__container {
-	display: flex;
-	align-items: center;
-}
-
-.mdl-layout__header-row__container > * {
-	padding-right: 10px;
-}
-
-.mdl-layout__header-row__container > a {
-	font-size: 16px;
-	color: var(--white);
-}
-
-.mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
-	width: 100%;
-	margin-left: 0;
-}
-
-.btn-add {
-	margin-left: auto;
-}
-
-.mdl-layout__drawer {
-	margin-top: 65px;
-}
-
-.qor-layout__sidebar >.sidebar-body {
-	top: 0;
-}
-
-.qor-page__header+.qor-page__body {
-	padding-top: 0;
-}
-
-.qor-slideout__body > .content-header {
-	display: none;
+body {
+	height: 100vh;
+	background-color: var(--white);
 }
 
 .logo {
@@ -85,6 +49,64 @@
   height: 64px;
   background: url(../images/logo.svg) no-repeat center center;
 }
+
+/*
+	Various Element overrides
+*/
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+	border: 1px solid var(--default-light);
+	background-color: var(--primary-light);
+	border-radius: var(--default-border-radius);
+	color: var(--primary-dark);
+	padding-inline: 10px;
+}
+
+/*
+	End
+*/
+
+.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+	border: var(--default-border);
+}
+
+.mdl-checkbox__ripple-container .mdl-ripple {
+	background: var(--primary-light);
+}
+
+/*
+	Menu icons
+*/
+
+[qor-icon-name="Service Providers"] > a {
+  background: url(../images/service-provider.svg) no-repeat left center;
+}
+
+[qor-icon-name="Developer Credentials"] > a {
+  background: url(../images/developer-portal.svg) no-repeat left center;
+}
+
+[qor-icon-name="Blog Management"] > a {
+  background: url(../images/blog.svg) no-repeat left center;
+}
+
+[qor-icon-name*=Site]>a::before {
+	content: '';
+}
+[qor-icon-name="Site Management"] > a {
+  background: url(../images/customise.svg) no-repeat left center;
+}
+
+[qor-icon-name*=User]>a::before {
+	content: '';
+}
+[qor-icon-name="User Management"] > a {
+  background: url(../images/user-management.svg) no-repeat left center;
+}
+
+/*
+	End
+*/
 
 /*
 	Media Queries 

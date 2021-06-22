@@ -2,7 +2,8 @@
 {{$resource := .Resource}}
 
 {{if len .Result}}
-  <table class="mdl-data-table mdl-js-data-table qor-table qor-js-table">
+<div class="tyk-table__wrapper">
+  <table class="tyk-table mdl-data-table mdl-js-data-table qor-table qor-js-table">
     <thead>
       <tr>
         {{$order_by := $context.Request.URL.Query.Get "order_by"}}
@@ -11,12 +12,11 @@
           {{$dbName := $meta.DBName}}
           {{$is_sorted := eq $order_by $dbName}}
           {{$is_desc_sorted := eq $order_by (print $dbName "_desc")}}
-          <th class="mdl-data-table__cell--non-numeric {{if is_sortable_meta $meta}}{{if (or $is_sorted $is_desc_sorted)}}is-sorted{{end}}{{end}}" data-heading="{{$meta.Name}}" {{if is_sortable_meta $meta}}{{if $is_sorted}}data-order-by="{{$dbName}}_desc"{{else}}data-order-by="{{$dbName}}"{{end}}{{end}}>{{meta_label $meta}}</th>
+          <th class="mdl-data-table__cell--non-numeric {{if is_sortable_meta $meta}}{{if (or $is_sorted $is_desc_sorted)}}is-sorted{{end}}{{end}}" data-heading="{{$meta.Name}}" {{if is_sortable_meta $meta}}{{if $is_sorted}}data-order-by="{{$dbName}}_desc"{{else}}data-order-by="{{$dbName}}"{{end}}{{end}}>{{meta_label $meta}}{{if is_sortable_meta $meta}}<i class="tyk-icon tykon tykon-arrowsort"></i>{{end}}</th>
         {{end}}
         <th class="mdl-data-table__cell--non-numeric qor-table__actions"></th>
       </tr>
     </thead>
-
     <tbody>
       {{range $result := .Result}}
         {{$primaryKey := primary_key_of $result}}
@@ -51,6 +51,7 @@
       {{end}}
     </tbody>
   </table>
+</div>
 {{else}}
-  <h2 class="qor-page__tips">{{t (printf "%v.tables.no_items" $resource.ToParam) (printf "No %v to show." (lower (plural $resource.Name)))}}</h2>
+  <div class="tyk-message tyk-message--default">{{t (printf "%v.tables.no_items" $resource.ToParam) (printf "No %v to show." (lower (plural $resource.Name)))}}</div>
 {{end}}

@@ -1,0 +1,13 @@
+.qor-page__header + .qor-page__body {
+	padding-top: 0 !important;
+}
+
+.mdl-layout__container {
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+.qor-layout .mdl-layout__content {
+	padding-left: 270px;
+}

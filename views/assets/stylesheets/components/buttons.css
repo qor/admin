@@ -1,0 +1,37 @@
+.qor-button__icon-add,
+.qor-fieldset__add-promotion,
+button.qor-fieldset__add {
+	font-size: var(--size-xs);
+	font-family: 'OpenSans-Semibold';
+	text-transform: none;
+}
+
+.qor-button__icon-add:after,
+.qor-fieldset__add-promotion:after,
+button.qor-fieldset__add:after {
+	content: "+";
+	font-family: "tykon" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-size: 10px;
+}
+
+.mdl-button--primary.mdl-button--primary {
+	color: var(--primary-dark);
+	font-family: 'Opensans-SemiBold';
+	text-decoration: underline;
+}
+
+.mdl-button--accent.mdl-button--accent {
+	color: var(--primary-danger);
+}
+
+.mdl-button--accent.mdl-button--accent:hover {
+	background: 0;
+	text-decoration: underline;
+}

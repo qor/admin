@@ -96,3 +96,13 @@ So if you want to use the template under the pkg/mod, make sure $GOPATH/src/gith
 ## License
 
 Released under the [MIT License](http://opensource.org/licenses/MIT).
+
+# Frontend Development
+Requires [Node.js](https://nodejs.org/) and [Gulp](http://gulpjs.com/) for building frontend files
+
+```
+npm install && npm install -g gulp
+```
+
+* Watch SCSS/JavaScript changes (hot-reload): `gulp`
+* Build Release files: `gulp release`

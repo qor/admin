@@ -1,9 +1,9 @@
 package main
 
 import (
+	admin "github.com/TykTechnologies/raava-admin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/qor/admin"
 
 	"github.com/kataras/iris/v12"
 )

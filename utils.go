@@ -69,6 +69,10 @@ func getDepVersionFromMod(pth string) string {
 
 	for _, val := range goModDeps {
 		if txt := strings.Trim(val, "\t\r"); strings.HasPrefix(txt, pth) {
+			var err error
+			if pth, err = EncodePath(pth); err != nil {
+				break
+			}
 			return filepath.Join(goModPrefix, pth+"@"+strings.Split(txt, " ")[1])
 		}
 	}

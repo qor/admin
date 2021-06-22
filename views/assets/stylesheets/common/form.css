@@ -1,0 +1,42 @@
+.qor-field {
+	padding-block: 10px;
+}
+
+.qor-fieldset {
+	padding-block: 0;
+}
+
+.qor-field__block {
+	padding-bottom: 0;
+}
+
+.qor-field .mdl-textfield__label {
+	top: 0;
+}
+
+.mdl-dialog__actions > * {
+	height: auto;
+}
+
+.qor-form__actions {
+	text-align: right;
+}
+
+.qor-fieldset {
+	border: var(--default-border);
+	border-radius: var(--default-border-radius);
+	box-shadow: none;
+}
+
+.qor-action-forms > .qor-action-button {
+	margin: 0;
+}
+
+.qor-slideout,
+.qor-slideout .qor-fieldset {
+	background-color: var(--primary-light);
+}
+
+.mdl-textfield__expandable-holder {
+	margin-left: 0;
+}

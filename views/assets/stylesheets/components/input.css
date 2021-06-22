@@ -38,7 +38,8 @@
 .mdl-textfield__input.qor-search__input {
 	border-bottom: var(--default-border);
   background-color: var(--white);
-  min-width: 200px;
+  min-width: 220px;
+	padding: 10px 20px 10px 40px;
 }
 
 .qor-global-search.is-dirty .qor-search__clear,
@@ -51,7 +52,7 @@
 
 .qor-global-search .qor-search__clear, .qor-search .qor-search__clear {
 	right: 10px;
-	top: 18px;
+	top: 19px;
 }
 
 .mdl-textfield--expandable {
@@ -65,11 +66,20 @@
 
 .mdl-button.qor-search__label {
 	font-size: var(--size-md);
-	top: var(--size-xl);
+	top: 16px;
+	height: 35px;
+	left: 8px;
+	z-index: 500;
+	border-right: var(--default-border);
+	background-color: var(--white);
+	border-radius: 50% 0 0 50%;
+	padding: 9px;
 }
 
 .mdl-button.qor-search__label:hover {
-	background: 0;
+	background-color: var(--white);
+	cursor: default;
 }
+
 
 

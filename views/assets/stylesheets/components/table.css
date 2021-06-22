@@ -1,6 +1,7 @@
 .tyk-table__wrapper {
 	overflow-y: hidden; /* fixes the overflow of a long table  */
 	width: 100%;
+	border: var(--default-border);
 }
 
 .qor-table::before {
@@ -8,7 +9,6 @@
 }
 
 .qor-table-container {
-	display: flex;
 	padding: 20px;
 }
 
@@ -35,11 +35,12 @@
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
 	background-color: var(--default-light);
 }
+
 .tyk-table td {
 	border-bottom: none;
 }
 
-.qor-table.is-sortable>thead>tr>th[data-order-by] {
+.qor-table.is-sortable > thead > tr > th[data-order-by] {
 	text-decoration: none;
 }
 
@@ -49,4 +50,13 @@
 
 .mdl-data-table__cell--non-numeric.qor-table__actions {
 	width: 40px !important;
+}
+
+.tyk-table > thead th,
+.tyk-table>tbody td {
+	border-bottom: 1px solid var(--default-light);
+}
+
+.tyk-table tbody>tr:last-of-type > td {
+	border-bottom: none;
 }

@@ -1,5 +1,6 @@
 .redactor-box.redactor-styles-on {
 	border: var(--default-border);
+	border-radius: var(--default-border-radius);
 	box-shadow: none;
 }
 
@@ -14,7 +15,7 @@
 .redactor-air a,
 .redactor-toolbar a {
 	box-shadow: none;
-	border: 2px solid var(--default-light);
+	border: var(--default-border);
 	color: var(--primary-dark);
 }
 
@@ -55,7 +56,7 @@
 }
 
 .redactor-toolbar a.redactor-button-disabled {
-	border: 2px solid var(--default-light); 
+	border: var(--default-border);
 	cursor: not-allowed;
 	color: var(--primary-dark);
 }

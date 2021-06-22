@@ -24,12 +24,11 @@
 	background-color: var(--white);
 }
 
-
-
 #qor-menu-item--main > a:first-of-type {
 	font-family: 'OpenSans-Bold';
 	font-size: var(--size-md);
-	padding: 15px 40px;
+	padding: 15px 40px 15px 30px;
+  margin-left: 10px;
 }
 
 .qor-menu>li>a:focus,
@@ -37,9 +36,8 @@
 	background-color: var(--primary-light);
 }
 
-
 #qor-menu-item--sub > a:first-of-type {
-	font-family: 'OpenSans-Regular';
+	font-family: 'OpenSans-SemiBold';
 	font-size: var(--size-sm);
 	margin: 3px 0;
 }
@@ -57,16 +55,20 @@
 }
 
 .qor-menu > .active:hover > a,
-.qor-menu > .active:hover>a:focus,
-.qor-menu > .active:hover>a:hover,
-.qor-menu > .active>a,
-.qor-menu > .active>a:focus,
-.qor-menu > .active>a:hover {
+.qor-menu > .active:hover > a:focus,
+.qor-menu > .active:hover > a:hover,
+.qor-menu > .active >a,
+.qor-menu > .active >a:focus,
+.qor-menu > .active >a:hover {
 	color: var(--primary-success);
-	background-color: var(--white);
 	border-radius: var(--default-border-radius);
+}
+
+#qor-menu-item--sub.active > a:first-of-type {
+	font-family: 'OpenSans-Bold';
 }
 
 .mdl-layout__drawer {
 	width: 270px;
 }
+

@@ -68,7 +68,7 @@
 	font-size: var(--size-md);
 	top: 16px;
 	height: 35px;
-	left: 8px;
+	left: 10px;
 	z-index: 500;
 	border-right: var(--default-border);
 	background-color: var(--white);

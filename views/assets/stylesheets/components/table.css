@@ -1,5 +1,5 @@
 .tyk-table__wrapper {
-	overflow-y: hidden; /* fixes the overflow of a long table  */
+	overflow: visible;
 	width: 100%;
 	border: var(--default-border);
 }

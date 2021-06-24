@@ -2,9 +2,9 @@ package admin
 
 import (
 	"html/template"
+	"log"
 	"path/filepath"
 	"reflect"
-	"strings"
 
 	"github.com/jinzhu/gorm"
 	"github.com/jinzhu/inflection"
@@ -109,17 +109,20 @@ func (admin *Admin) SetAssetFS(assetFS assetfs.Interface) {
 
 // RegisterViewPath register view path for admin
 func (admin *Admin) RegisterViewPath(pth string) {
-	if admin.AssetFS.RegisterPath(filepath.Join(utils.AppRoot, "vendor", pth)) != nil {
+	var err error
+	if err = admin.AssetFS.RegisterPath(filepath.Join(utils.AppRoot, "vendor", pth)); err != nil {
 		for _, gopath := range utils.GOPATH() {
-			if admin.AssetFS.RegisterPath(filepath.Join(gopath, "src", pth)) == nil {
+			if err = admin.AssetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(pth))); err == nil {
 				break
 			}
 
-			pth = strings.TrimSuffix(pth, "/views")
-			if admin.AssetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(pth), "views")) == nil {
+			if err = admin.AssetFS.RegisterPath(filepath.Join(gopath, "src", pth)); err == nil {
 				break
 			}
 		}
+	}
+	if err != nil {
+		log.Printf("RegisterViewPathError: %s %s!", pth, err.Error())
 	}
 }
 

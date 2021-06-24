@@ -1,6 +1,7 @@
 package admin
 
 import (
+	"fmt"
 	"html/template"
 	"io/ioutil"
 	"path/filepath"
@@ -47,8 +48,9 @@ func RegisterViewPath(pth string) {
 				if assetFS.RegisterPath(filepath.Join(gopath, "src", pth)) == nil {
 					break
 				}
-				pth = strings.TrimSuffix(pth, "/views")
-				if assetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(pth), "views")) == nil {
+				pth = getDepVersionFromMod(strings.TrimSuffix(pth, "/views"))
+				fmt.Printf("\n\nRegisterViewPath | path =>%s\n\n", pth)
+				if assetFS.RegisterPath(filepath.Join(gopath, pth, "views")) == nil {
 					break
 				}
 			}

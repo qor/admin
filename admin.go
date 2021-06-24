@@ -116,6 +116,7 @@ func (admin *Admin) RegisterViewPath(pth string) {
 
 			// local copy in gopath/src preferred
 			p = filepath.Join(gopath, "src", pth)
+			log.Printf("RegisterViewPath | trying path--1 => %s\n", p)
 			if err = admin.AssetFS.RegisterPath(p); err == nil {
 				log.Printf("RegisterViewPath | using path--2 => %s\n", p)
 				break
@@ -123,6 +124,7 @@ func (admin *Admin) RegisterViewPath(pth string) {
 
 			// pkg/mod used if no gopath/src available
 			p = filepath.Join(gopath, getDepVersionFromMod(pth))
+			log.Printf("RegisterViewPath | trying path--2 => %s\n", p)
 			if err = admin.AssetFS.RegisterPath(p); err == nil {
 				log.Printf("RegisterViewPath | using path--1 => %s\n", p)
 				break

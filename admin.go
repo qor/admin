@@ -112,11 +112,19 @@ func (admin *Admin) RegisterViewPath(pth string) {
 	var err error
 	if err = admin.AssetFS.RegisterPath(filepath.Join(utils.AppRoot, "vendor", pth)); err != nil {
 		for _, gopath := range utils.GOPATH() {
-			if err = admin.AssetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(pth))); err == nil {
+			var p string
+
+			// local copy in gopath/src preferred
+			p = filepath.Join(gopath, "src", pth)
+			if err = admin.AssetFS.RegisterPath(p); err == nil {
+				log.Printf("RegisterViewPath | using path--2 => %s\n", p)
 				break
 			}
 
-			if err = admin.AssetFS.RegisterPath(filepath.Join(gopath, "src", pth)); err == nil {
+			// pkg/mod used if no gopath/src available
+			p = filepath.Join(gopath, getDepVersionFromMod(pth))
+			if err = admin.AssetFS.RegisterPath(p); err == nil {
+				log.Printf("RegisterViewPath | using path--1 => %s\n", p)
 				break
 			}
 		}

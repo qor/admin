@@ -55,3 +55,12 @@
 .action-button {
 	margin-left: auto;
 }
+
+.mdl-layout__header-row__container > a > .tyk-icon {
+	font-size: 13px;
+	padding-left: 3px;
+}
+
+.mdl-layout__header-row__container > a > .tykon-profile {
+	font-size: var(--size-md);
+}

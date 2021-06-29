@@ -38,6 +38,7 @@
 .mdl-layout__header-row__container > a {
 	font-size: var(--size-md);
 	color: var(--white);
+	text-decoration: none;
 }
 
 .mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
@@ -47,7 +48,8 @@
 
 .mdl-layout-title {
 	font-size: var(--size-xl);
-	font-family: 'OpenSans-Bold';
+	font-family: 'smoolthan_bold';
+	margin-right: 10px;
 }
 
 .action-button {

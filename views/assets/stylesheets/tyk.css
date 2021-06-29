@@ -14,12 +14,13 @@
 
 :root {
   --primary-dark: #505071;
-  --primary-success: #00d9ba;
+  --primary-success: #00D9BA;
   --primary-light: #EDEDF9;
   --primary-info : #82BBC6;
   --primary-danger : #FF6C7D;
+  --primary-warning : #FFE885;
+  --primary-base : #A2A2CC;
   --default-light: #C3C3E5;
-  --white: #fff;
   --background-dark: #43435B;
   --background-base: #E1E1E1;
   --size-xs: 12px;
@@ -27,8 +28,9 @@
   --size-md: 16px;
   --size-lg: 18px;
   --size-xl: 24px;
-  --default-border: 3px solid #C3C3E5; /* Standard is 2px but it looks thinner whereas 3px looks like the standard one */
+  --default-border: 2px solid #C3C3E5;
   --default-border-radius: 18px;
+  --white: #fff;
 }
 
 /* End */
@@ -60,6 +62,10 @@ body {
 	border-radius: var(--default-border-radius);
 	color: var(--primary-dark);
 	padding-inline: 10px;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+	width: 100% !important;
 }
 
 /*
@@ -102,6 +108,24 @@ body {
 }
 [qor-icon-name="User Management"] > a {
   background: url(../images/user-management.svg) no-repeat left center;
+}
+
+/*
+	End
+*/
+
+/*
+	Text colors
+*/
+
+.text-success {
+	color: var(--primary-success);
+}
+.text-warning {
+	color: var(--primary-warning);
+}
+.text-danger {
+	color: var(--primary-danger);
 }
 
 /*

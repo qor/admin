@@ -36,8 +36,8 @@
         <div class="mdl-layout__header-row">
           <a href="/admin" class="logo"></a>
           <div class="mdl-layout__header-row__container">
-            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View documentation <i class=\"tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
-            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View live portal <i class=\"tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
+            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View documentation <i class=\"text-success tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
+            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View live portal <i class=\"text-success tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
             {{if .CurrentUser}}
               <div>
                 <h5>{{.CurrentUser.DisplayName}}</h5>

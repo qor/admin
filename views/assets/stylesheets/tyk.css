@@ -29,7 +29,9 @@
   --size-lg: 18px;
   --size-xl: 24px;
   --default-border: 2px solid #C3C3E5;
+  --active-border: 2px solid #00D9BA;
   --default-border-radius: 18px;
+  --default-text-color: #505071;
   --white: #fff;
 }
 
@@ -52,32 +54,25 @@ body {
   background: url(../images/logo.svg) no-repeat center center;
 }
 
-/*
-	Various Element overrides
-*/
-
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-	border: 1px solid var(--default-light);
-	background-color: var(--primary-light);
-	border-radius: var(--default-border-radius);
-	color: var(--primary-dark);
-	padding-inline: 10px;
-}
-
-.select2-container--default .select2-search--inline .select2-search__field {
-	width: 100% !important;
-}
-
-/*
-	End
-*/
-
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
 	border: var(--default-border);
 }
 
 .mdl-checkbox__ripple-container .mdl-ripple {
 	background: var(--primary-light);
+}
+
+a:focus,
+a:hover {
+	color: var(--white);
+}
+
+#dialog .mdl-dialog .mdl-dialog__content>p i {
+	color: var(--primary-warning)
+}
+
+#dialog .mdl-dialog .mdl-dialog__content {
+	color: var(--default-text-color);
 }
 
 /*

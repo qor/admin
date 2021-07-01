@@ -6,15 +6,15 @@ $(function() {
                   <div class="mdl-dialog-bg"></div>
                   <div class="mdl-dialog">
                       <div class="mdl-dialog__content">
-                        <p><i class="material-icons">warning</i></p>
+                        <p><i class="tyk-icon tykon tykon-warning"></i></p>
                         <p class="mdl-dialog__message dialog-message">
                         </p>
                       </div>
                       <div class="mdl-dialog__actions">
-                        <button type="button" class="mdl-button mdl-button--raised mdl-button--colored dialog-ok dialog-button" data-type="confirm">
+                        <button type="button" class="tyk-button tyk-button--success tyk-button--md dialog-ok dialog-button" data-type="confirm">
                           ${QOR_Translations.okButton}
                         </button>
-                        <button type="button" class="mdl-button dialog-cancel dialog-button" data-type="">
+                        <button type="button" class="tyk-button tyk-button--primary-link tyk-button--md dialog-cancel dialog-button" data-type="">
                           ${QOR_Translations.cancelButton}
                         </button>
                       </div>

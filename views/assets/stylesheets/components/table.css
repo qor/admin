@@ -60,3 +60,27 @@
 .tyk-table tbody>tr:last-of-type > td {
 	border-bottom: none;
 }
+
+.tyk-table tbody>tr:last-of-type > td:first-of-type {
+	border-bottom-left-radius: 18px;
+}
+
+.qor-table__actions .mdl-menu__item a {
+	color: var(--default-text-color);
+}
+
+/* Change the delete icon  */
+
+[qor-icon-name=Delete]>a::before {
+	content: "U";
+  font-family: tykon!important;
+  font-style: normal!important;
+  font-weight: 400!important;
+  font-variant: normal!important;
+  text-transform: none!important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  margin-top: -8px;
+}

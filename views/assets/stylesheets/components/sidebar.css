@@ -12,7 +12,7 @@
 }
 
 .qor-menu > li > a {
-	color: var(--primary-dark);
+	color: var(--default-text-color);
 	border-radius: var(--default-border-radius);
 }
 

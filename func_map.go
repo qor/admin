@@ -20,6 +20,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/jinzhu/inflection"
 	"github.com/qor/qor"
+	"github.com/qor/qor/resource"
 	"github.com/qor/qor/utils"
 	"github.com/qor/roles"
 	"github.com/qor/session"
@@ -379,6 +380,15 @@ func (context *Context) Pagination() *PaginationResult {
 
 func (context *Context) primaryKeyOf(value interface{}) interface{} {
 	if reflect.Indirect(reflect.ValueOf(value)).Kind() == reflect.Struct {
+		obj := reflect.Indirect(reflect.ValueOf(value))
+
+		for i := 0; i < obj.Type().NumField(); i++ {
+			// If given struct has CompositePrimaryKey field and it is not nil. return it as the primary key.
+			if obj.Type().Field(i).Name == resource.CompositePrimaryKeyFieldName && obj.Field(i).FieldByName("CompositePrimaryKey").String() != "" {
+				return obj.Field(i).FieldByName("CompositePrimaryKey")
+			}
+		}
+
 		scope := &gorm.Scope{Value: value}
 		return fmt.Sprint(scope.PrimaryKeyValue())
 	}
@@ -647,24 +657,23 @@ func (context *Context) renderMeta(meta *Meta, value interface{}, prefix []strin
 	}
 }
 
-func (context *Context) isEqual(value interface{}, hasValue interface{}) bool {
+// isEqual export for test only. If values are struct, compare their primary key. otherwise treat them as string
+func (context *Context) isEqual(value interface{}, comparativeValue interface{}) bool {
 	var result string
 
-	if (value == nil || hasValue == nil) && (value != hasValue) {
+	if (value == nil || comparativeValue == nil) && (value != comparativeValue) {
 		return false
 	}
 
-	if reflect.Indirect(reflect.ValueOf(hasValue)).Kind() == reflect.Struct {
-		scope := &gorm.Scope{Value: hasValue}
-		result = fmt.Sprint(scope.PrimaryKeyValue())
+	if reflect.Indirect(reflect.ValueOf(comparativeValue)).Kind() == reflect.Struct {
+		result = fmt.Sprint(context.primaryKeyOf(comparativeValue))
 	} else {
-		result = fmt.Sprint(hasValue)
+		result = fmt.Sprint(comparativeValue)
 	}
 
 	reflectValue := reflect.Indirect(reflect.ValueOf(value))
 	if reflectValue.Kind() == reflect.Struct {
-		scope := &gorm.Scope{Value: value}
-		return fmt.Sprint(scope.PrimaryKeyValue()) == result
+		return fmt.Sprint(context.primaryKeyOf(value)) == result
 	} else if reflectValue.Kind() == reflect.String {
 		// type UserType string, alias type will panic if do
 		// return reflectValue.Interface().(string) == result

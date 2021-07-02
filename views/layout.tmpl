@@ -53,17 +53,6 @@
       </div>
 
       <main class="mdl-layout__content qor-page" id="content">
-        <div class="content-header">
-          {{$actions := load_actions "header" }}
-            {{if $actions}}
-              {{$actions}}
-            {{end}}
-          {{if has_create_permission .Resource}}
-            <a class="tyk-button tyk-button--success tyk-button--md action-button" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
-              Add
-            </a>
-          {{end}}
-        </div>
         {{.Content}}
       </main>
     </div>

@@ -13,5 +13,11 @@
     {{render "index/table"}}
   </div>
 
+  {{if has_create_permission .Resource}}
+    <a class="mdl-button mdl-button--fab mdl-button--primary qor-button--new" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
+      <i class="material-icons">add</i>
+    </a>
+  {{end}}
+
   {{render "index/pagination"}}
 </div>

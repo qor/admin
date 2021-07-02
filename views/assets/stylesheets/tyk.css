@@ -75,6 +75,20 @@ a:hover {
 	color: var(--default-text-color);
 }
 
+.qor-error > li {
+	color: var(--primary-danger);
+}
+
+.qor-form__actions #qor-submit-loading {
+	display: block;
+	width: 100%;
+	float: none;
+}
+
+.loading.relative {
+	left: auto;
+}
+
 /*
 	Menu icons
 */

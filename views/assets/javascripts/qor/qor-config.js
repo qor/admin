@@ -1,7 +1,9 @@
 // init for slideout after show event
 $.fn.qorSliderAfterShow = $.fn.qorSliderAfterShow || {};
 window.QOR = {
-    $formLoading: '<div id="qor-submit-loading" class="clearfix"><div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div></div>'
+    $formLoading: '<div id="qor-submit-loading" class="clearfix"><div class="loading relative"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div></div>'
+            
+
 };
 
 String.prototype.escapeSymbol = function() {

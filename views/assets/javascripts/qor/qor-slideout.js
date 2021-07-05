@@ -645,14 +645,16 @@
   QorSlideout.TEMPLATE = `<div class="qor-slideout">
             <div class="qor-slideout__header">
                 <div class="qor-slideout__header-link">
-                    <a href="#" target="_blank" class="mdl-button mdl-button--icon mdl-js-button mdl-js-repple-effect qor-slideout__opennew"><i class="material-icons">open_in_new</i></a>
+                    <a href="#" target="_blank" class="mdl-button mdl-button--icon mdl-js-button mdl-js-repple-effect qor-slideout__opennew">
+                      <i class="tyk-icon tykon tykon-link "></i>
+                    </a>
                     <a href="#" class="mdl-button mdl-button--icon mdl-js-button mdl-js-repple-effect qor-slideout__fullscreen">
-                        <i class="material-icons">fullscreen</i>
-                        <i class="material-icons" style="display: none;">fullscreen_exit</i>
+                      <i class="tyk-icon tykon tykon-fullscreen"></i>
+                      <i class="tyk-icon tykon tykon-fullscreen-exit" style="display: none;"></i>
                     </a>
                 </div>
                 <button type="button" class="mdl-button mdl-button--icon mdl-js-button mdl-js-repple-effect qor-slideout__close" data-dismiss="slideout">
-                    <span class="material-icons">close</span>
+                    <i class="tyk-icon tykon tykon-x"></i>
                 </button>
                 <h3 class="qor-slideout__title"></h3>
             </div>
@@ -660,7 +662,7 @@
         </div>`;
 
   QorSlideout.TEMPLATE_LOADING = `<div class="qor-body__loading">
-            <div><div class="mdl-spinner mdl-js-spinner is-active qor-layout__bottomsheet-spinner"></div></div>
+            <div class="loading relative"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div>
         </div>`;
 
   QorSlideout.plugin = function(options) {

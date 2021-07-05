@@ -23,7 +23,6 @@
 }
 
 .qor-fieldset {
-	border: var(--default-border);
 	border-radius: var(--default-border-radius);
 	box-shadow: none;
 }
@@ -32,11 +31,26 @@
 	margin: 0;
 }
 
-.qor-slideout,
-.qor-slideout .qor-fieldset {
+.qor-slideout {
 	background-color: var(--primary-light);
 }
 
 .mdl-textfield__expandable-holder {
 	margin-left: 0;
+}
+
+.qor-fieldset .qor-fieldset {
+	border: 1px solid var(--default-light);
+	border-radius: var(--default-border-radius);
+	background-color: var(--primary-light);
+}
+
+.qor-form__actions #qor-submit-loading {
+	display: block;
+	width: 100%;
+	float: none;
+}
+
+.loading.relative {
+	left: auto;
 }

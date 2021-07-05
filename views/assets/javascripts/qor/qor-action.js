@@ -345,7 +345,7 @@
 
     QorAction.TEMPLATE_LOADING = `<div class="qor-body__loading">
                                         <div class="mdl-dialog-bg"></div>
-                                        <div><div class="mdl-spinner mdl-js-spinner is-active qor-layout__bottomsheet-spinner"></div></div>
+                                        <div class="loading relative"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div>
                                     </div>`;
 
     $.fn.qorSliderAfterShow.qorInsertActionData = function(url, html) {

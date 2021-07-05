@@ -1,0 +1,7 @@
+.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+	border: var(--default-border);
+}
+
+.mdl-checkbox__ripple-container .mdl-ripple {
+	background: var(--primary-light);
+}

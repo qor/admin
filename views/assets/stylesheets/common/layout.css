@@ -11,3 +11,32 @@
 .qor-layout .mdl-layout__content {
 	padding-left: 270px;
 }
+
+/*
+	Media Queries 
+*/
+
+@media only screen and (min-width: 320px) and (max-width: 1025px) {
+	.qor-layout .mdl-layout__content {
+	  padding-left: 0;
+	}
+
+	.mdl-layout__drawer {
+		width: 230px;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+	.qor-layout .mdl-layout__content {
+	  padding-left: 0;
+	}
+
+	.mdl-layout__drawer {
+		width: 230px;
+	}
+}
+
+/*
+	End 
+*/
+

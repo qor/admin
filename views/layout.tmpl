@@ -10,14 +10,14 @@
   -->
   <head>
     {{$title := page_title}}
-    <title>{{if $title}}{{$title}} - {{end}}{{if .Admin.SiteName}}{{t .Admin.SiteName}}{{else}}{{t "Qor Admin"}}{{end}}</title>
+    <title>{{if $title}}{{$title}} - {{end}}{{if .Admin.SiteName}}{{t .Admin.SiteName}}{{else}}{{t "Tyk Portal"}}{{end}}</title>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" />
     <!-- Stylesheets -->
     {{stylesheet_tag "fonts"}}
     {{stylesheet_tag "qor_admin_default"}}
-    {{stylesheet_tag "tyk-ui"}}
     {{load_admin_stylesheets}}
     {{load_theme_stylesheets}}
     {{stylesheet_tag "tyk-ui"}}
@@ -36,8 +36,8 @@
         <div class="mdl-layout__header-row">
           <a href="/admin" class="logo"></a>
           <div class="mdl-layout__header-row__container">
-            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View documentation <i class=\"tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
-            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">View live portal <i class=\"tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
+            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">Documentation <i class=\"text-success tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
+            {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">Live portal <i class=\"text-success tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
             {{if .CurrentUser}}
               <div>
                 <h5>{{.CurrentUser.DisplayName}}</h5>
@@ -53,6 +53,17 @@
       </div>
 
       <main class="mdl-layout__content qor-page" id="content">
+        <div class="content-header">
+          {{$actions := load_actions "header" }}
+            {{if $actions}}
+              {{$actions}}
+            {{end}}
+          {{if has_create_permission .Resource}}
+            <a class="tyk-button tyk-button--success tyk-button--md action-button" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
+              Add
+            </a>
+          {{end}}
+        </div>
         {{.Content}}
       </main>
     </div>
@@ -62,8 +73,8 @@
       QOR_Translations = window.QOR_Translations || {};
       QOR_Translations.okButton = '{{t "qor_admin.form.ok" "OK"}}'
       QOR_Translations.cancelButton = '{{t "qor_admin.form.cancel" "Cancel"}}'
-      QOR_Translations.serverError = '{{t "qor_admin.form.serverError" "Server error, please try again later!"}}'
-      QOR_Translations.slideoutCloseWarning = '{{t "qor_admin.slideout.close_warning" "You have unsaved changes on this slideout. If you close this slideout, you will lose all unsaved changes. Are you sure you want to close the slideout?"}}'
+      QOR_Translations.serverError = '{{t "qor_admin.form.serverError" "Server error, please try again later !"}}'
+      QOR_Translations.slideoutCloseWarning = '{{t "qor_admin.slideout.close_warning" "You have unsaved changes on this slideout. If you close this, you will lose all unsaved changes. Are you sure you want to close the slideout ?"}}'
     </script>
     {{javascript_tag "qor_admin_default"}}
     {{javascript_tag "tyk"}}

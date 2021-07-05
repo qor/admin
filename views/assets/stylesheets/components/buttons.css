@@ -22,7 +22,7 @@ button.qor-fieldset__add:after {
 }
 
 .mdl-button--primary.mdl-button--primary {
-	color: var(--primary-dark);
+	color: var(--default-text-color);
 	font-family: 'Opensans-SemiBold';
 	text-decoration: underline;
 }

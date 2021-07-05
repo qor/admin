@@ -1,5 +1,22 @@
-.qor-search__clear > i {
- color: var(--primary-dark);
+.mdl-textfield__input {
+	font-family: 'OpenSans-Semibold';
+  font-size: var(--size-sm);
+  border: var(--default-border);
+  background-color: var(--white);
+  color: var(--default-text-color);
+  display: block;
+  height: 39px;
+  padding: 10px 20px 10px 20px;
+  transition: all .2s linear;
+  width: 100%;
+  border-radius: var(--default-border-radius);
+}
+
+::-webkit-input-placeholder {
+	font-family: 'OpenSans-SemiBold';
+	color: var(--primary-base);
+  opacity: 0.8;
+  padding-left: 5px;
 }
 
 .mdl-textfield:not(.qor-search) {
@@ -13,32 +30,25 @@
 	font-size: var(--size-sm);
 }
 
-.mdl-textfield__input {
-	border-bottom: var(--default-border);
-}
-
 .mdl-textfield__label {
 	position: relative;
 }
 
-.mdl-textfield__input {
-	font-family: 'OpenSans-Semibold';
-  font-size: var(--size-sm);
-  border: var(--default-border);
-  background-color: var(--white);
-  color: var(--primary-dark);
-  display: block;
-  height: 39px;
-  padding: 10px 20px 10px 20px;
-  transition: all .2s linear;
-  width: 100%;
-  border-radius: var(--default-border-radius);
+.mdl-textfield--expandable {
+	min-width: 240px;
 }
+
+.mdl-textfield.is-focused .mdl-textfield__input {
+  outline: none;
+  border: var(--active-border);
+}
+
+/* Search input */
 
 .mdl-textfield__input.qor-search__input {
 	border-bottom: var(--default-border);
   background-color: var(--white);
-  min-width: 220px;
+  min-width: 240px;
 	padding: 10px 20px 10px 40px;
 }
 
@@ -46,40 +56,62 @@
 .qor-global-search.is-focused .qor-search__clear,
 .qor-search.is-dirty .qor-search__clear,
 .qor-search.is-focused .qor-search__clear {
-	right: 10px;
+	right: 11px;
 	left: auto;
+	top: 18px;
 }
 
-.qor-global-search .qor-search__clear, .qor-search .qor-search__clear {
-	right: 10px;
-	top: 19px;
+.qor-search > .mdl-button.qor-search__label {
+  font-size: var(--size-md);
+  top: 17px;
+  height: 33px;
+  left: 10px;
+  z-index: 500;
+  background-color: var(--primary-light);
+  padding: 8px;
 }
 
-.mdl-textfield--expandable {
-	min-width: 240px;
+.qor-search__clear > i {
+	color: var(--default-text-color);
+}
+
+.mdl-button.qor-search__label:hover,
+.mdl-button.qor-search__label:active,
+.mdl-button.qor-search__label:focus {
+	background-color: var(--primary-light);
+	cursor: default;
 }
 
 .qor-global-search .qor-search__label,
 .qor-search .qor-search__label {
-	color: var(--primary-dark);
+	color: var(--default-text-color);
 }
 
-.mdl-button.qor-search__label {
-	font-size: var(--size-md);
-	top: 16px;
-	height: 35px;
-	left: 10px;
-	z-index: 500;
-	border-right: var(--default-border);
-	background-color: var(--white);
-	border-radius: 50% 0 0 50%;
-	padding: 9px;
+/* Icons inside input */
+
+.qor-field__datepicker .qor-action__datepicker,
+.qor-field__datetimepicker .qor-action__datepicker,
+.qor-field__datepicker .qor-action__timepicker,
+.qor-field__datetimepicker .qor-action__timepicker {
+	bottom: 4px;
 }
 
-.mdl-button.qor-search__label:hover {
-	background-color: var(--white);
-	cursor: default;
+.qor-field__datepicker .qor-action__timepicker,
+.qor-field__datetimepicker .qor-action__timepicker {
+	right: 5px;
 }
 
 
+/*
+	Media Queries 
+*/
 
+@media only screen and (min-width: 320px) and (max-width: 732px) {
+	.qor-search .qor-search__label {
+		top: 17px !important;
+	}
+}
+
+/*
+	End 
+*/

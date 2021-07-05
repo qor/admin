@@ -13,7 +13,7 @@
         <fieldset class="qor-fieldset">
           {{if has_delete_permission $meta}}
             <button data-confirm="{{t "qor_admin.form.are_you_sure" "Are you sure?"}}" class="mdl-button qor-button--muted mdl-button--icon mdl-js-button qor-fieldset__delete" type="button">
-              <i class="material-icons md-18">delete</i>
+              <i class="tyk-icon tykon tykon-delete"></i>
             </button>
           {{end}}
           {{render_nested_form $value (edit_sections $meta.Resource) $index}}
@@ -24,7 +24,7 @@
     {{if has_create_permission .Meta}}
       <fieldset class="qor-fieldset qor-fieldset--new">
         <button data-confirm="{{t "qor_admin.form.are_you_sure" "Are you sure?"}}" class="mdl-button qor-button--muted mdl-button--icon mdl-js-button qor-fieldset__delete" type="button">
-          <i class="material-icons md-18">delete</i>
+          <i class="tyk-icon tykon tykon-delete"></i>
         </button>
         {{if $current_values}}
           {{render_nested_form $meta.Resource.NewStruct (new_sections $meta.Resource) (len $current_values)}}

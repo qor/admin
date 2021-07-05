@@ -1,90 +1,95 @@
 @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/MaterialIcons.woff) format('woff');
-  }
-  @font-face {
-    font-family: 'Roboto-Italic';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Roboto Italic'), local('Roboto-Italic'), url(//fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu52xM.woff) format('woff');
-  }
-  @font-face {
-    font-family: 'Roboto-Light';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Roboto Light'), local('Roboto-Light'), url(//fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff) format('woff');
-  }
-  @font-face {
-    font-family: 'Roboto-Regular';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5g.woff) format('woff');
-  }
-  @font-face {
-    font-family: 'Roboto-Medium';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9vAA.woff) format('woff');
-  }
-  @font-face {
-    font-family: 'Roboto-Bold';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Roboto Bold'), local('Roboto-Bold'), url(//fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlvAA.woff) format('woff');
-  }
-  
-/* open-sans-regular - latin */
-@font-face {
-  font-family: 'OpenSans-regular';
+  font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-    url('../fonts/OpenSans-Regular.woff') format('woff')
+  src: url(../fonts/MaterialIcons.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'OpenSans-Bold';
+  font-family: 'Roboto-Italic';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(//fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu52xM.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(//fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5g.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9vAA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/OpenSans-Bold.woff2') format('woff2')
-    url('../fonts/OpenSans-Bold.woff') format('woff')
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(//fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlvAA.woff) format('woff');
+}
+
+/* open-sans-regular - latin */
+@font-face {
+font-family: 'OpenSans-regular';
+font-style: normal;
+font-weight: 400;
+src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+  url('../fonts/OpenSans-Regular.woff') format('woff')
 }
 
 @font-face {
-  font-family: 'OpenSans-Italic';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
-    url('../fonts/OpenSans-Italic.woff') format('woff')
+font-family: 'OpenSans-Bold';
+font-style: normal;
+font-weight: 700;
+src: url('../fonts/OpenSans-Bold.woff2') format('woff2')
+  url('../fonts/OpenSans-Bold.woff') format('woff')
+}
+
+@font-face {
+font-family: 'OpenSans-Italic';
+font-style: normal;
+font-weight: 400;
+src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
+  url('../fonts/OpenSans-Italic.woff') format('woff')
 }
   
-  .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    word-break: normal;
-  
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-  
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-  
-    /* Support for IE. */
-    -webkit-font-feature-settings: 'liga';
-    -moz-font-feature-settings: 'liga';
-    font-feature-settings: 'liga';
-    -ms-font-feature-settings: 'liga';
-  }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  word-break: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -ms-font-feature-settings: 'liga';
+}

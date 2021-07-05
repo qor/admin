@@ -1,0 +1,26 @@
+.text-success {
+	color: var(--primary-success);
+}
+.text-warning {
+	color: var(--primary-warning);
+}
+.text-danger {
+	color: var(--primary-danger);
+}
+
+a:focus,
+a:hover {
+	color: var(--white);
+}
+
+#dialog .mdl-dialog .mdl-dialog__content > p i {
+	color: var(--primary-warning)
+}
+
+#dialog .mdl-dialog .mdl-dialog__content {
+	color: var(--default-text-color);
+}
+
+.qor-error > li {
+	color: var(--primary-danger);
+}

@@ -16,7 +16,7 @@
 .redactor-toolbar a {
 	box-shadow: none;
 	border: var(--default-border);
-	color: var(--primary-dark);
+	color: var(--default-text-color);
 }
 
 .redactor-air a:hover,
@@ -58,7 +58,7 @@
 .redactor-toolbar a.redactor-button-disabled {
 	border: var(--default-border);
 	cursor: not-allowed;
-	color: var(--primary-dark);
+	color: var(--default-text-color);
 }
 
 .redactor-source-view .redactor-toolbar a:hover {

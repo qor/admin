@@ -89,35 +89,15 @@ a:hover {
 	left: auto;
 }
 
+.select2-selection__arrow {
+	display: none;
+}
+
 /*
 	Menu icons
 */
 
-[qor-icon-name="Service Providers"] > a {
-  background: url(../images/service-provider.svg) no-repeat left center;
-}
 
-[qor-icon-name="Developer Credentials"] > a {
-  background: url(../images/developer-portal.svg) no-repeat left center;
-}
-
-[qor-icon-name="Blog Management"] > a {
-  background: url(../images/blog.svg) no-repeat left center;
-}
-
-[qor-icon-name*=Site]>a::before {
-	content: '';
-}
-[qor-icon-name="Site Management"] > a {
-  background: url(../images/customise.svg) no-repeat left center;
-}
-
-[qor-icon-name*=User]>a::before {
-	content: '';
-}
-[qor-icon-name="User Management"] > a {
-  background: url(../images/user-management.svg) no-repeat left center;
-}
 
 /*
 	End

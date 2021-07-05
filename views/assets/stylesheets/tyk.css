@@ -7,6 +7,7 @@
 @import './components/buttons.css';
 @import './common/layout.css';
 @import './common/form.css';
+@import './common/text.css';
 
 /*
 	Global Variables
@@ -37,10 +38,6 @@
 
 /* End */
 
-/*
-	General Overrides
-*/
-
 body {
 	height: 100vh;
 	background-color: var(--white);
@@ -54,83 +51,3 @@ body {
   background: url(../images/logo.svg) no-repeat center center;
 }
 
-.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-	border: var(--default-border);
-}
-
-.mdl-checkbox__ripple-container .mdl-ripple {
-	background: var(--primary-light);
-}
-
-a:focus,
-a:hover {
-	color: var(--white);
-}
-
-#dialog .mdl-dialog .mdl-dialog__content>p i {
-	color: var(--primary-warning)
-}
-
-#dialog .mdl-dialog .mdl-dialog__content {
-	color: var(--default-text-color);
-}
-
-.qor-error > li {
-	color: var(--primary-danger);
-}
-
-.qor-form__actions #qor-submit-loading {
-	display: block;
-	width: 100%;
-	float: none;
-}
-
-.loading.relative {
-	left: auto;
-}
-
-.select2-selection__arrow {
-	display: none;
-}
-
-/*
-	Menu icons
-*/
-
-
-
-/*
-	End
-*/
-
-/*
-	Text colors
-*/
-
-.text-success {
-	color: var(--primary-success);
-}
-.text-warning {
-	color: var(--primary-warning);
-}
-.text-danger {
-	color: var(--primary-danger);
-}
-
-/*
-	End
-*/
-
-/*
-	Media Queries 
-*/
-
-@media screen and (min-width: 1025px) {
-	.mdl-layout__drawer-button {
-	   display: none;
-	}
-}
-
-/*
-	End 
-*/

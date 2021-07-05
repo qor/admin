@@ -126,6 +126,13 @@ a.qor-slideout__fullscreen > i.tyk-icon+.tyk-icon {
 	}
 }
 
+@media screen and (min-width: 1025px) {
+	.mdl-layout__drawer-button {
+	   display: none;
+	}
+}
+
+
 /*
 	End 
 */

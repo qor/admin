@@ -55,3 +55,7 @@
   background-color: var(--default-light);
   color: var(--white);
 }
+
+.select2-selection__arrow {
+  display: none;
+}

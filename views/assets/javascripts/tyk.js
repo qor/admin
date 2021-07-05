@@ -10,11 +10,3 @@ function onCancel() {
 		window.location.href = backURL;
 	}
 }
-
-/* should not hide this section with such a method but rather find the issue in the Go template
-$(document).ready(function () {
-	if($('.qor-page__body').siblings('.qor-table-container')) {
-		$('.qor-page__header').remove();
-	}
-})
-*/

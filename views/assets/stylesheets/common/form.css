@@ -44,3 +44,13 @@
 	border-radius: var(--default-border-radius);
 	background-color: var(--primary-light);
 }
+
+.qor-form__actions #qor-submit-loading {
+	display: block;
+	width: 100%;
+	float: none;
+}
+
+.loading.relative {
+	left: auto;
+}

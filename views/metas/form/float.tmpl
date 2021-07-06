@@ -1,15 +1,16 @@
-<div class="qor-field">
-  <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
-    <label class="qor-field__label mdl-textfield__label" for="{{.InputId}}">
-      {{meta_label .Meta}}
-    </label>
-
-    <div class="qor-field__show">
-      {{.Value}}
-    </div>
-
-    <div class="qor-field__edit">
-      <input class="mdl-textfield__input" type="number" step="any" id="{{.InputId}}" name="{{.InputName}}" value="{{.Value}}" {{if not (has_change_permission .Meta) }}disabled{{end}}>
-    </div>
+<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+  <label for="{{.InputId}}">{{meta_label .Meta}}</label>
+  <div class="qor-field__show">{{.Value}}</div>
+  <div class="tyk-form-control__wrapper">
+    <input
+     autocomplete="off"
+     class="tyk-form-control"
+     name="{{.InputName}}"
+     type="number"
+     step="any"
+     id="{{.InputId}}"
+     value="{{.Value}}"
+    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+    />
   </div>
 </div>

@@ -58,11 +58,15 @@
             {{if $actions}}
               {{$actions}}
             {{end}}
-          {{if has_create_permission .Resource}}
-            <a class="tyk-button tyk-button--success tyk-button--md action-button" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
-              Add
-            </a>
-          {{end}}
+            {{if .Resource}}
+              {{$NotSingleton := not .Resource.Config.Singleton}}
+              {{$HasCreatePermission := has_create_permission .Resource}}
+              {{if and $NotSingleton $HasCreatePermission}}
+                <a class="tyk-button tyk-button--success tyk-button--md action-button" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
+                  Add
+                </a>
+              {{end}}
+            {{end}}
         </div>
         {{.Content}}
       </main>

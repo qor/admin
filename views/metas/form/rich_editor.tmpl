@@ -13,17 +13,24 @@
 
   {{$asset_manager := .Meta.Config.AssetManager}}
   <div class="qor-field__edit qor-field__block qor-redactor-box">
-      <textarea class="qor-field__input" id="{{.InputId}}" name="{{.InputName}}" rows="10"
-                data-redactor-settings="{{marshal .Meta.Config.Settings}}"
-                data-toggle="qor.redactor"
-                {{if $asset_manager}}
-                  {{$asset_router := printf "%v/%v" $asset_manager.GetAdmin.GetRouter.Prefix $asset_manager.ToParam}}
-                  data-upload-url="{{$asset_router}}/upload"
-                  data-crop-url="{{$asset_router}}/crop"
-                  data-text="{&quot;title&quot;: &quot;{{t "qor_admin.form.crop_image" "Crop image"}}&quot;, &quot;ok&quot;: &quot;{{t "qor_admin.form.ok" "OK"}}&quot;, &quot;cancel&quot;: &quot;{{t "qor_admin.form.cancel" "Cancel"}}&quot;}"
-                {{end}}
-                {{if not (has_change_permission .Meta) }}disabled{{end}}>
-            {{.Value}}
-      </textarea>
+
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners qor-redactor-box">
+    <textarea
+      class="tyk-form-control qor-js-autoheight"
+      id="{{.InputId}}"
+      name="{{.InputName}}"
+      rows="10"
+      data-redactor-settings="{{marshal .Meta.Config.Settings}}"
+      data-toggle="qor.redactor"
+      {{if $asset_manager}}
+        {{$asset_router := printf "%v/%v" $asset_manager.GetAdmin.GetRouter.Prefix $asset_manager.ToParam}}
+        data-upload-url="{{$asset_router}}/upload"
+        data-crop-url="{{$asset_router}}/crop"
+        data-text="{&quot;title&quot;: &quot;{{t "qor_admin.form.crop_image" "Crop image"}}&quot;, &quot;ok&quot;: &quot;{{t "qor_admin.form.ok" "OK"}}&quot;, &quot;cancel&quot;: &quot;{{t "qor_admin.form.cancel" "Cancel"}}&quot;}"
+      {{end}}
+      {{if not (has_change_permission .Meta) }}disabled{{end}}
+    >
+      {{.Value}}
+    </textarea>
   </div>
 </div>

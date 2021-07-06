@@ -1,10 +1,16 @@
-<div class="qor-field">
-  <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" {{if .InputId}}for="{{.InputId}}"{{end}}>
-    <span class="qor-field__label mdl-checkbox__label">{{meta_label .Meta}}</span>
-
-    <span class="qor-field__edit">
-      <input type="checkbox" {{if .InputId}}id="{{.InputId}}"{{end}} name="{{.InputName}}" class="mdl-checkbox__input" value="true" type="checkbox" {{if .Value}}checked{{end}} {{if (not (has_change_permission .Meta))  }} disabled{{end}}>
+<div class="tyk-checkbox">
+  <div class="tyk-form-control__wrapper">
+    <label>
+      <input
+        name="{{.InputName}}"
+        {{if .InputId}} id="{{.InputId}}" {{end}}
+        value="true"
+        type="checkbox"
+        value="false"
+        {{if .Value}}checked{{end}} {{if (not (has_change_permission .Meta))  }} disabled{{end}}
+      >
+      {{meta_label .Meta}}
       {{if has_change_permission .Meta}}<input type="hidden" name="{{.InputName}}" value="false">{{end}}
-    </span>
-  </label>
+    </label>
+  </div>
 </div>

@@ -1,13 +1,14 @@
-<div class="qor-field">
-  <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
-    <label class="qor-field__label" for="{{.InputId}}">
-      {{meta_label .Meta}}
-    </label>
-
-    <div class="qor-field__show">{{.Value}}</div>
-
-    <div class="qor-field__edit">
-      <textarea class="mdl-textfield__input qor-js-autoheight" id="{{.InputId}}" name="{{.InputName}}" rows="1" {{if (not (has_change_permission .Meta)) }}disabled{{end}}>{{.Value}}</textarea>
-    </div>
-  </div>
+<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+  <label for="{{.InputId}}">{{meta_label .Meta}}</label>
+  <div class="qor-field__show">{{.Value}}</div>
+  <div class="tyk-form-control__wrapper">
+  <textarea
+    class="tyk-form-control qor-js-autoheight"
+    id="{{.InputId}}"
+    name="{{.InputName}}"
+    rows="1"
+    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+    >
+    {{.Value}}
+  </textarea>
 </div>

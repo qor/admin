@@ -5,6 +5,14 @@
 	font-size: var(--size-sm);
 }
 
+::-webkit-input-placeholder {
+	font-family: 'OpenSans-SemiBold';
+	color: var(--primary-base);
+  opacity: 0.8;
+  padding-left: 5px;
+}
+
+
 /* Search input */
 
 .mdl-textfield__input.qor-search__input {

@@ -41,6 +41,10 @@
 	text-decoration: none;
 }
 
+.mdl-layout__header-row__container > a:hover {
+	text-decoration: underline;
+}
+
 .mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
 	width: 100%;
 	margin-left: 0;

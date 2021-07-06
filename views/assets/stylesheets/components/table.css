@@ -27,7 +27,6 @@
 }
 
 .qor-table {
-	/* border: 1px solid var(--default-light); */
 	margin: 0;
 	box-shadow: none;
 }
@@ -46,10 +45,6 @@
 
 .tyk-table > thead th i {
 	padding-left: 5px;
-}
-
-.mdl-data-table__cell--non-numeric.qor-table__actions {
-	width: 40px !important;
 }
 
 .tyk-table > thead th,

@@ -1,0 +1,41 @@
+.collapsible-container {
+  color: var(--primary-dark);
+  border: var(--default-border);
+  border-radius: var(--default-border-radius);
+  margin: 20px;
+}
+
+.collapsible-header {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.collapsible-header__title {
+  font-family: 'smoolthan_medium';
+  font-weight: 500;
+  color: #36364c;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.collapsible-header > i {
+  margin-right: 10px;
+}
+
+a.collapsible-header__link {
+  color: var(--primary-dark);
+  float: right;
+  font-family: 'OpenSans-SemiBold';
+  color: var(--primary-success);
+}
+
+.collapsible-header__info {
+  padding-left: 26px;
+}
+
+.collapsible-content {
+  padding-inline: 40px;
+  display: none;
+  padding-bottom: 20px;
+}
+

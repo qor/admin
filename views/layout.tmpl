@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <!--
-    ,-----.    ,-----.  ,------.
-    '  .-.  '  '  .-.  ' |  .--. '
-    |  | |  |  |  | |  | |  '--'.'
-    '  '-'  '-.'  '-'  ' |  |\  \
-    `-----'--' `-----'  `--' '--'
-    ENTERPRISE CONTENT MANAGEMENT SYSTEM
-  -->
   <head>
     {{$title := page_title}}
     <title>{{if $title}}{{$title}} - {{end}}{{if .Admin.SiteName}}{{t .Admin.SiteName}}{{else}}{{t "Tyk Portal"}}{{end}}</title>
@@ -68,7 +60,7 @@
               {{end}}
             {{end}}
         </div>
-        {{.Content}}
+          {{.Content}}
       </main>
     </div>
 

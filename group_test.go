@@ -36,7 +36,7 @@ func genResourcePermissions(resourceList [][]string) admin.ResourcePermissions {
 
 func TestGroupMenuPermission(t *testing.T) {
 	group, ctx := groupTestEnvPrep(t, genResourcePermissions([][]string{{"Company"}, {"Credit Card"}}))
-
+	db.New().Find(&ctx.Groups)
 	companyMenu := Admin.GetMenu("Companies")
 	if !companyMenu.HasPermission(roles.Read, ctx) {
 		t.Error("user should have permission to access allowed Company resource")
@@ -45,6 +45,7 @@ func TestGroupMenuPermission(t *testing.T) {
 	// check no group permission menu
 	group.ResourcePermissions = admin.ResourcePermissions{}
 	utils.AssertNoErr(t, db.Save(&group).Error)
+	db.New().Find(&ctx.Groups)
 	if companyMenu.HasPermission(roles.Read, ctx) {
 		t.Error("user should not have permission to access company when it is not allowed")
 	}
@@ -66,7 +67,7 @@ func TestGroupNestedMenuPermission(t *testing.T) {
 	utils.AssertNoErr(t, db.Save(&group).Error)
 
 	ctx := &admin.Context{Context: &qor.Context{CurrentUser: user, DB: Admin.DB}, Admin: Admin, Settings: map[string]interface{}{}}
-
+	db.New().Find(&ctx.Groups)
 	nestedMenu := Admin.GetMenu("MenuA Father")
 	if !nestedMenu.HasPermission(roles.Read, ctx) {
 		t.Error("menu with sub menus should have permission when at least one of the sub menu is allowed to access")
@@ -82,7 +83,7 @@ func TestNestedMenuRolePermission(t *testing.T) {
 
 	ctx := &admin.Context{Context: &qor.Context{CurrentUser: user, DB: Admin.DB}, Admin: Admin, Settings: map[string]interface{}{}}
 	ctx.Roles = []string{Role_system_administrator}
-
+	db.New().Find(&ctx.Groups)
 	nestedMenu := Admin.GetMenu("MenuA Father")
 	if !nestedMenu.HasPermission(roles.Read, ctx) {
 		t.Error("menu with sub menus should have permission when at least one of the sub menu is allowed to access either by group or role permission")
@@ -91,7 +92,7 @@ func TestNestedMenuRolePermission(t *testing.T) {
 
 func TestIndividualNoPermissionMenu(t *testing.T) {
 	_, ctx := groupTestEnvPrep(t, genResourcePermissions([][]string{{"Company"}, {"Credit Card"}}))
-
+	db.New().Find(&ctx.Groups)
 	// Check no permission menu
 	noPermissionMenu := Admin.AddMenu(&admin.Menu{Name: "Dashboard", Link: "/admin"})
 	if noPermissionMenu.HasPermission(roles.Read, ctx) {
@@ -114,7 +115,7 @@ func TestGroupMenuPermissionShouldHasLowerPriorityThanRole(t *testing.T) {
 	ctx := &admin.Context{Context: &qor.Context{CurrentUser: user, DB: Admin.DB},
 		Admin: Admin, Settings: map[string]interface{}{}}
 	ctx.Context.Roles = []string{Role_system_administrator}
-
+	db.New().Find(&ctx.Groups)
 	Admin.AddResource(&Profile{}, &admin.Config{Permission: roles.Allow(roles.CRUD, Role_system_administrator)})
 	profileMenu := Admin.GetMenu("Profiles")
 	if !profileMenu.HasPermission(roles.Read, ctx) {
@@ -277,6 +278,7 @@ func TestSkipGroupPermissionResourceRouter(t *testing.T) {
 
 func TestActionIsAllowed(t *testing.T) {
 	group, ctx := groupTestEnvPrep(t, genResourcePermissions([][]string{{"Company", "Publish"}, {"Credit Card"}}))
+	db.New().Find(&ctx.Groups)
 	actionPublish := Admin.GetResource("Company").GetAction("Publish")
 
 	if !actionPublish.IsAllowed(roles.Read, ctx) {
@@ -286,6 +288,7 @@ func TestActionIsAllowed(t *testing.T) {
 	// check no group permission menu
 	group.ResourcePermissions = genResourcePermissions([][]string{{"Company"}, {"Credit Card"}})
 	utils.AssertNoErr(t, db.Save(&group).Error)
+	db.New().Find(&ctx.Groups)
 	if actionPublish.IsAllowed(roles.Read, ctx) {
 		t.Error("user should not have permission to access publish action when it is not allowed")
 	}
@@ -294,7 +297,7 @@ func TestActionIsAllowed(t *testing.T) {
 func TestActionIsAllowedWorkWithRolePermission(t *testing.T) {
 	group, ctx := groupTestEnvPrep(t, genResourcePermissions([][]string{{"Company", "Preview"}, {"Credit Card"}}))
 	actionPreview := Admin.GetResource("Company").GetAction("Preview")
-
+	db.New().Find(&ctx.Groups)
 	if actionPreview.IsAllowed(roles.Read, ctx) {
 		t.Error("action should not have permission when group is allowed but role denied. role has higher power")
 	}
@@ -302,7 +305,7 @@ func TestActionIsAllowedWorkWithRolePermission(t *testing.T) {
 	// group permission NOT allowed but role allowed
 	group.ResourcePermissions = genResourcePermissions([][]string{{"Company"}, {"Credit Card"}})
 	utils.AssertNoErr(t, db.Save(&group).Error)
-
+	db.New().Find(&ctx.Groups)
 	actionApprove := Admin.GetResource("Company").GetAction("Approve")
 	if !actionApprove.IsAllowed(roles.Read, ctx) {
 		t.Error("user should have permission on action when group is not allowed but role is allowed")
@@ -311,6 +314,7 @@ func TestActionIsAllowedWorkWithRolePermission(t *testing.T) {
 
 func TestSkipGroupControlAction(t *testing.T) {
 	_, ctx := groupTestEnvPrep(t, genResourcePermissions([][]string{{"Company", "Publish"}, {"Credit Card"}}))
+	db.New().Find(&ctx.Groups)
 	res := Admin.GetResource("Credit Card")
 	actionPublish := res.Action(&admin.Action{
 		Name: "Publish",
@@ -330,6 +334,7 @@ func TestSkipGroupControlAction(t *testing.T) {
 
 func TestAllowedActions(t *testing.T) {
 	_, ctx := groupTestEnvPrep(t, genResourcePermissions([][]string{{"Company", "Preview", "Publish"}, {"Credit Card"}}))
+	db.New().Find(&ctx.Groups)
 	var fakeRecord interface{}
 	actions := Admin.GetResource("Company").GetActions()
 
@@ -346,7 +351,7 @@ func TestAllowedActions(t *testing.T) {
 
 func TestActionHasPermission(t *testing.T) {
 	_, ctx := groupTestEnvPrep(t, genResourcePermissions([][]string{{"Company", "Preview", "Publish"}, {"Credit Card"}}))
-
+	db.New().Find(&ctx.Groups)
 	actionPreview := Admin.GetResource("Company").GetAction("Preview")
 	actionPublish := Admin.GetResource("Company").GetAction("Publish")
 

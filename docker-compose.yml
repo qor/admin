@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      - "POSTGRES_USER=qor"
+      - "POSTGRES_PASSWORD=qor"
+      - "POSTGRES_DB=qor_test"
+    ports:
+      - 5432:5432

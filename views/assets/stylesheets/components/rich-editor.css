@@ -4,6 +4,11 @@
 	box-shadow: none;
 }
 
+.redactor-focus.redactor-styles-on,
+.redactor-focus:focus.redactor-styles-on {
+	border: var(--active-border) !important;
+}
+
 .redactor-toolbar {
 	border-bottom: var(--default-border);
 }

@@ -1,15 +1,8 @@
-.mdl-textfield__input {
+.qor-field .mdl-textfield__label,
+.qor-field__label {
+	color: var(--primary-dark);
 	font-family: 'OpenSans-Semibold';
-  font-size: var(--size-sm);
-  border: var(--default-border);
-  background-color: var(--white);
-  color: var(--default-text-color);
-  display: block;
-  height: 39px;
-  padding: 10px 20px 10px 20px;
-  transition: all .2s linear;
-  width: 100%;
-  border-radius: var(--default-border-radius);
+	font-size: var(--size-sm);
 }
 
 ::-webkit-input-placeholder {
@@ -19,29 +12,6 @@
   padding-left: 5px;
 }
 
-.mdl-textfield:not(.qor-search) {
-	padding: 0;
-}
-
-.qor-field .mdl-textfield__label,
-.qor-field__label {
-	color: var(--primary-dark);
-	font-family: 'OpenSans-Semibold';
-	font-size: var(--size-sm);
-}
-
-.mdl-textfield__label {
-	position: relative;
-}
-
-.mdl-textfield--expandable {
-	min-width: 240px;
-}
-
-.mdl-textfield.is-focused .mdl-textfield__input {
-  outline: none;
-  border: var(--active-border);
-}
 
 /* Search input */
 

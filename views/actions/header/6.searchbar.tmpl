@@ -14,9 +14,18 @@
         <label class="mdl-button mdl-js-button mdl-button--icon qor-search__label" for="inputSearch">
           <i class="tyk-icon tykon tykon-search"></i>
         </label>
-        <div class="mdl-textfield__expandable-holder">
-          <input class="mdl-textfield__input qor-search__input" type="text" id="inputSearch" name="keyword" value="{{ $keyword }}" placeholder="{{t "qor_admin.actions.search_bar_search" "Search"}}">
-          <label class="mdl-textfield__label"></label>
+        <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+          <div class="tyk-form-control__wrapper">
+            <input
+              autocomplete="off"
+              class="tyk-form-control mdl-textfield__input qor-search__input"
+              type="text"
+              id="inputSearch"
+              name="keyword"
+              value="{{ $keyword }}"
+              placeholder="{{t "qor_admin.actions.search_bar_search" "Search"}}"
+            >
+          </div>
         </div>
         <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored qor-search__clear" type="button">
           <i class="tyk-icon tykon tykon-x"></i>

@@ -25,8 +25,8 @@
 
       {{if has_update_permission .Resource}}
         <div class="qor-form__actions qor-field__edit">
-          <button class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect qor-button--save" type="submit">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
-          <a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect qor-button--cancel" href="javascript:history.back();">{{t "qor_admin.form.cancel_edit" "Cancel Edit"}}</a>
+          <a class="tyk-button tyk-button--primary-link tyk-button--md qor-button--cancel" href="javascript:history.back();">{{t "qor_admin.form.cancel_edit" "Cancel Edit"}}</a>
+          <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
         </div>
       {{end}}
     </form>

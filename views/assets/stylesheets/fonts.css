@@ -40,29 +40,28 @@
   src: local('Roboto Bold'), local('Roboto-Bold'), url(//fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlvAA.woff) format('woff');
 }
 
-/* open-sans-regular - latin */
 @font-face {
-font-family: 'OpenSans-regular';
-font-style: normal;
-font-weight: 400;
-src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-  url('../fonts/OpenSans-Regular.woff') format('woff')
+  font-family: 'OpenSans-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+    url('../fonts/OpenSans-Regular.woff') format('woff')
 }
 
 @font-face {
-font-family: 'OpenSans-Bold';
-font-style: normal;
-font-weight: 700;
-src: url('../fonts/OpenSans-Bold.woff2') format('woff2')
-  url('../fonts/OpenSans-Bold.woff') format('woff')
+  font-family: 'OpenSans-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2')
+    url('../fonts/OpenSans-Bold.woff') format('woff')
 }
 
 @font-face {
-font-family: 'OpenSans-Italic';
-font-style: normal;
-font-weight: 400;
-src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
-  url('../fonts/OpenSans-Italic.woff') format('woff')
+  font-family: 'OpenSans-Italic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
+    url('../fonts/OpenSans-Italic.woff') format('woff')
 }
   
 .material-icons {

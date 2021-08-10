@@ -14,6 +14,8 @@
 }
 
 .redactor-box.redactor-styles-on .redactor-toolbar {
+	border-top-left-radius: var(--default-border-radius);
+	border-top-right-radius: var(--default-border-radius);
 	padding: 10px 15px;
 }
 
@@ -75,3 +77,6 @@
 	cursor: not-allowed;
 }
 
+.tyk-form-control.redactor-source.redactor-source-open:active {
+	border: none !important;
+}

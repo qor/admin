@@ -60,9 +60,12 @@
 	border-bottom-left-radius: 18px;
 }
 
-.qor-table__actions .mdl-menu__item a {
+.qor-table__actions .mdl-menu__item a,
+.qor-table a:not([class*=mdl-button]) {
 	color: var(--default-text-color);
 }
+
+
 
 /* Change the delete icon  */
 

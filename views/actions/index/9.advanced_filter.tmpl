@@ -1,7 +1,7 @@
 {{$filters := get_filters}}
 {{if $filters}}
   <div class="qor-actions qor-advanced-filter" data-toggle="qor.advancedsearch">
-    <button class="mdl-button mdl-button--colored qor-advanced-filter__toggle" type="button">
+    <button class="tyk-button tyk-button--primary qor-advanced-filter__toggle" type="button">
       {{if has_filter}}
       <span class="qor-notifications__unread"><i class="material-icons" style="font-size: 1.05em">edit</i></span>
       {{end}}
@@ -10,7 +10,7 @@
 
     <div class="qor-advanced-filter__dropdown clearfix" style="display: none;" advanced-search-toggle>
       <button class="mdl-button mdl-button--icon qor-advanced-filter__close">
-        <i class="material-icons">close</i>
+        <i class="tyk-icon tykon tykon-x"></i>
       </button>
       <h3 class="mdl-layout-title">{{t "qor_admin.actions.advanced_filter" "Advanced Filter"}}</h3>
       {{if len saved_filters}}
@@ -33,8 +33,8 @@
         {{range $filter := $filters}}
           {{render_filter $filter}}
         {{end}}
-        <button type="submit" class="mdl-button mdl-button--colored mdl-button--raised">{{t "qor_admin.filter.apply" "Apply"}}</button>
-        <button type="button" class="mdl-button mdl-button--colored qor-advanced-filter__save">{{t "qor_admin.filter.save_this_filter" "Save This Filter"}}</button>
+        <button type="submit" class="tyk-button tyk-button--success mdl-button--raised">{{t "qor_admin.filter.apply" "Apply"}}</button>
+        <button type="button" class="tyk-button tyk-button--primary-link qor-advanced-filter__save">{{t "qor_admin.filter.save_this_filter" "Save This Filter"}}</button>
       </form>
     </div>
   </div>

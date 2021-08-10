@@ -13,8 +13,7 @@
 
   <div class="qor-form-container">
     {{if has_update_permission .Resource}}
-      <a href="{{join_url (url_for .Result .Resource) "edit"}}" class="mdl-button mdl-button--fab mdl-button--primary mdl-js-button mdl-js-ripple-effect qor-button--edit" data-url="{{join_url (url_for .Result .Resource) "edit"}}">
-        <i class="material-icons">edit</i>
+      <a href="{{join_url (url_for .Result .Resource) "edit"}}" class="tyk-button tyk-button--primary mdl-js-button mdl-js-ripple-effect qor-button--edit" data-url="{{join_url (url_for .Result .Resource) "edit"}}"> Continue on edit
       </a>
     {{end}}
 

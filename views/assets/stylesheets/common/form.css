@@ -15,7 +15,7 @@
 }
 
 .qor-form__actions {
-  padding-inline: 20px;
+  padding-block: 20px;
   background-color: var(--primary-light);
   position: sticky;
   top: 0;

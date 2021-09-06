@@ -1,52 +1,57 @@
 .qor-field {
-	padding-block: 10px;
+  padding-block: 10px;
 }
 
 .qor-field__block {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .qor-field .mdl-textfield__label {
-	top: 0;
+  top: 0;
 }
 
 .mdl-dialog__actions > * {
-	height: auto;
+  height: auto;
 }
 
 .qor-form__actions {
-	text-align: right;
+  padding-inline: 20px;
+  background-color: var(--primary-light);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  text-align: right;
 }
 
 .qor-fieldset {
-	border-radius: var(--default-border-radius);
-	box-shadow: none;
+  border-radius: var(--default-border-radius);
+  box-shadow: none;
 }
 
 .qor-action-forms > .qor-action-button {
-	margin: 0;
+  margin: 0;
 }
 
 .qor-slideout {
-	background-color: var(--primary-light);
+  background-color: var(--primary-light);
 }
 
 .mdl-textfield__expandable-holder {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 .qor-fieldset .qor-fieldset {
-	border: 1px solid var(--default-light);
-	border-radius: var(--default-border-radius);
-	background-color: var(--primary-light);
+  border: 1px solid var(--default-light);
+  border-radius: var(--default-border-radius);
+  background-color: var(--primary-light);
 }
 
 .qor-form__actions #qor-submit-loading {
-	display: block;
-	width: 100%;
-	float: none;
+  display: block;
+  width: 100%;
+  float: none;
 }
 
 .loading.relative {
-	left: auto;
+  left: auto;
 }

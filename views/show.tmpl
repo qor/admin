@@ -29,12 +29,6 @@
 
       {{render_form .Result show_sections}}
 
-      {{if has_update_permission .Resource}}
-        <div class="qor-form__actions qor-field__edit">
-          <a class="tyk-button tyk-button--primary-link tyk-button--md qor-button--cancel" href="javascript:history.back();">{{t "qor_admin.form.cancel_edit" "Cancel Edit"}}</a>
-          <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
-        </div>
-      {{end}}
     </form>
   </div>
 </div>

@@ -6,9 +6,7 @@
     class="tyk-form-control qor-js-autoheight"
     id="{{.InputId}}"
     name="{{.InputName}}"
-    rows="1"
+    rows="2"
     {{if (not (has_change_permission .Meta)) }}disabled{{end}}
-    >
-    {{.Value}}
-  </textarea>
+    >{{ .Value }}</textarea>
 </div>

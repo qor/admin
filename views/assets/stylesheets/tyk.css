@@ -6,6 +6,7 @@
 @import './components/rich-editor.css';
 @import './components/buttons.css';
 @import './components/collapsible.css';
+@import './components/code-reference.css';
 @import './common/layout.css';
 @import './common/form.css';
 @import './common/text.css';

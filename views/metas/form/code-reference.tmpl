@@ -9,18 +9,31 @@
      type="text"
      id="{{.InputId}}"
      value="{{.Value}}"
-     oninput="CodeReferenceOnChange(this, this.value)"
+     oninput="CodeReferenceOnChange(`${this.name}_code_reference`, this.value, '{{ .CRType }}')"
     {{if (not (has_change_permission .Meta)) }}disabled{{end}}
     />
   </div>
 </div>
 <div class="qor-field">
   <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
-    <label class="qor-field__label mdl-textfield__label" for="{{.InputId}}">
+    <label class="qor-field__label mdl-textfield__label" for="{{.InputName}}_code_reference">
       #Code Reference
     </label>
-    <div class="qor-field__edit">
-      {{ code_reference_format .Value .Meta.Collection }}
+    <div id="{{.InputName}}_code_reference_container" class="code-reference-container">
+      <div id="{{.InputName}}_code_reference" class="qor-field__edit">
+      {{ if (ne .Value nil) }}
+        {{ if (eq .CRType "content") }}
+          safe .blocks.{{.Value}}.Content
+        {{ else if (eq .CRType "text") }}
+          .blocks.{{.Value}}.Content
+        {{ else if (eq .CRType "image") }}
+          .blocks.{{.Value}}.Image.URL
+        {{ end }}
+      {{ end }}
+      </div>
+      <div onclick="copyToClipboard('{{.InputName}}_code_reference')" class="code-reference-copy-icon">
+        <i class="tyk-icon tykon tykon-copy"></i>
+      </div>
     </div>
   </div>
 </div>

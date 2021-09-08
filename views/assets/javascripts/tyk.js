@@ -11,10 +11,30 @@ function onCancel() {
   }
 }
 
-function CodeReferenceOnChange(inputEl, value) {
-  if (inputEl.value.match(/\.{1,}/)) return;
-  const labelValue =
-    inputEl.parentElement.parentElement.parentElement.lastElementChild.lastElementChild.lastElementChild.innerText;
-  inputEl.parentElement.parentElement.parentElement.lastElementChild.lastElementChild.lastElementChild.innerText =
-    labelValue.replace(/\.blocks\..*?\./g, `.blocks.${value}.`);
+function CodeReferenceOnChange(inputId, value, crType) {
+  const codeRefContainer = document.getElementById(`${inputId}_container`);
+  if (value == '') {
+    codeRefContainer.style.display = 'none';
+    return;
+  }
+  codeRefContainer.style.display = 'flex';
+  const codeRefEl = document.getElementById(inputId);
+  let crValue;
+  switch (crType) {
+    case 'content':
+      crValue = `safe .blocks.${value}.Content`;
+      break;
+    case 'image':
+      crValue = `.blocks.${value}.Image.URL`;
+      break;
+    default:
+      crValue = `.blocks.${value}.Content`;
+      break;
+  }
+  codeRefEl.innerText = crValue;
+}
+
+function copyToClipboard(elemId) {
+  const codeRefEl = document.getElementById(elemId);
+  navigator.clipboard.writeText(codeRefEl.innerText);
 }

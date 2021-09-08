@@ -95,7 +95,7 @@ a.qor-slideout__fullscreen > i.tyk-icon + .tyk-icon {
 	border-radius: var(--default-border-radius);
 	background: var(--white);
 	position: absolute;
-	top: 25px;
+	top: 20px;
 	right: 5px;
 	z-index: 10;
 	display: none;

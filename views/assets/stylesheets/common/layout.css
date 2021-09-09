@@ -10,6 +10,7 @@
 
 .qor-layout .mdl-layout__content {
 	padding-left: 270px;
+  z-index: 1;
 }
 
 

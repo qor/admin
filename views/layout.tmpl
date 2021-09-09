@@ -35,8 +35,15 @@
                 <h5>{{.CurrentUser.DisplayName}}</h5>
               </div>
             {{end}}
-            <a href="{{logout_url}}" title="{{t "qor_admin.account.logout" "logout"}}" alt="{{t "qor_admin.account.logout" "logout"}}"><i class="tyk-icon tykon tykon-profile"></i></a>
-            <!--<a class="mdl-button mdl-js-button mdl-button--icon" href="{{logout_url}}" title="{{t "qor_admin.account.logout" "logout"}}" alt="{{t "qor_admin.account.logout" "logout"}}"><i class="material-icons">exit_to_app</i></a> -->
+
+            <div class="profile-details-container">
+              <i id="profile-icon" class="tyk-icon tykon tykon-profile profile-details-container__icon"></i>
+              <ul id="profile-menu" class="profile-details-container__list">
+                <li>
+                  <a id="logout-btn" href="{{logout_url}}" title="{{t "qor_admin.account.logout" "logout"}}" alt="{{t "qor_admin.account.logout" "logout"}}">Logout</a>
+                </li>
+              </ul>
+            </div>
           </div>
       </header>
 

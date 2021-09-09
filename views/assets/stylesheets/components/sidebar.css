@@ -76,25 +76,31 @@
   background: url(../../images/service-provider.svg) no-repeat left center;
 }
 
-[qor-icon-name="Developer Credentials"] > a {
+[qor-icon-name="Developer Portal"] > a {
   background: url(../../images/developer-portal.svg) no-repeat left center;
 }
 
-[qor-icon-name="Blog Management"] > a {
+[qor-icon-name="Blog"] > a {
   background: url(../../images/blog.svg) no-repeat left center;
 }
 
-[qor-icon-name*=Site]>a::before {
-	content: '';
-}
-[qor-icon-name="Site Management"] > a {
+[qor-icon-name="Customise"] > a {
   background: url(../../images/customise.svg) no-repeat left center;
 }
 
-[qor-icon-name*=User]>a::before {
+[qor-icon-name="User Management"]>a::before {
 	content: '';
 }
+
 [qor-icon-name="User Management"] > a {
   background: url(../../images/user-management.svg) no-repeat left center;
+}
+
+[qor-icon-name*=Settings]>a::before {
+	content: '';
+}
+
+[qor-icon-name="Settings"] > a {
+  background: url(../../images/settings.svg) no-repeat left center;
 }
 

@@ -22,13 +22,13 @@ function CodeReferenceOnChange(inputId, value, crType) {
     let crValue;
     switch (crType) {
         case 'content':
-            crValue = `safe .blocks.${value}.Content`;
+            crValue = `{{ safe .blocks.${value}.Content }}`;
             break;
         case 'image':
-            crValue = `.blocks.${value}.Image.URL`;
+            crValue = `{{ .blocks.${value}.Image.URL }}`;
             break;
         default:
-            crValue = `.blocks.${value}.Content`;
+            crValue = `{{ .blocks.${value}.Content }}`;
             break;
     }
     codeRefEl.innerText = crValue;

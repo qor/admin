@@ -21,16 +21,17 @@
     </label>
     <div id="{{.InputName}}_code_reference_snippet" {{ if not .Value }}style="display:none"{{ end }} class="code-reference-snippet">
       <div class="qor-field__edit code-reference">
-        <span id="{{.InputName}}_code_reference">
-          {{ if (eq .CRType "content") }}
-            safe .blocks.{{.Value}}.Content
-          {{ else if (eq .CRType "text") }}
-            .blocks.{{.Value}}.Content
-          {{ else if (eq .CRType "image") }}
-            .blocks.{{.Value}}.Image.URL
-          {{ end }}
-        </span>
-        <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>
+          <span id="{{.InputName}}_code_reference">{{"{{"}}
+            {{ if (eq .CRType "content") }}
+               safe .blocks.{{.Value}}.Content
+            {{ else if (eq .CRType "text") }}
+              .blocks.{{.Value}}.Content
+            {{ else if (eq .CRType "image") }}
+              .blocks.{{.Value}}.Image.URL
+            {{ end }}{{"}}"}}
+          </span>
+          <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>
+        </div>
       </div>
     </div>
   </div>

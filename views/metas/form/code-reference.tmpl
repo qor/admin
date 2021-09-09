@@ -19,34 +19,18 @@
     <label class="qor-field__label mdl-textfield__label" for="{{.InputName}}_code_reference">
       #Code Reference
     </label>
-<<<<<<< HEAD
-    <div id="{{.InputName}}_code_reference_snippet" {{ if not .Value }}style="display:none"{{ end }} class="code-reference-snippet">
-      <div class="qor-field__edit code-reference">
-          <span id="{{.InputName}}_code_reference">{{"{{"}}
-            {{ if (eq .CRType "content") }}
-               safe .blocks.{{.Value}}.Content
-            {{ else if (eq .CRType "text") }}
-              .blocks.{{.Value}}.Content
-            {{ else if (eq .CRType "image") }}
-              .blocks.{{.Value}}.Image.URL
-            {{ end }}{{"}}"}}
-          </span>
-          <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>
-        </div>
-=======
     <div id="{{.InputName}}_code_reference_container" {{ if not .Value }}style="display:none"{{ end }} class="code-reference-container">
       <div class="qor-field__edit">
-        <span id="{{.InputName}}_code_reference">
+        <span id="{{.InputName}}_code_reference">{{"{{"}}
           {{ if (eq .CRType "content") }}
             safe .blocks.{{.Value}}.Content
           {{ else if (eq .CRType "text") }}
             .blocks.{{.Value}}.Content
           {{ else if (eq .CRType "image") }}
             .blocks.{{.Value}}.Image.URL
-          {{ end }}
+          {{ end }}{{"}}"}}
         </span>
         <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>
->>>>>>> parent of d8a4a00... More UI enhancements
       </div>
     </div>
   </div>

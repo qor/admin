@@ -106,3 +106,22 @@ npm install && npm install -g gulp
 
 * Watch SCSS/JavaScript changes (hot-reload): `gulp`
 * Build Release files: `gulp release`
+
+# Update Raava to use the latest version
+We need the latest commit hash from `raava-admin` repo. You can get it from the GitHub repo, or:
+
+### From a local copy
+We need to have the latest version of the `master` branch
+```bash
+# make sure we are in the correct branch
+$ git checkout master
+# get the lastest update
+$ git pull
+# display the hash from the las commit 
+$ git log -1 --format='%H'
+```
+
+Now that we got the commit hash, we need to move to the local `raava` folder and do this
+```bash
+$ go get github.com/TykTechnologies/raava-admin@<commit-hash-here>
+```

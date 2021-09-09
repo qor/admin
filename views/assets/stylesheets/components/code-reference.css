@@ -1,15 +1,9 @@
 .code-reference-container {
-    height: 5em;
-}
-
-.code-reference-snippet {
-    display: flex;
-    flex-direction: row;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
+  display: flex;
+  flex-direction: row;
 }
 
 .code-reference-copy-icon {
-    padding-left: 5px;
-    cursor: pointer;
+  padding-left: 5px;
+  cursor: pointer;
 }

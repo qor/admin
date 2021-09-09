@@ -11,6 +11,7 @@ function onCancel() {
   }
 }
 
+<<<<<<< HEAD
 function CodeReferenceOnChange(inputId, value, crType) {
   const codeRefContainer = document.getElementById(`${inputId}_container`);
   if (value == '') {
@@ -38,3 +39,16 @@ function copyToClipboard(elemId) {
   const codeRefEl = document.getElementById(elemId);
   navigator.clipboard.writeText(codeRefEl.innerText);
 }
+=======
+document.getElementById("profile-icon").addEventListener("mouseover", showProfileMenu);
+document.getElementById("logout-btn").addEventListener("mouseout", hideProfilemenu);
+document.getElementById("logout-btn").addEventListener("mouseleave", hideProfilemenu);
+
+function showProfileMenu() {
+  document.getElementById("profile-menu").style.visibility = "visible";
+}
+
+function hideProfilemenu() {
+  document.getElementById("profile-menu").style.visibility = "hidden";
+}
+>>>>>>> fbabca1... rebasing

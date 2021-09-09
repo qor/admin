@@ -63,6 +63,7 @@
 #profile-icon {
 	font-size: var(--size-md);
 	padding-left: 10px;
+	cursor: pointer;
 }
 
 .qor-slideout__header .qor-slideout__header-link a.qor-slideout__opennew i {
@@ -113,9 +114,7 @@ a.qor-slideout__fullscreen > i.tyk-icon+.tyk-icon {
 }
 
 .profile-details-container__list > li {
-  padding-block: 10px;
-  padding-left: 20px;
-  padding-right: 50px;
+	padding: 10px 50px 10px 20px;
   z-index: 10;
 }
 

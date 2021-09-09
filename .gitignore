@@ -25,3 +25,6 @@ __*
 *.min.map
 .sass-cache
 npm-debug.log
+
+# Others
+.vscode

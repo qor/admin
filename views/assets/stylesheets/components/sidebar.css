@@ -1,57 +1,57 @@
 .qor-layout .mdl-layout__drawer {
-	position: fixed;
-	height: 97%;
+  position: fixed;
+  height: 97%;
 }
 
 .qor-menu {
-	padding: 0 5px;
+  padding: 0 5px;
 }
 
 .qor-layout__sidebar {
-	background-color: var(--primary-light);
+  background-color: var(--primary-light);
 }
 
 .qor-menu > li > a {
-	color: var(--default-text-color);
-	border-radius: var(--default-border-radius);
+  color: var(--default-text-color);
+  border-radius: var(--default-border-radius);
 }
 
 .qor-menu > li > ul > li > a {
-	padding: 10px 16px 10px 40px;
+  padding: 10px 16px 10px 40px;
 }
 
 .qor-menu > li > ul > li > a:hover {
-	background-color: var(--white);
+  background-color: var(--white);
 }
 
 #qor-menu-item--main > a:first-of-type {
-	font-family: 'OpenSans-Bold';
-	font-size: var(--size-md);
-	padding: 15px 40px 15px 30px;
+  font-family: 'OpenSans-Bold';
+  font-size: var(--size-md);
+  padding: 15px 40px 15px 30px;
   margin-left: 10px;
 }
 
 .qor-menu>li>a:focus,
 .qor-menu>li>a:hover {
-	background-color: var(--primary-light);
+  background-color: var(--primary-light);
 }
 
 #qor-menu-item--sub > a:first-of-type {
-	font-family: 'OpenSans-SemiBold';
-	font-size: var(--size-sm);
-	margin: 3px 0;
+  font-family: 'OpenSans-SemiBold';
+  font-size: var(--size-sm);
+  margin: 3px 0;
 }
 
 .mdl-layout__drawer {
-	margin-top: 65px;
+  margin-top: 65px;
 }
 
 .qor-layout__sidebar >.sidebar-body {
-	top: 0;
+  top: 0;
 }
 
 .qor-slideout__body > .content-header {
-	display: none;
+  display: none;
 }
 
 .qor-menu > .active:hover > a,
@@ -60,41 +60,47 @@
 .qor-menu > .active >a,
 .qor-menu > .active >a:focus,
 .qor-menu > .active >a:hover {
-	color: var(--primary-success);
-	border-radius: var(--default-border-radius);
+  color: var(--primary-success);
+  border-radius: var(--default-border-radius);
 }
 
 #qor-menu-item--sub.active > a:first-of-type {
-	font-family: 'OpenSans-Bold';
+  font-family: 'OpenSans-Bold';
 }
 
 .mdl-layout__drawer {
-	width: 270px;
+  width: 270px;
 }
 
 [qor-icon-name="Service Providers"] > a {
   background: url(../../images/service-provider.svg) no-repeat left center;
 }
 
-[qor-icon-name="Developer Credentials"] > a {
+[qor-icon-name="Developer Portal"] > a {
   background: url(../../images/developer-portal.svg) no-repeat left center;
 }
 
-[qor-icon-name="Blog Management"] > a {
+[qor-icon-name="Blog"] > a {
   background: url(../../images/blog.svg) no-repeat left center;
 }
 
-[qor-icon-name*=Site]>a::before {
-	content: '';
-}
-[qor-icon-name="Site Management"] > a {
+[qor-icon-name="Customise"] > a {
   background: url(../../images/customise.svg) no-repeat left center;
 }
 
-[qor-icon-name*=User]>a::before {
-	content: '';
+[qor-icon-name="User Management"]>a::before {
+  content: '';
 }
+
 [qor-icon-name="User Management"] > a {
   background: url(../../images/user-management.svg) no-repeat left center;
+}
+
+[qor-icon-name*=Settings]>a::before {
+  content: '';
+}
+
+[qor-icon-name="Settings"] > a {
+  background: url(../../images/settings.svg) no-repeat left center;
 }
 

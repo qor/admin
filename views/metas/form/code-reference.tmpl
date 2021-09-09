@@ -14,25 +14,24 @@
     />
   </div>
 </div>
-<div class="qor-field">
+<div class="qor-field code-reference-container">
   <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
-    <label class="qor-field__label mdl-textfield__label" for="{{.InputName}}_code_reference">
+    <label class="qor-field__label mdl-textfield__label">
       #Code Reference
     </label>
-    <div id="{{.InputName}}_code_reference_container" class="code-reference-container">
-      <div id="{{.InputName}}_code_reference" class="qor-field__edit">
-      {{ if (ne .Value nil) }}
-        {{ if (eq .CRType "content") }}
-          safe .blocks.{{.Value}}.Content
-        {{ else if (eq .CRType "text") }}
-          .blocks.{{.Value}}.Content
-        {{ else if (eq .CRType "image") }}
-          .blocks.{{.Value}}.Image.URL
-        {{ end }}
-      {{ end }}
-      </div>
-      <div onclick="copyToClipboard('{{.InputName}}_code_reference')" class="code-reference-copy-icon">
-        <i class="tyk-icon tykon tykon-copy"></i>
+    <div id="{{.InputName}}_code_reference_snippet" {{ if not .Value }}style="display:none"{{ end }} class="code-reference-snippet">
+      <div class="qor-field__edit code-reference">
+          <span id="{{.InputName}}_code_reference">{{"{{"}}
+            {{ if (eq .CRType "content") }}
+               safe .blocks.{{.Value}}.Content
+            {{ else if (eq .CRType "text") }}
+              .blocks.{{.Value}}.Content
+            {{ else if (eq .CRType "image") }}
+              .blocks.{{.Value}}.Image.URL
+            {{ end }}{{"}}"}}
+          </span>
+          <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>
+        </div>
       </div>
     </div>
   </div>

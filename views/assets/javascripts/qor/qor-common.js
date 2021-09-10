@@ -167,7 +167,7 @@ $(function() {
 
   // ********************************Qor Handle AJAX error********************
   QOR.handleAjaxError = function(err) {
-    let $body = $("body"),
+    let $body = $(".qor-page__body"),
       rJSON = err.responseJSON,
       rText = err.responseText,
       $error = $(`<ul class="qor-alert qor-error" data-dismissible="true"><button type="button" class="mdl-button mdl-button--icon" data-dismiss="alert">

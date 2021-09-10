@@ -14,13 +14,21 @@
   height: auto;
 }
 
-.qor-form__actions {
-  padding-block: 20px;
+.qor-form__actions,
+.qor-slideout__body .qor-page__header {
+  padding: 20px;
   background-color: var(--primary-light);
   position: sticky;
   top: 0;
   z-index: 999;
   text-align: right;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 10%);
+  margin-bottom: 15px;
+}
+
+.qor-slideout__body .qor-page__header {
+  width: 100%;
+  margin-left: 0px;
 }
 
 .qor-fieldset {

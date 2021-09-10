@@ -25,7 +25,7 @@
     </a>
   {{end}}
 {{else}}
-  <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md {{end -}} qor-action-button" type="button"
+  <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--{{if eq .Action.Label "Reject" }}danger {{else}}success {{ end -}}tyk-button--md {{end -}} qor-action-button" type="button"
     data-url="{{template "url" .}}"
     data-error-no-item="{{t "qor_admin.actions.please_select_an_item" "Please select at least one item"}}"
     {{if $action.URLOpenType}}

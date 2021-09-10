@@ -7,6 +7,7 @@
 @import './components/buttons.css';
 @import './components/collapsible.css';
 @import './components/code-reference.css';
+@import './components/alert.css';
 @import './common/layout.css';
 @import './common/form.css';
 @import './common/text.css';
@@ -32,7 +33,7 @@
   --size-lg: 18px;
   --size-xl: 24px;
   --default-border: 2px solid #C3C3E5;
-  --active-border: 2px solid #00D9BA;
+  --success-border: 2px solid #00D9BA;
   --default-border-radius: 18px;
   --default-text-color: #505071;
   --white: #fff;

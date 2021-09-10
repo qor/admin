@@ -6,7 +6,7 @@
 
 .redactor-focus.redactor-styles-on,
 .redactor-focus:focus.redactor-styles-on {
-	border: var(--active-border) !important;
+	border: var(--success-border) !important;
 }
 
 .redactor-toolbar {

@@ -25,3 +25,7 @@
   border: 2px solid var(--primary-danger);
   color: var(--primary-danger);
 }
+
+.qor-alert > button {
+  top: 20px;
+}

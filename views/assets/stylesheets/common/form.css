@@ -14,6 +14,20 @@
   height: auto;
 }
 
+.qor-form-section-rows {
+  padding-inline: 20px;
+}
+
+.qor-slideout__body,
+.qor-fieldset .qor-form-section-rows {
+  padding: 0;
+}
+
+.qor-slideout .qor-page__body .qor-form-container,
+.qor-form__actions {
+  margin: 0;
+}
+
 .qor-form__actions,
 .qor-slideout__body .qor-page__header {
   padding: 20px;

@@ -15,13 +15,13 @@
 
 
 .qor-alert--success {
-  background: #C2F2E9;
+  background: var(--primary-success-light);
   border: var(--success-border);
   color: var(--primary-success);
 }
 
 .qor-error {
-  background: #FFBBC5;
+  background: var(--primary-danger-light);
   border: 2px solid var(--primary-danger);
   color: var(--primary-danger);
 }

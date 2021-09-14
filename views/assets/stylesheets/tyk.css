@@ -19,9 +19,11 @@
 :root {
   --primary-dark: #505071;
   --primary-success: #00D9BA;
+  --primary-success-light: #C2F2E9;
   --primary-light: #EDEDF9;
   --primary-info : #82BBC6;
   --primary-danger : #FF6C7D;
+  --primary-danger-light : #FF6C7D;
   --primary-warning : #FFE885;
   --primary-base : #A2A2CC;
   --default-light: #C3C3E5;

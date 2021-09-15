@@ -15,23 +15,36 @@
   </div>
 </div>
 <div class="qor-field">
-  <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
-    <label class="qor-field__label mdl-textfield__label" for="{{.InputName}}_code_reference">
-      #Code Reference
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+    <label for="{{.InputName}}_code_reference">
+      #CodeReference
     </label>
-    <div id="{{.InputName}}_code_reference_container" {{ if not .Value }}style="display:none"{{ end }} class="code-reference-container">
-      <div class="qor-field__edit">
-        <span id="{{.InputName}}_code_reference">{{"{{"}}
-          {{ if (eq .CRType "content") }}
-            safe .blocks.{{.Value}}.Content
-          {{ else if (eq .CRType "text") }}
-            .blocks.{{.Value}}.Content
-          {{ else if (eq .CRType "image") }}
-            .blocks.{{.Value}}.Image.URL
-          {{ end }}{{"}}"}}
-        </span>
-        <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>
-      </div>
+    <div class="qor-field__show">{{.Value}}</div>
+    {{ $codeRef := "" }}
+    {{ if eq .Value "" }}
+      {{ $codeRef = "" }}
+    {{ else }}
+      {{ if (eq .CRType "content") }}
+        {{ $codeRef = print `safe .blocks.` .Value `.Content` }}
+      {{ else if (eq .CRType "text") }}
+        {{ $codeRef = print `.blocks.` .Value `.Content` }}
+      {{ else if (eq .CRType "image") }}
+        {{ $codeRef = print `.blocks.` .Value `.Image.URL` }}
+      {{ end }}
+    {{ end }}
+    <div id="{{.InputName}}_code_reference_container" class="tyk-form-control__wrapper code-reference-container">
+      <input
+      autocomplete="off"
+      readonly
+      disabled
+      class="tyk-form-control"
+      name="{{.InputName}}"
+      type="text"
+      id="{{.InputName}}_code_reference"
+      value="{{ if ne $codeRef "" }} {{"{{"}} {{ $codeRef }} {{"}}"}} {{ end }}"
+      {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+      />
+      <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>
     </div>
   </div>
 </div>

@@ -1,9 +1,11 @@
 .code-reference-container {
   display: flex;
   flex-direction: row;
+  color: --default-text-color;
 }
 
 .code-reference-copy-icon {
+  padding-top: 10px;
   padding-left: 5px;
   cursor: pointer;
 }

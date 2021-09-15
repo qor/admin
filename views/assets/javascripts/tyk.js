@@ -13,6 +13,7 @@ function onCancel() {
 
 function CodeReferenceOnChange(inputId, value, crType) {
     const codeRefContainer = document.getElementById(`${inputId}_container`);
+    console.log(codeRefContainer)
     if (value == '') {
         codeRefContainer.style.display = 'none';
         return;
@@ -20,6 +21,7 @@ function CodeReferenceOnChange(inputId, value, crType) {
     codeRefContainer.style.display = 'flex';
     const codeRefEl = document.getElementById(inputId);
     let crValue;
+    console.log(codeRefEl)
     switch (crType) {
         case 'content':
             crValue = `safe .blocks.${value}.Content`;
@@ -31,10 +33,10 @@ function CodeReferenceOnChange(inputId, value, crType) {
             crValue = `.blocks.${value}.Content`;
             break;
     }
-    codeRefEl.innerText = `{{ ${crValue} }}`;
+    codeRefEl.value = `{{ ${crValue} }}`;
 }
 
 function copyToClipboard(elemId) {
     const codeRefEl = document.getElementById(elemId);
-    navigator.clipboard.writeText(codeRefEl.innerText);
+    navigator.clipboard.writeText(codeRefEl.value);
 }

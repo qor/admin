@@ -21,16 +21,16 @@
     </label>
     <div class="qor-field__show">{{.Value}}</div>
     {{ $codeRef := "" }}
-    {{ $value := .Value }}
-    {{ if eq $value "" }}
-      {{ $value = "[Name]" }}
-    {{ end }}
-    {{ if (eq .CRType "content") }}
-      {{ $codeRef = print `safe .blocks.` $value `.Content` }}
-    {{ else if (eq .CRType "text") }}
-      {{ $codeRef = print `.blocks.` $value `.Content` }}
-    {{ else if (eq .CRType "image") }}
-      {{ $codeRef = print `.blocks.` $value `.Image.URL` }}
+    {{ if eq .Value "" }}
+      {{ $codeRef = "" }}
+    {{ else }}
+      {{ if (eq .CRType "content") }}
+        {{ $codeRef = print `safe .blocks.` .Value `.Content` }}
+      {{ else if (eq .CRType "text") }}
+        {{ $codeRef = print `.blocks.` .Value `.Content` }}
+      {{ else if (eq .CRType "image") }}
+        {{ $codeRef = print `.blocks.` .Value `.Image.URL` }}
+      {{ end }}
     {{ end }}
     <div id="{{.InputName}}_code_reference_container" class="tyk-form-control__wrapper code-reference-container">
       <input
@@ -41,7 +41,7 @@
       name="{{.InputName}}"
       type="text"
       id="{{.InputName}}_code_reference"
-      value="{{"{{"}} {{ $codeRef }} {{"}}"}}"
+      value="{{ if ne $codeRef "" }} {{"{{"}} {{ $codeRef }} {{"}}"}} {{ end }}"
       {{if (not (has_change_permission .Meta)) }}disabled{{end}}
       />
       <i onclick="copyToClipboard('{{.InputName}}_code_reference')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>

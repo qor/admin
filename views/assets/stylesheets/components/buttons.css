@@ -35,3 +35,7 @@ button.qor-fieldset__add:after {
 	background: 0;
 	text-decoration: underline;
 }
+
+.redactor-toolbar i {
+	font-size: 14px !important;
+}

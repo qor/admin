@@ -1,7 +1,6 @@
 .code-reference-container {
   display: flex;
   flex-direction: row;
-  color: --default-text-color;
 }
 
 .code-reference-copy-icon {

@@ -12,12 +12,6 @@ function onCancel() {
 }
 
 function CodeReferenceOnChange(inputId, value, crType) {
-    const codeRefContainer = document.getElementById(`${inputId}_container`);
-    if (value == '') {
-        codeRefContainer.style.display = 'none';
-        return;
-    }
-    codeRefContainer.style.display = 'flex';
     const codeRefEl = document.getElementById(inputId);
     let crValue;
     switch (crType) {

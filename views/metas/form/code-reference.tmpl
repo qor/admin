@@ -17,18 +17,22 @@
 <div class="qor-field">
   <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
     <label for="{{.InputName}}_code_reference">
-      #Code Reference
+      #CodeReference
     </label>
     <div class="qor-field__show">{{.Value}}</div>
     {{ $codeRef := "" }}
-    {{ if (eq .CRType "content") }}
-        {{ $codeRef = print `safe .blocks.` .Value `.Content` }}
-    {{ else if (eq .CRType "text") }}
-      {{ $codeRef = print `.blocks.` .Value `.Content` }}
-    {{ else if (eq .CRType "image") }}
-      {{ $codeRef = print `.blocks.` .Value `.Image.URL` }}
+    {{ $value := .Value }}
+    {{ if eq $value "" }}
+      {{ $value = "[Name]" }}
     {{ end }}
-    <div id="{{.InputName}}_code_reference_container" {{ if not .Value }}style="display:none"{{ end }} class="tyk-form-control__wrapper code-reference-container">
+    {{ if (eq .CRType "content") }}
+      {{ $codeRef = print `safe .blocks.` $value `.Content` }}
+    {{ else if (eq .CRType "text") }}
+      {{ $codeRef = print `.blocks.` $value `.Content` }}
+    {{ else if (eq .CRType "image") }}
+      {{ $codeRef = print `.blocks.` $value `.Image.URL` }}
+    {{ end }}
+    <div id="{{.InputName}}_code_reference_container" class="tyk-form-control__wrapper code-reference-container">
       <input
       autocomplete="off"
       readonly

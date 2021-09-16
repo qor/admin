@@ -1,0 +1,31 @@
+.qor-alert {
+  position: relative;
+  transform: none;
+  justify-content: flex-start;
+  box-shadow: none;
+  display: none;
+  border-radius: var(--default-border-radius);
+}
+
+.qor-alert.qor-alert__active {
+  transform: translate(-50%,-110%);
+  display: flex;
+  margin:0 35px -60px 0;
+}
+
+
+.qor-alert--success {
+  background: var(--primary-success-light);
+  border: var(--success-border);
+  color: var(--primary-success);
+}
+
+.qor-error {
+  background: var(--primary-danger-light);
+  border: 2px solid var(--primary-danger);
+  color: var(--primary-danger);
+}
+
+.qor-alert > button {
+  top: 20px;
+}

@@ -26,7 +26,7 @@
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
 .select2-container--default.select2-container--focus .select2-selection--multiple {
   border-radius: var(--default-border-radius);
-  border: var(--active-border);
+  border: var(--success-border);
 }
 
 .select2-search.select2-search--inline {

@@ -14,13 +14,35 @@
   height: auto;
 }
 
+.qor-form-section-rows {
+  padding-inline: 20px;
+}
+
+.qor-slideout__body,
+.qor-fieldset .qor-form-section-rows {
+  padding: 0;
+}
+
+.qor-slideout .qor-page__body .qor-form-container,
 .qor-form__actions {
-  padding-block: 20px;
+  margin: 0;
+}
+
+.qor-form__actions,
+.qor-slideout__body .qor-page__header {
+  padding: 20px;
   background-color: var(--primary-light);
   position: sticky;
   top: 0;
   z-index: 999;
   text-align: right;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 10%);
+  margin-bottom: 15px;
+}
+
+.qor-slideout__body .qor-page__header {
+  width: 100%;
+  margin-left: 0px;
 }
 
 .qor-fieldset {

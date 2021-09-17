@@ -28,3 +28,7 @@
 .qor-alert > button {
   top: 20px;
 }
+
+.qor-error .material-icons {
+  color: var(--text-on-red-background);
+}

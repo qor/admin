@@ -13,20 +13,12 @@
   z-index: 1;
 }
 
-
 .qor-advanced-filter .qor-advanced-filter__dropdown {
   box-shadow: none;
   z-index: 9999;
   border: var(--default-border);
   border-radius: var(--default-border-radius);
   top: 55px;
-}
-
-.error-container {
-  position: absolute;
-  right: 200px;
-  bottom: 20px;
-  width: 350px;
 }
 
 /*

@@ -40,6 +40,11 @@
   margin-bottom: 15px;
 }
 
+.qor-slideout__body .qor-page__header.combined-actions {
+  box-shadow: none;
+  padding: 0;
+}
+
 .qor-slideout__body .qor-page__header {
   width: 100%;
   margin-left: 0px;

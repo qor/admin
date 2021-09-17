@@ -39,3 +39,8 @@ button.qor-fieldset__add:after {
 .redactor-toolbar i {
 	font-size: 14px !important;
 }
+
+.tyk-button.on-provisioning-requests {
+  margin-top: 15px;
+  margin-right: 10px;
+}

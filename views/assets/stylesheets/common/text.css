@@ -20,7 +20,3 @@ a:hover {
 #dialog .mdl-dialog .mdl-dialog__content {
 	color: var(--default-text-color);
 }
-
-.qor-error > li {
-	color: var(--primary-danger);
-}

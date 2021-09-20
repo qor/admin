@@ -40,7 +40,6 @@ button.qor-fieldset__add:after {
 	font-size: 14px !important;
 }
 
-.tyk-button.on-provisioning-requests {
-  margin-top: 15px;
-  margin-right: 10px;
-}
+/* .combined-actions > .tyk-button {
+  margin: 15px 10px 0 0;
+} */

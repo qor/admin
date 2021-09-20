@@ -21,6 +21,10 @@
   top: 55px;
 }
 
+.mdl-layout__content.qor-page.is-singleton {
+  overflow: overlay;
+}
+
 /*
   Media Queries 
 */

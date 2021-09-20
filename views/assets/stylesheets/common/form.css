@@ -43,6 +43,14 @@
 .qor-slideout__body .qor-page__header.combined-actions {
   box-shadow: none;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.qor-slideout__body .qor-page__header .qor-action-forms {
+  margin-left: 5px;
 }
 
 .qor-slideout__body .qor-page__header {
@@ -81,4 +89,12 @@
 
 .loading.relative {
   left: auto;
+}
+
+.not-singleton .qor-form-container {
+  margin: 0;
+}
+
+.not-singleton .qor-form-container .qor-form-section {
+  margin: 20px;
 }

@@ -8,9 +8,8 @@
 }
 
 .qor-alert.qor-alert__active {
-  transform: translate(-50%,-110%);
   display: flex;
-  margin:0 35px -60px 0;
+  margin: 10px 35px 0px 0px;
 }
 
 
@@ -23,9 +22,13 @@
 .qor-error {
   background: var(--primary-danger-light);
   border: 2px solid var(--primary-danger);
-  color: var(--primary-danger);
+  color: var(--text-on-red-background);
 }
 
 .qor-alert > button {
   top: 20px;
+}
+
+.qor-error .material-icons {
+  color: var(--text-on-red-background);
 }

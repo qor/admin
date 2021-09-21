@@ -19,16 +19,16 @@
         <div class="qor-form__actions">
           <div class="qor-page__header combined-actions">      
             {{if ne $section "/admin/general"}}
-              <a class="tyk-button tyk-button--primary-link tyk-button--md qor-button--cancel" onclick="onCancel();" href="javascript:void(0)">{{t "qor_admin.form.cancel_edit" "Cancel"}}</a>
+              <a class="tyk-button tyk-button--primary{{if $actions}}-link{{else}}-outline{{end}} tyk-button--md qor-button--cancel" onclick="onCancel();" href="javascript:void(0)">{{t "qor_admin.form.cancel_edit" "Cancel"}}</a>
             {{end}}
             {{if eq $section "/admin/provisioning_requests"}}
               {{$actions}}
             {{else}}
-              {{if $notSingleton}}
-                <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
-              {{end}}
               {{if eq $section "/admin/users"}}
                 {{$actions}}
+              {{end}}
+              {{if $notSingleton}}
+                <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
               {{end}}
             {{ end }}
           </div>

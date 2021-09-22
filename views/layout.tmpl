@@ -50,20 +50,23 @@
       <div class="mdl-layout__drawer">
         {{render "shared/sidebar"}}
       </div>
-
-      <main class="mdl-layout__content qor-page" id="content">
+      
+      {{$NotSingleton := not .Resource.Config.Singleton}}
+      <main class="mdl-layout__content qor-page {{if $NotSingleton}}not-singleton{{else}}is-singleton{{end}}" id="content">
         <div class="content-header">
           {{$actions := load_actions "header" }}
             {{if $actions}}
               {{$actions}}
             {{end}}
             {{if .Resource}}
-              {{$NotSingleton := not .Resource.Config.Singleton}}
               {{$HasCreatePermission := has_create_permission .Resource}}
               {{if and $NotSingleton $HasCreatePermission}}
                 <a class="tyk-button tyk-button--success tyk-button--md action-button" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
                   Add
                 </a>
+              {{else}}
+                {{ $section :=  url_for .Resource}}
+                <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit" form="{{$section}}">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
               {{end}}
             {{end}}
         </div>

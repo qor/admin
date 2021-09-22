@@ -1,6 +1,10 @@
+{{$notSingleton := not .Resource.Config.Singleton}}
+{{ $section :=  url_for .Resource}}
 {{$actions := load_actions "edit"}}
 {{if $actions}}
-  <div class="qor-page__header">{{$actions}}</div>
+  {{ if and (ne $section "/admin/provisioning_requests") (ne $section "/admin/users") }}
+    <div class="qor-page__header">{{$actions}}</div>
+  {{end}}
 {{end}}
 
 <div class="qor-page__body qor-page__edit">
@@ -9,16 +13,27 @@
   {{render "shared/errors"}}
 
   <div class="qor-form-container">
-    <form class="qor-form" action="{{url_for .Result .Resource}}" method="POST" enctype="multipart/form-data">
+    <form class="qor-form" action="{{url_for .Result .Resource}}" method="POST" enctype="multipart/form-data" id="{{url_for .Result .Resource}}">
       <input name="_method" value="PUT" type="hidden">
-
       {{if has_update_permission .Resource}}
         <div class="qor-form__actions">
-          <a class="tyk-button tyk-button--primary-outline tyk-button--md qor-button--cancel" onclick="onCancel();" href="javascript:void(0)">{{t "qor_admin.form.cancel_edit" "Cancel"}}</a>
-          <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
+          <div class="qor-page__header combined-actions">      
+            {{if ne $section "/admin/general"}}
+              <a class="tyk-button tyk-button--primary{{if $actions}}-link{{else}}-outline{{end}} tyk-button--md qor-button--cancel" onclick="onCancel();" href="javascript:void(0)">{{t "qor_admin.form.cancel_edit" "Cancel"}}</a>
+            {{end}}
+            {{if eq $section "/admin/provisioning_requests"}}
+              {{$actions}}
+            {{else}}
+              {{if eq $section "/admin/users"}}
+                {{$actions}}
+              {{end}}
+              {{if $notSingleton}}
+                <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
+              {{end}}
+            {{ end }}
+          </div>
         </div>
       {{end}}
-
       {{render_form .Result edit_sections}}
     </form>
   </div>

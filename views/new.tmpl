@@ -13,7 +13,7 @@
     <form class="qor-form" action="{{url_for .Resource}}" method="POST" enctype="multipart/form-data">
       {{if has_create_permission .Resource}}
         <div class="qor-form__actions">
-          <a class="mtyk-button tyk-button--primary-outline tyk-button--md qor-button--cancel" onclick="onCancel();" href="javascript:void(0)">{{t "qor_admin.form.cancel" "Cancel"}}</a>
+          <a class="mtyk-button tyk-button--primary-link tyk-button--md qor-button--cancel" onclick="onCancel();" href="javascript:void(0)">{{t "qor_admin.form.cancel" "Cancel"}}</a>
           <button class="tyk-button tyk-button--success tyk-button--md qor-button--save" type="submit">{{t "qor_admin.form.add" "Save" }}</button>
           </button>
         </div>

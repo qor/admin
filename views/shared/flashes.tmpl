@@ -1,11 +1,13 @@
 {{range $flash := flashes}}
 <div class="qor-alert qor-alert--{{$flash.Type}} qor-alert__active" data-dismissible="true" role="alert" data-type="{{$flash.Type}}">
-  <button type="button" class="mdl-button mdl-button--icon" data-dismiss="alert">
-    <i class="material-icons">close</i>
-  </button>
-
+  {{if eq $flash.Type "success"}}
+    <i class="tyk-icon tykon tykon-check "></i>
+  {{end}}
   <span class="qor-alert-message">
     {{$flash.Message}}
   </span>
+  <button type="button" class="mdl-button mdl-button--icon" data-dismiss="alert">
+    <i class="tyk-icon tykon tykon-x"></i>
+  </button>
 </div>
 {{end}}

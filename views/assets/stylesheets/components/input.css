@@ -1,6 +1,6 @@
 .qor-field .mdl-textfield__label,
 .qor-field__label {
-	color: var(--primary-dark);
+	color: var(--default-text-color);
 	font-family: 'OpenSans-Semibold';
 	font-size: var(--size-sm);
 }

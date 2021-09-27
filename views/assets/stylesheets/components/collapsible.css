@@ -1,5 +1,5 @@
 .collapsible-container {
-  color: var(--primary-dark);
+  color: var(--default-text-color);
   border: var(--default-border);
   border-radius: var(--default-border-radius);
   margin: 20px;
@@ -23,7 +23,7 @@
 }
 
 a.collapsible-header__link {
-  color: var(--primary-dark);
+  color: var(--default-text-color);
   float: right;
   font-family: 'OpenSans-SemiBold';
   color: var(--primary-success);

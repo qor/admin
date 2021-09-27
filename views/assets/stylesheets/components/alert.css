@@ -12,8 +12,8 @@
   margin: 10px 35px 0px 0px;
 }
 
-
 .qor-alert--success {
+  flex-direction: row;
   background: var(--primary-success-light);
   border: var(--success-border);
   color: var(--primary-success);
@@ -29,6 +29,21 @@
   top: 20px;
 }
 
-.qor-error .material-icons {
+.qor-error .tyk-icon: {
   color: var(--text-on-red-background);
+}
+
+.qor-alert--success > .tyk-icon:first-child {
+  background-color: var(--primary-dark);
+  padding-left: 7px;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+
+.qor-alert>.tyk-icon:first-child {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: white;
 }

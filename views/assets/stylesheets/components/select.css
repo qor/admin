@@ -37,7 +37,7 @@
   border: 1px solid var(--default-light);
   background-color: var(--primary-light);
   border-radius: var(--default-border-radius);
-  color: var(--primary-dark);
+  color: var(--default-text-color);
   padding-inline: 10px;
 }
 

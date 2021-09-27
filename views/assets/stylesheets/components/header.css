@@ -1,7 +1,7 @@
 .qor-layout .mdl-layout__header,
 .qor-layout .mdl-layout__tab-bar,
 .qor-slideout__header {
-  background-color: var(--primary-dark);
+  background-color: var(--default-text-color);
 }
 
 .content-header {

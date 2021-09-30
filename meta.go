@@ -33,6 +33,7 @@ type Meta struct {
 	Config          MetaConfigInterface
 	Collection      interface{}
 	Resource        *Resource
+	Tooltip         string
 
 	metas        []resource.Metaor
 	baseResource *Resource

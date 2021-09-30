@@ -175,6 +175,26 @@ func (admin *Admin) newResource(value interface{}, config ...*Config) *Resource 
 		res.Name = namer.ResourceName()
 	}
 
+	if configuration.Description != "" {
+		res.Description = configuration.Description
+	}
+
+	if configuration.Tooltip != "" {
+		res.Tooltip = configuration.Tooltip
+	}
+
+	if configuration.CreateCallback != nil {
+		res.CreateCallback = configuration.CreateCallback
+	}
+
+	if configuration.UpdateCallback != nil {
+		res.UpdateCallback = configuration.UpdateCallback
+	}
+
+	if configuration.DeleteCallback != nil {
+		res.DeleteCallback = configuration.DeleteCallback
+	}
+
 	// Configure resource when initializing
 	modelType := utils.ModelType(res.Value)
 	for i := 0; i < modelType.NumField(); i++ {

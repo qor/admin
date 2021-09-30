@@ -89,7 +89,9 @@ func (ac *Controller) Create(context *Context) {
 	} else {
 		responder.With("html", func() {
 			context.Flash(string(context.t("qor_admin.form.successfully_created", "{{.Name}} was successfully created", res)), "success")
-			http.Redirect(context.Writer, context.Request, context.URLFor(result, res), http.StatusFound)
+			if res.CreateCallback != nil {
+				res.CreateCallback(context)
+			}
 		}).With([]string{"json", "xml"}, func() {
 			context.Writer.WriteHeader(status)
 			context.Encode("show", result)
@@ -189,6 +191,9 @@ func (ac *Controller) Update(context *Context) {
 		responder.With("html", func() {
 			context.Flash(string(context.t("qor_admin.form.successfully_updated", "{{.Name}} was successfully updated", res)), "success")
 			context.Execute("show", result)
+			if res.UpdateCallback != nil {
+				res.UpdateCallback(context)
+			}
 		}).With([]string{"json", "xml"}, func() {
 			context.Encode("show", result)
 		}).Respond(context.Request)
@@ -210,6 +215,9 @@ func (ac *Controller) Delete(context *Context) {
 	}).With([]string{"json", "xml"}, func() {
 		context.Writer.WriteHeader(status)
 		context.Encode("OK", map[string]interface{}{"status": "ok"})
+		if res.DeleteCallback != nil {
+			res.DeleteCallback(context)
+		}
 	}).Respond(context.Request)
 }
 

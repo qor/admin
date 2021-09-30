@@ -1,5 +1,6 @@
 <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
   <label for="{{.InputId}}">{{meta_label .Meta}}</label>
+  {{if .Meta.Tooltip }}{{ .Meta.Tooltip }}{{end}}
   <div class="qor-field__show">{{.Value}}</div>
   <div class="tyk-form-control__wrapper">
     <input

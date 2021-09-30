@@ -64,4 +64,21 @@
     />
   </div>
 </div>
+
+<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+  <label for="{{.InputId}}-Gateway">Gateway:</label>
+  <div class="qor-field__show">{{$current_values.Gateway}}</div>
+  <div class="tyk-form-control__wrapper">
+    <input
+     autocomplete="off"
+     class="tyk-form-control"
+     name="{{.InputName}}"
+     type="text"
+     id="{{.InputId}}-Gateway"
+     value="{{$current_values.Gateway}}"
+    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+    />
+  </div>
+</div>
+
 {{end}}

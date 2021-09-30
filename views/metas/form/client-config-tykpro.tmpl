@@ -1,0 +1,67 @@
+{{$current_values := raw_value_of .ResourceValue .Meta }}
+
+{{if $current_values}}
+<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+  <label for="{{.InputId}}-URL">URL:</label>
+  <div class="qor-field__show">{{$current_values.URL}}</div>
+  <div class="tyk-form-control__wrapper">
+    <input
+     autocomplete="off"
+     class="tyk-form-control"
+     name="{{.InputName}}"
+     type="text"
+     id="{{.InputId}}-URL"
+     value="{{$current_values.URL}}"
+    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+    />
+  </div>
+</div>
+
+<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+  <label for="{{.InputId}}-Secret">Secret:</label>
+  <div class="qor-field__show">{{$current_values.Secret}}</div>
+  <div class="tyk-form-control__wrapper">
+    <input
+     autocomplete="off"
+     class="tyk-form-control"
+     name="{{.InputName}}"
+     type="text"
+     id="{{.InputId}}-Secret"
+     value="{{$current_values.Secret}}"
+    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+    />
+  </div>
+</div>
+
+<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+  <label for="{{.InputId}}-OrgID">Organisation ID:</label>
+  <div class="qor-field__show">{{$current_values.OrgID}}</div>
+  <div class="tyk-form-control__wrapper">
+    <input
+     autocomplete="off"
+     class="tyk-form-control"
+     name="{{.InputName}}"
+     type="text"
+     id="{{.InputId}}-OrgID"
+     value="{{$current_values.OrgID}}"
+    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+    />
+  </div>
+</div>
+
+<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+  <label for="{{.InputId}}-PoliciesTagsFlat">Policies Tags:</label>
+  <div class="qor-field__show">{{$current_values.PoliciesTagsFlat}}</div>
+  <div class="tyk-form-control__wrapper">
+    <input
+     autocomplete="off"
+     class="tyk-form-control"
+     name="{{.InputName}}"
+     type="text"
+     id="{{.InputId}}-PoliciesTagsFlat"
+     value="{{$current_values.PoliciesTagsFlat}}"
+    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+    />
+  </div>
+</div>
+{{end}}

@@ -1,3 +1,7 @@
 <span class="mdl-layout-title">{{page_title}}</span>
+{{if .Resource }}
+  {{if .Resource.Description }}<br/><span >{{.Resource.Description}}</span>{{ end }}
+{{ end }}
+
 
 

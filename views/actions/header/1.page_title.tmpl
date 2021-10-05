@@ -1,7 +1,12 @@
-<span class="mdl-layout-title">{{page_title}}</span>
-{{if .Resource }}
-  {{if .Resource.Description }}<br/><span >{{.Resource.Description}}</span>{{ end }}
-{{ end }}
+<div class="right-buffer-medium">
+  <p class="mdl-layout-title">{{page_title}}</p>
+  {{if .Resource }}
+    {{if .Resource.Description }}
+      <p class="mdl-layout-description">{{.Resource.Description}}</p>
+    {{ end }}
+  {{ end }}
+</div>
+
 
 
 

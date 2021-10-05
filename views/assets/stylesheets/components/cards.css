@@ -1,0 +1,55 @@
+.card,
+.card .card-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:var(--primary-light);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  padding-inline: 50px;
+}
+
+.card.is-link a {
+  text-decoration: none;
+  color: var(--default-text-color)
+}
+
+.card.is-link:hover {
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+}
+
+.header__card {
+  padding-left: 0;
+}
+
+.card__title {
+  background-color: var(--secondary-dark);
+  padding-inline: 10px;
+  padding-block: 7px;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+  align-self: center;
+  font-size: var(--size-md);
+  text-transform: uppercase;
+}
+
+.card__header {
+  align-self: flex-start;
+  padding-top: 50px;
+}
+
+.card__image {
+  margin-top: 20px;
+}
+
+.card__image,
+.card__description,
+.card__header {
+  margin-bottom: 20px;
+  text-align: center;
+}

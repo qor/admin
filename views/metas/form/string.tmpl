@@ -1,6 +1,15 @@
 <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
-  <label for="{{.InputId}}">{{meta_label .Meta}}</label>
-  {{if .Meta.Tooltip }}{{ .Meta.Tooltip }}{{end}}
+  <div class="input-label-wrapper">
+    <label for="{{.InputId}}">{{meta_label .Meta}}</label>
+    {{if .Meta.Tooltip }}
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-{{.InputId}}" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{.InputId}}">
+        {{ .Meta.Tooltip }}
+      </div>
+    {{end}}
+  </div>
   <div class="qor-field__show">{{.Value}}</div>
   <div class="tyk-form-control__wrapper">
     <input

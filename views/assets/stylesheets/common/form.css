@@ -99,6 +99,16 @@
   margin: 20px;
 }
 
+.input-label-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-label-wrapper label {
+  margin-right: 5px;
+}
+
 /* For forms that are within a Singleton */
 
 .is-singleton .qor-form {

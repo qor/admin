@@ -51,7 +51,12 @@
         {{render "shared/sidebar"}}
       </div>
       
-      {{$NotSingleton := not .Resource.Config.Singleton}}
+      {{$NotSingleton := false}}
+      {{ if .Resource}}
+        {{ if .Resource.Config}}
+          {{$NotSingleton = not .Resource.Config.Singleton}}
+        {{ end }}
+      {{ end }}
       <main class="mdl-layout__content qor-page {{if $NotSingleton}}not-singleton{{else}}is-singleton{{end}}" id="content">
         <div class="content-header">
           {{$actions := load_actions "header" }}
@@ -84,7 +89,7 @@
     </script>
     {{javascript_tag "qor_admin_default"}}
     {{javascript_tag "tyk"}}
-    <script type="module" src="admin/assets/javascripts/modules.js"></script>
+    {{/* <script type="module" src="admin/assets/javascripts/modules.js"></script> */}}
     {{load_admin_javascripts}}
     {{load_theme_javascripts}}
   </body>

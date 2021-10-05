@@ -34,3 +34,22 @@ function copyToClipboard(elemId) {
   const codeRefEl = document.getElementById(elemId);
   navigator.clipboard.writeText(codeRefEl.value);
 }
+
+function hideHelpSection() {
+	let overviewToggleButton = document.getElementsByClassName('toggle-help-section');
+	let overviewToggleSection = document.getElementsByClassName('help-section');
+
+  overviewToggleButton[0].style.display = 'none';
+  overviewToggleSection[0].style.display = 'none';
+  localStorage.setItem('hideHelpSection', 'hidden');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	let overviewToggleButton = document.getElementsByClassName('toggle-help-section');
+	let overviewToggleSection = document.getElementsByClassName('help-section');
+
+  if(localStorage.getItem('hideHelpSection') === 'hidden') {
+    overviewToggleButton[0].style.display = 'none';
+    overviewToggleSection[0].style.display = 'none';
+  }
+}, false);

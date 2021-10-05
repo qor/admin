@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:var(--primary-light);
+  padding-inline: 50px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.header__card {
+  padding-left: 0;
+}
+
+.card__title {
+  background-color: var(--secondary-dark);
+  padding-inline: 10px;
+  padding-block: 7px;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+  align-self: center;
+  font-size: var(--size-lg);
+  text-transform: uppercase;
+}
+
+.card__header {
+  align-self: flex-start;
+  padding-top: 50px;
+}
+
+.card__image {
+  margin-top: 20px;
+}
+
+.card__image,
+.card__description,
+.card__header {
+  margin-bottom: 20px;
+  text-align: center;
+}

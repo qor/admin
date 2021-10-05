@@ -6,8 +6,8 @@
 
 .content-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  align-items: baseline;
   border-bottom: 1px solid var(--default-light);
   padding: 15px 24px;
   margin-bottom: 5px;
@@ -58,7 +58,11 @@
   margin-right: 10px;
 }
 
-.action-button {
+.mdl-layout-description {
+  font-size: 13px;
+}
+
+.header-cta {
   margin-left: auto;
 }
 
@@ -171,7 +175,7 @@ a.qor-slideout__fullscreen > i.tyk-icon + .tyk-icon {
     flex-direction: column;
   }
 
-  .action-button {
+  .header-cta {
     margin: 0;
   }
 }

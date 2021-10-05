@@ -27,7 +27,7 @@
 #qor-menu-item--main > a:first-of-type {
   font-family: 'OpenSans-Bold';
   font-size: var(--size-md);
-  padding: 15px 40px 15px 30px;
+  padding: 15px 40px 15px 35px;
   margin-left: 10px;
 }
 
@@ -88,11 +88,11 @@
   background: url(../../images/customise.svg) no-repeat left center;
 }
 
-[qor-icon-name="User Management"]>a::before {
+[qor-icon-name="API Consumers"]>a::before {
   content: '';
 }
 
-[qor-icon-name="User Management"] > a {
+[qor-icon-name="API Consumers"] > a {
   background: url(../../images/user-management.svg) no-repeat left center;
 }
 

@@ -66,12 +66,12 @@
             {{if .Resource}}
               {{$HasCreatePermission := has_create_permission .Resource}}
               {{if and $NotSingleton $HasCreatePermission}}
-                <a class="tyk-button tyk-button--success tyk-button--md action-button" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
+                <a class="tyk-button tyk-button--success tyk-button--md header-cta" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
                   Add
                 </a>
               {{else}}
                 {{ $section :=  url_for .Resource}}
-                <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save" type="submit" form="{{$section}}">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
+                <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save header-cta" type="submit" form="{{$section}}">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
               {{end}}
             {{end}}
         </div>
@@ -89,7 +89,7 @@
     </script>
     {{javascript_tag "qor_admin_default"}}
     {{javascript_tag "tyk"}}
-    {{/* <script type="module" src="admin/assets/javascripts/modules.js"></script> */}}
+    <script type="module" src="./assets/javascripts/modules.js"></script>
     {{load_admin_javascripts}}
     {{load_theme_javascripts}}
   </body>

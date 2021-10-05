@@ -4,16 +4,17 @@ export function Collapsible (options) {
 
 	clickableElement.forEach((item,index) => {
   	item.addEventListener('click', () => {
-  		let arrowIcon = clickableElement[index].children[0].classList[0] === 'tyk-icon' ? clickableElement[index].children[0] : null;
+      let contentStyle = collapsibleContent[index].style;
+  		let arrowIcon = clickableElement[index].children[0]?.classList[0] === 'tyk-icon' ? clickableElement[index].children[0] : null;
 			if(
-					collapsibleContent[index].style.display.length === 0 ||
-					collapsibleContent[index].style.display === 'none'
+					contentStyle.display.length === 0 ||
+					contentStyle.display === 'none'
 				) {
-				collapsibleContent[index].style.display = 'block'
+				contentStyle.display = 'block';
 				arrowIcon?.classList.remove('tykon-arrowup');
 				arrowIcon?.classList.add('tykon-arrowdown');
 			} else {
-				collapsibleContent[index].style.display = 'none'
+				contentStyle.display = 'none';
 				arrowIcon?.classList.remove('tykon-arrowdown');
 				arrowIcon?.classList.add('tykon-arrowup');
 			}

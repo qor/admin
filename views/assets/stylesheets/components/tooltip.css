@@ -1,0 +1,7 @@
+.mdl-tooltip {
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary-base);
+  border-radius: var(--default-border-radius);
+  padding: 20px;
+  color: var(--default-text-color);
+}

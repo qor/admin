@@ -2,6 +2,14 @@
   padding-top: 0 !important;
 }
 
+.qor-form {
+  padding-top: 20px;
+}
+
+.overview {
+  padding: 20px;
+}
+
 .mdl-layout__container {
   position: relative;
   height: 100%;
@@ -19,6 +27,22 @@
   border: var(--default-border);
   border-radius: var(--default-border-radius);
   top: 55px;
+}
+
+.help-section {
+  display: none;
+}
+
+.toggle-help-section {
+  padding-bottom: 20px;
+}
+
+.toggle-help-section__cta {
+  cursor: pointer;
+}
+
+.toggle-help-section .tykon {
+  margin-left: 5px;
 }
 
 /*

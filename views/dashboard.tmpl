@@ -5,9 +5,14 @@
     <div class="tyk-col--lg-12 tyk-col card">
       <div class="tyk-row">
         <div class="tyk-col--lg-3 tyk-col card"> 
-          <img class="card__image" src="./assets/images/overview/tyk-desktop.svg" />
+          <img class="card__image" src="/admin/assets/images/overview/tyk-desktop.svg" />
          </div>
         <div class="tyk-col--lg-9 tyk-col card">
+          {{if .CurrentUser}}
+            <div>
+              <h5>{{.CurrentUser.DisplayName}}</h5>
+            </div>
+          {{end}}
           <h2 class="card__header"> Hello .Username</h2>
           <p>Welcome to Tyk Portal admin dashboard. Here you can manage your API products and plans, customise the portal, invite and organise api-consumers and much more.</p>
         </div>
@@ -30,7 +35,7 @@
         <a href="/admin/providers">
           <div class="card-contents">
             <span class="card__title"> Providers </span>
-            <img class="card__image" src="./assets/images/overview/providers.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/providers.svg" />
             <div class="card__description">Connect the developer portal to a provider and import API products and plans.</div>
           </div>
         </a> 
@@ -39,7 +44,7 @@
         <a href="/admin/api_products">
           <div class="card-contents">
             <span class="card__title"> API Products </span>
-            <img class="card__image" src="./assets/images/overview/api-products.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/api-products.svg" />
             <div class="card__description">API Products is an easy way to offer bundle of APIs as products to external developers. </div>
           </div>
         </a> 
@@ -48,7 +53,7 @@
         <a href="/admin/plans">
           <div class="card-contents">
             <span class="card__title"> Plans </span>
-            <img class="card__image" src="./assets/images/overview/plans.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/plans.svg" />
             <div class="card__description">Plans unlock the ability to create tiered access levels to one or more API products, for example Bronze, Silver and Gold.</div>
           </div>
         </a> 
@@ -60,7 +65,7 @@
         <a href="/admin/catalogues">
           <div class="card-contents">
             <span class="card__title"> Catalogues </span>
-            <img class="card__image" src="./assets/images/overview/catalogues.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/catalogues.svg" />
             <div class="card__description">Catalogues enables the ability to publish  API products and plans based on visibility and access requirements.</div>
           </div>
         </a> 
@@ -69,7 +74,7 @@
         <a href="/admin/provisioning_requests">
           <div class="card-contents">
             <span class="card__title"> Provisioning Requests </span>
-            <img class="card__image" src="./assets/images/overview/requests.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/requests.svg" />
             <div class="card__description">A provisioning request will be sent when a developer subscribe to an API product(s) and a plan (if approval is required).</div>
           </div>
         </a> 
@@ -78,7 +83,7 @@
         <a href="/admin/apps">
           <div class="card-contents">
             <span class="card__title"> Apps </span>
-            <img class="card__image" src="./assets/images/overview/apps.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/apps.svg" />
             <div class="card__description">An app can capture data about intended use of the API Product(s) from the external developer as well as the access credentials. </div>
           </div>
         </a> 
@@ -90,7 +95,7 @@
         <a href="/admin/organisations">
           <div class="card-contents">
             <span class="card__title"> Organisations </span>
-            <img class="card__image" src="./assets/images/overview/organisations.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/organisations.svg" />
             <div class="card__description">An organisation can represent larger business units of a company. It works as a container for various teams and users.</div>
           </div>
         </a> 
@@ -99,7 +104,7 @@
         <a href="/admin/teams">
           <div class="card-contents">
             <span class="card__title"> Teams </span>
-            <img class="card__image" src="./assets/images/overview/teams.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/teams.svg" />
             <div class="card__description">This area display all teams, a team is created automatically when a new organisation is created. </div>
           </div>
         </a> 
@@ -108,7 +113,7 @@
         <a href="/admin/users">
           <div class="card-contents">
             <span class="card__title"> Users </span>
-            <img class="card__image" src="./assets/images/overview/users.svg" />
+            <img class="card__image" src="/admin/assets/images/overview/users.svg" />
             <div class="card__description">All the registered api consumers for the public facing portal will be displayed in this area. Invite and manage the users from here.</div>
           </div>
         </a> 

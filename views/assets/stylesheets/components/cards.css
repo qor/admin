@@ -4,9 +4,12 @@
   flex-direction: column;
   align-items: center;
   background-color:var(--primary-light);
-  padding-inline: 50px;
   border-radius: 20px;
   margin-bottom: 20px;
+}
+
+.card {
+  padding-inline: 50px;
 }
 
 .card.is-link a {
@@ -31,7 +34,7 @@
   border-bottom-right-radius: 20px;
   text-align: center;
   align-self: center;
-  font-size: var(--size-lg);
+  font-size: var(--size-md);
   text-transform: uppercase;
 }
 

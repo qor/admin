@@ -30,12 +30,6 @@
           <div class="mdl-layout__header-row__container">
             {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">Documentation <i class=\"text-success tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
             {{t "qor_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Tyk</span></a><a href=\"/\" target=\"_blank\">Live portal <i class=\"text-success tyk-icon tykon tykon-link\" aria-hidden=\"true\"></i></a>" .Admin.GetRouter}}
-            {{if .CurrentUser}}
-              <div>
-                <h5>{{.CurrentUser.DisplayName}}</h5>
-              </div>
-            {{end}}
-
             <div class="profile-details-container">
               <i id="profile-icon" class="tyk-icon tykon tykon-profile profile-details-container__icon"></i>
               <ul id="profile-menu" class="profile-details-container__list">
@@ -58,12 +52,12 @@
         {{ end }}
       {{ end }}
       <main class="mdl-layout__content qor-page {{if $NotSingleton}}not-singleton{{else}}is-singleton{{end}}" id="content">
-        <div class="content-header">
-          {{$actions := load_actions "header" }}
+        {{if .Resource}}
+          <div class="content-header">
+            {{$actions := load_actions "header" }}
             {{if $actions}}
               {{$actions}}
             {{end}}
-            {{if .Resource}}
               {{$HasCreatePermission := has_create_permission .Resource}}
               {{if and $NotSingleton $HasCreatePermission}}
                 <a class="tyk-button tyk-button--success tyk-button--md header-cta" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
@@ -73,9 +67,9 @@
                 {{ $section :=  url_for .Resource}}
                 <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save header-cta" type="submit" form="{{$section}}">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
               {{end}}
-            {{end}}
-        </div>
-          {{.Content}}
+          </div>
+        {{end}}
+        {{.Content}}
       </main>
     </div>
 
@@ -89,7 +83,7 @@
     </script>
     {{javascript_tag "qor_admin_default"}}
     {{javascript_tag "tyk"}}
-    <script type="module" src="./assets/javascripts/modules.js"></script>
+    <script type="module" src="/admin/assets/javascripts/modules.js"></script>
     {{load_admin_javascripts}}
     {{load_theme_javascripts}}
   </body>

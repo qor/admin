@@ -36,8 +36,8 @@ function copyToClipboard(elemId) {
 }
 
 function hideHelpSection() {
-	let overviewToggleButton = document.getElementsByClassName('toggle-help-section');
-	let overviewToggleSection = document.getElementsByClassName('help-section');
+  let overviewToggleButton = document.querySelector('.toggle-help-section');
+  let overviewToggleSection = document.querySelector('.help-section');
 
   overviewToggleButton[0].style.display = 'none';
   overviewToggleSection[0].style.display = 'none';
@@ -45,8 +45,8 @@ function hideHelpSection() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-	let overviewToggleButton = document.getElementsByClassName('toggle-help-section');
-	let overviewToggleSection = document.getElementsByClassName('help-section');
+  let overviewToggleButton = document.querySelector('.toggle-help-section');
+  let overviewToggleSection = document.querySelector('.help-section');
 
   if(localStorage.getItem('hideHelpSection') === 'hidden') {
     overviewToggleButton[0].style.display = 'none';

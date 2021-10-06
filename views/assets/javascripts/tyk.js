@@ -39,8 +39,8 @@ function hideHelpSection() {
   let overviewToggleButton = document.querySelector('.toggle-help-section');
   let overviewToggleSection = document.querySelector('.help-section');
 
-  overviewToggleButton[0].style.display = 'none';
-  overviewToggleSection[0].style.display = 'none';
+  overviewToggleButton.style.display = 'none';
+  overviewToggleSection.style.display = 'none';
   localStorage.setItem('hideHelpSection', 'hidden');
 }
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let overviewToggleSection = document.querySelector('.help-section');
 
   if(localStorage.getItem('hideHelpSection') === 'hidden') {
-    overviewToggleButton[0].style.display = 'none';
-    overviewToggleSection[0].style.display = 'none';
+    overviewToggleButton.style.display = 'none';
+    overviewToggleSection.style.display = 'none';
   }
 }, false);

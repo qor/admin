@@ -20,3 +20,14 @@ a:hover {
 #dialog .mdl-dialog .mdl-dialog__content {
 	color: var(--default-text-color);
 }
+
+a.docs-link {
+  margin-top: 30px;
+  color: var(--primary-success);
+  font-size: 16px;
+  font-family: 'OpenSans-SemiBold';
+}
+
+a.docs-link i {
+  font-size: 13px;
+}

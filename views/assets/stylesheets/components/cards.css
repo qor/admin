@@ -2,7 +2,6 @@
 .card .card-contents {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color:var(--primary-light);
   border-radius: 20px;
   margin-bottom: 20px;
@@ -12,9 +11,13 @@
   padding-inline: 50px;
 }
 
+.card .card-contents {
+  align-items: center;
+}
+
 .card.is-link a {
   text-decoration: none;
-  color: var(--default-text-color)
+  color: var(--default-text-color);
 }
 
 .card.is-link:hover {

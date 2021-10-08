@@ -8,6 +8,7 @@ import (
 	"html"
 	"html/template"
 	"math/rand"
+	"net/http"
 	"net/url"
 	"path"
 	"path/filepath"
@@ -175,6 +176,9 @@ func (context *Context) FuncMap() template.FuncMap {
 		"load_theme_javascripts": context.loadThemeJavaScripts,
 		"load_admin_stylesheets": context.loadAdminStyleSheets,
 		"load_admin_javascripts": context.loadAdminJavaScripts,
+		"req": func() *http.Request {
+			return context.Context.Request
+		},
 	}
 
 	for key, value := range context.Admin.funcMaps {

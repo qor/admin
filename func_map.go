@@ -619,9 +619,7 @@ func (context *Context) renderMeta(meta *Meta, value interface{}, prefix []strin
 		}
 		fallthrough
 	default:
-		a := fmt.Sprintf("%v/metas/%v/%v.tmpl", meta.baseResource.ToParam(), metaType, meta.Name)
-		b := fmt.Sprintf("metas/%v/%v.tmpl", metaType, meta.Type)
-		if content, err = context.Asset(a, b); err == nil {
+		if content, err = context.Asset(fmt.Sprintf("%v/metas/%v/%v.tmpl", meta.baseResource.ToParam(), metaType, meta.Name), fmt.Sprintf("metas/%v/%v.tmpl", metaType, meta.Type)); err == nil {
 			tmpl, err = tmpl.Parse(string(content))
 		} else if metaType == "index" {
 			tmpl, err = tmpl.Parse("{{.Value}}")

@@ -8,6 +8,7 @@ import (
 	"html"
 	"html/template"
 	"math/rand"
+	"net/http"
 	"net/url"
 	"path"
 	"path/filepath"
@@ -175,6 +176,9 @@ func (context *Context) FuncMap() template.FuncMap {
 		"load_theme_javascripts": context.loadThemeJavaScripts,
 		"load_admin_stylesheets": context.loadAdminStyleSheets,
 		"load_admin_javascripts": context.loadAdminJavaScripts,
+		"req": func() *http.Request {
+			return context.Context.Request
+		},
 	}
 
 	for key, value := range context.Admin.funcMaps {
@@ -615,7 +619,9 @@ func (context *Context) renderMeta(meta *Meta, value interface{}, prefix []strin
 		}
 		fallthrough
 	default:
-		if content, err = context.Asset(fmt.Sprintf("%v/metas/%v/%v.tmpl", meta.baseResource.ToParam(), metaType, meta.Name), fmt.Sprintf("metas/%v/%v.tmpl", metaType, meta.Type)); err == nil {
+		a := fmt.Sprintf("%v/metas/%v/%v.tmpl", meta.baseResource.ToParam(), metaType, meta.Name)
+		b := fmt.Sprintf("metas/%v/%v.tmpl", metaType, meta.Type)
+		if content, err = context.Asset(a, b); err == nil {
 			tmpl, err = tmpl.Parse(string(content))
 		} else if metaType == "index" {
 			tmpl, err = tmpl.Parse("{{.Value}}")

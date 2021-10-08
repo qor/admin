@@ -9,8 +9,9 @@
          </div>
         <div class="tyk-col--lg-9 tyk-col card">
           <h2 class="card__header">Hello
-            {{if .CurrentUser}}
-              {{.CurrentUser.DisplayName}}</h5>
+          {{ $user := CurrentUser req }}
+            {{if $user}}
+              {{$user.DisplayName}}</h5>
             {{end}}
           </h2>
           <p>Welcome to Tyk Portal admin dashboard. Here you can manage your API products and plans, customise the portal, invite and organise api-consumers and much more.</p>

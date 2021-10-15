@@ -1,7 +1,7 @@
 .qor-layout .mdl-layout__header,
 .qor-layout .mdl-layout__tab-bar,
 .qor-slideout__header {
-  background-color: var(--default-text-color);
+  background-color: var(--secondary-dark);
 }
 
 .content-header {
@@ -37,9 +37,13 @@
 }
 
 .mdl-layout__header-row__container > a {
-  font-size: var(--size-md);
+  font-size: 16px;
   color: var(--white);
   text-decoration: none;
+}
+
+.mdl-layout__header-row__container > a > i {
+  font-size: 14px;
 }
 
 .mdl-layout__header-row__container > a:hover {

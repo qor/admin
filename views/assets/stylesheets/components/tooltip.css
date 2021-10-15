@@ -1,7 +1,33 @@
-.mdl-tooltip {
+/* .mdl-tooltip {
   background-color: var(--primary-light);
   border: 2px solid var(--primary-base);
   border-radius: var(--default-border-radius);
-  padding: 20px;
   color: var(--default-text-color);
+}
+
+.mdl-tooltip:before {
+  content: "";
+  position: absolute;
+  right: 95%;
+  top: 16px;
+  border-top: 7px solid transparent;
+  border-right: 17px solid white;
+  border-bottom: 6px solid transparent;
+} */
+
+.mdl-tooltip {
+  background: var(--secondary-dark);
+  border-radius: var(--default-border-radius);
+  color: white;
+}
+.mdl-tooltip:before {
+  content: "";
+  position: absolute;
+  right: 96%;
+  top: 13px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 16px solid var(--secondary-dark);
+  border-bottom: 10px solid transparent;
 }

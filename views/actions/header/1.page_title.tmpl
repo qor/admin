@@ -1,6 +1,14 @@
-<div class="right-buffer-medium">
+<div class="right-buffer-medium resource-details{{if .Resource.Tooltip }} with-tooltip{{end}}{{if .Resource.Description }} with-description{{end}}">
   <p class="mdl-layout-title">{{page_title}}</p>
   {{if .Resource }}
+    {{if .Resource.Tooltip }}
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-{{page_title}}" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{page_title}}">
+        {{ .Resource.Tooltip }}
+      </div>
+    {{end}}
     {{if .Resource.Description }}
       <p class="mdl-layout-description">{{.Resource.Description}}</p>
     {{ end }}

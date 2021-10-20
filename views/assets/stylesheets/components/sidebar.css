@@ -44,8 +44,8 @@
 }
 
 #qor-menu-item--main > ul.qor-menu.collapse.in > #qor-menu-item--sub > a:first-of-type {
-  font-family: 'OpenSans-SemiBold' !important;
-  font-size: var(--size-sm) !important;
+  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-size: var(--size-sm);
   margin: 3px 0;
 }
 

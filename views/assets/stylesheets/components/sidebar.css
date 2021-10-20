@@ -31,14 +31,22 @@
   margin-left: 10px;
 }
 
-.qor-menu>li>a:focus,
-.qor-menu>li>a:hover {
+.qor-menu > li > a:focus,
+.qor-menu > li > a:hover {
   background-color: var(--primary-light);
 }
 
 #qor-menu-item--sub > a:first-of-type {
-  font-family: 'OpenSans-SemiBold';
+  font-family: 'OpenSans-Bold';
+  font-size: var(--size-md);
+  padding: 15px 40px 15px 35px;
+  margin-left: 10px;
+}
+
+#qor-menu-item--main > ul.qor-menu.collapse.in > #qor-menu-item--sub > a:first-of-type {
+  font-family: 'OpenSans-SemiBold', sans-serif;
   font-size: var(--size-sm);
+  padding: 10px 16px 10px 40px;
   margin: 3px 0;
 }
 
@@ -46,7 +54,7 @@
   margin-top: 65px;
 }
 
-.qor-layout__sidebar >.sidebar-body {
+.qor-layout__sidebar > .sidebar-body {
   top: 0;
 }
 
@@ -57,14 +65,14 @@
 .qor-menu > .active:hover > a,
 .qor-menu > .active:hover > a:focus,
 .qor-menu > .active:hover > a:hover,
-.qor-menu > .active >a,
-.qor-menu > .active >a:focus,
-.qor-menu > .active >a:hover {
+.qor-menu > .active > a,
+.qor-menu > .active > a:focus,
+.qor-menu > .active > a:hover {
   color: var(--primary-success);
   border-radius: var(--default-border-radius);
 }
 
-#qor-menu-item--sub.active > a:first-of-type {
+#qor-menu-item--main > #qor-menu-item--sub.active > a:first-of-type {
   font-family: 'OpenSans-Bold';
 }
 
@@ -72,35 +80,34 @@
   width: 270px;
 }
 
-[qor-icon-name="Service Providers"] > a {
+[qor-icon-name='Service Providers'] > a {
   background: url(../../images/service-provider.svg) no-repeat left center;
 }
 
-[qor-icon-name="Developer Portal"] > a {
+[qor-icon-name='Developer Portal'] > a {
   background: url(../../images/developer-portal.svg) no-repeat left center;
 }
 
-[qor-icon-name="Blog"] > a {
+[qor-icon-name='Blog'] > a {
   background: url(../../images/blog.svg) no-repeat left center;
 }
 
-[qor-icon-name="Customise"] > a {
+[qor-icon-name='Customise'] > a {
   background: url(../../images/customise.svg) no-repeat left center;
 }
 
-[qor-icon-name="API Consumers"]>a::before {
+[qor-icon-name='API Consumers'] > a::before {
   content: '';
 }
 
-[qor-icon-name="API Consumers"] > a {
+[qor-icon-name='API Consumers'] > a {
   background: url(../../images/user-management.svg) no-repeat left center;
 }
 
-[qor-icon-name*=Settings]>a::before {
+[qor-icon-name*='Settings'] > a::before {
   content: '';
 }
 
-[qor-icon-name="Settings"] > a {
+[qor-icon-name='Settings'] > a {
   background: url(../../images/settings.svg) no-repeat left center;
 }
-

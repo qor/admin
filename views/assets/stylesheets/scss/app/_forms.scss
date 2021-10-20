@@ -38,7 +38,7 @@
     }
     .mdl-button {
         float: right;
-        + .mdl-button {
+        +.mdl-button {
             margin-right: 8px;
         }
     }
@@ -121,7 +121,6 @@
     position: relative;
 }
 
-
 .chosen-container {
     margin-top: 8px;
 }
@@ -132,7 +131,7 @@
     margin-bottom: 20px;
 }
 
-[data-upgraded] > .qor-field__show {
+[data-upgraded]>.qor-field__show {
     margin-bottom: 0;
 }
 
@@ -188,19 +187,19 @@ button.qor-fieldset__add,
         .qor-field__error {
             display: block;
             font-size: 12px;
-            > i {
+            >i {
                 font-size: 18px;
                 vertical-align: top;
             }
-            > span {
-                + span {
+            >span {
+                +span {
                     margin-left: 8px;
                 }
             }
         }
         .mdl-textfield,
         .qor-field__block {
-            + .qor-field__error {
+            +.qor-field__error {
                 margin-top: -16px;
             }
         }
@@ -252,8 +251,8 @@ button.qor-fieldset__add,
     margin-top: 8px;
     &.is-svg {
         .qor-file__list {
-            > ul {
-                > li {
+            >ul {
+                >li {
                     text-align: center;
                     img {
                         display: inline-block;
@@ -267,12 +266,12 @@ button.qor-fieldset__add,
 
 .qor-file__list {
     overflow: hidden;
-    > ul {
+    >ul {
         margin-top: 12px;
         margin-bottom: 0;
         padding-left: 0;
         list-style: none;
-        > li {
+        >li {
             position: relative;
             float: left;
             display: block;
@@ -283,7 +282,7 @@ button.qor-fieldset__add,
             border: 1px solid unquote('rgba(#{$color-black}, 0.12)');
             background-color: unquote('rgb(#{$color-white})');
             overflow: hidden;
-            > span {
+            >span {
                 position: absolute;
                 bottom: 0;
                 width: 100%;
@@ -345,7 +344,7 @@ button.qor-fieldset__add,
                 opacity: 1;
             }
         }
-        > span {
+        >span {
             display: flex;
             font-size: 12px;
             align-items: center;
@@ -421,7 +420,8 @@ button.qor-fieldset__add,
     }
 }
 
-.qor-section-columns-3 .qor-field {
+.qor-section-columns-3 .qor-field,
+.qor-section-columns-3 .tyk-form-group {
     width: 33.33%;
     float: left;
     padding-right: 20px;
@@ -465,6 +465,7 @@ button.qor-fieldset__add,
 .mdl-checkbox__label {
     line-height: 22px;
 }
+
 .mdl-checkbox {
     height: auto;
     margin-bottom: 12px;

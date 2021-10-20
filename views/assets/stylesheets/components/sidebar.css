@@ -46,6 +46,7 @@
 #qor-menu-item--main > ul.qor-menu.collapse.in > #qor-menu-item--sub > a:first-of-type {
   font-family: 'OpenSans-SemiBold', sans-serif;
   font-size: var(--size-sm);
+  padding: 10px 16px 10px 40px;
   margin: 3px 0;
 }
 

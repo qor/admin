@@ -128,6 +128,31 @@
   margin-bottom: 15px;
 }
 
-.is-singleton .qor-form .qor-form-section .qor-fieldset{
+.is-singleton .qor-form .qor-form-section .qor-fieldset {
   margin: 0;
+}
+
+/* For forms that are NOT within a Singleton */
+
+.qor-fieldset-container .qor-field__block fieldset.qor-fieldset {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--default-light);
+  border-radius: 0px;
+}
+
+/* .qor-fieldset-container .qor-field__block fieldset.qor-fieldset:last-of-type {
+  border-bottom: none;
+} */
+
+.qor-form-section.clearfix .qor-fieldset {
+  background-color: transparent !important;
+}
+
+.qor-form-section .qor-field__label.qor-form-section-title,
+.qor-field.collection-edit.qor-fieldset-container .qor-field__label {
+  font-size: larger;
+}
+
+.qor-form-section .qor-field__label.qor-form-section-title {
+  margin: 0 0 0 24px;
 }

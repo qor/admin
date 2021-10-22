@@ -1,16 +1,26 @@
 <div class="tyk-checkbox">
   <div class="tyk-form-control__wrapper">
-    <label>
-      <input
-        name="{{.InputName}}"
-        {{if .InputId}} id="{{.InputId}}" {{end}}
-        value="true"
-        type="checkbox"
-        value="false"
-        {{if .Value}}checked{{end}} {{if (not (has_change_permission .Meta))  }} disabled{{end}}
-      >
-      {{meta_label .Meta}}
-      {{if has_change_permission .Meta}}<input type="hidden" name="{{.InputName}}" value="false">{{end}}
-    </label>
+    <div class="input-label-wrapper">
+      <label>
+        <input
+          name="{{.InputName}}"
+          {{if .InputId}} id="{{.InputId}}" {{end}}
+          value="true"
+          type="checkbox"
+          value="false"
+          {{if .Value}}checked{{end}} {{if (not (has_change_permission .Meta))  }} disabled{{end}}
+        >
+        {{meta_label .Meta}}
+        {{if has_change_permission .Meta}}<input type="hidden" name="{{.InputName}}" value="false">{{end}}
+      </label>
+      {{if .Meta.Tooltip }}
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-{{.InputId}}" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{.InputId}}">
+        {{ .Meta.Tooltip }}
+      </div>
+      {{end}}
+    </div>
   </div>
 </div>

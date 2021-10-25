@@ -24,9 +24,12 @@ import (
 //      "ColorVariations",
 //    }
 type Section struct {
-	Resource *Resource
-	Title    string
-	Rows     [][]string
+	Resource    *Resource
+	Title       string
+	Description string
+	Tooltip     string
+	Separator   bool
+	Rows        [][]string
 }
 
 // String stringify section
@@ -73,7 +76,12 @@ func (res *Resource) generateSections(values ...interface{}) []*Section {
 }
 
 func uniqueSection(section *Section, hasColumns *[]string) *Section {
-	newSection := Section{Title: section.Title}
+	newSection := Section{
+		Title:       section.Title,
+		Description: section.Description,
+		Tooltip:     section.Tooltip,
+		Separator:   section.Separator,
+	}
 	var newRows [][]string
 	for _, row := range section.Rows {
 		var newColumns []string
@@ -144,9 +152,7 @@ func (res *Resource) ConvertSectionToStrings(sections []*Section) []string {
 	var columns []string
 	for _, section := range sections {
 		for _, row := range section.Rows {
-			for _, col := range row {
-				columns = append(columns, col)
-			}
+			columns = append(columns, row...)
 		}
 	}
 	return columns

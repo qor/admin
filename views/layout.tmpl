@@ -44,7 +44,7 @@
       <div class="mdl-layout__drawer">
         {{render "shared/sidebar"}}
       </div>
-      
+
       {{$NotSingleton := false}}
       {{ if .Resource}}
         {{ if .Resource.Config}}
@@ -61,7 +61,7 @@
               {{$HasCreatePermission := has_create_permission .Resource}}
               {{if and $NotSingleton $HasCreatePermission}}
                 <a class="tyk-button tyk-button--success tyk-button--md header-cta" href="{{new_resource_path .Resource}}" data-url="{{new_resource_path .Resource}}">
-                  Add
+                  + Add new {{ singular .Resource.Name }}
                 </a>
               {{else}}
                 {{ $section :=  url_for .Resource}}

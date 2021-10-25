@@ -155,7 +155,7 @@
 }
 
 .qor-form-section-description {
-  font-family: "OpenSans-Regular";
+  font-family: "OpenSans-Regular", sans-serif;
   font-size: var(--size-sm);
   font-weight: normal;
   margin: var(--size-sm) 0 0 var(--size-xl);

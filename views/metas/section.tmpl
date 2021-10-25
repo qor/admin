@@ -1,4 +1,5 @@
-<div class="qor-form-section clearfix" data-section-title="{{.Title}}">
+{{.Section.Separator}}
+<div {{if .Section.Separator}}class="qor-form-section clearfix bottom-separator"{{else}}class="qor-form-section clearfix"{{end}} data-section-title="{{.Title}}">
   {{if .Title}}
     <label class="qor-field__label qor-form-section-title">
       {{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .Title) .Title}}

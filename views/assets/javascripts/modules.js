@@ -1,10 +1,9 @@
 import { Collapsible } from './modules/collapsible.js';
 
-let settingsCollapsablePanels = Collapsible();
-
 let overviewSelectors = {
   clickableSelector: 'toggle-help-section__cta',
-  contentSelector: 'help-section'
+  contentSelector: 'help-section',
+  textSelector: '.toggle-help-section__cta'
 }
 
-let overviewSection = Collapsible(overviewSelectors)
+Collapsible(overviewSelectors)

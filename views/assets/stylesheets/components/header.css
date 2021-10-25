@@ -155,9 +155,7 @@ a.qor-slideout__fullscreen > i.tyk-icon + .tyk-icon {
 }
 
 .resource-details {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: block;
 }
 
 /*

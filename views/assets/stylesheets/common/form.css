@@ -134,25 +134,23 @@
 
 /* For forms that are NOT within a Singleton */
 
-.qor-fieldset-container .qor-field__block fieldset.qor-fieldset {
-  background-color: transparent !important;
-  border-bottom: 1px solid var(--default-light);
-  border-radius: 0px;
-}
-
-/* .qor-fieldset-container .qor-field__block fieldset.qor-fieldset:last-of-type {
-  border-bottom: none;
-} */
 
 .qor-form-section.clearfix .qor-fieldset {
-  background-color: transparent !important;
+  background-color: transparent;
+  border-bottom: 1px solid var(--default-light);
+  border-radius: 0px;
+  margin-bottom: 30px;
 }
 
 .qor-form-section .qor-field__label.qor-form-section-title,
 .qor-field.collection-edit.qor-fieldset-container .qor-field__label {
-  font-size: larger;
+  font-size: var(--size-lg);
 }
 
 .qor-form-section .qor-field__label.qor-form-section-title {
   margin: 0 0 0 24px;
+}
+
+.qor-field.collection-edit.qor-fieldset-container .qor-form-section.clearfix {
+  margin: 0;
 }

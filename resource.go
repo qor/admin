@@ -717,7 +717,7 @@ func (res *Resource) GetMeta(name string) *Meta {
 func (res *Resource) allowedSections(sections []*Section, context *Context, roles ...roles.PermissionMode) []*Section {
 	var newSections []*Section
 	for _, section := range sections {
-		newSection := Section{Resource: section.Resource, Title: section.Title}
+		newSection := Section{Resource: section.Resource, Title: section.Title, Description: section.Description}
 		var editableRows [][]string
 		for _, row := range section.Rows {
 			var editableColumns []string

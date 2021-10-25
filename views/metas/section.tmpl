@@ -4,6 +4,11 @@
       {{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .Title) .Title}}
     </label>
   {{end}}
+  {{if .Description}}
+    <label class="qor-field__label qor-form-section-description">
+      {{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .Description) .Description}}
+    </label>
+  {{end}}
 
   <div {{if .Title}}class="qor-fieldset"{{end}}>
     {{range .Rows}}

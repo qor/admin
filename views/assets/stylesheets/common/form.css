@@ -134,12 +134,11 @@
 
 /* For forms that are NOT within a Singleton */
 
-
 .qor-form-section.clearfix .qor-fieldset {
   background-color: transparent;
   border-bottom: 1px solid var(--default-light);
   border-radius: 0px;
-  margin-bottom: 30px;
+  margin-bottom: var(--size-xl);
 }
 
 .qor-form-section .qor-field__label.qor-form-section-title,
@@ -148,9 +147,16 @@
 }
 
 .qor-form-section .qor-field__label.qor-form-section-title {
-  margin: 0 0 0 24px;
+  margin: 0 0 0 var(--size-xl);
 }
 
 .qor-field.collection-edit.qor-fieldset-container .qor-form-section.clearfix {
   margin: 0;
+}
+
+.qor-form-section-description {
+  font-family: "OpenSans-Regular";
+  font-size: var(--size-sm);
+  font-weight: normal;
+  margin: var(--size-sm) 0 0 var(--size-xl);
 }

@@ -6,24 +6,27 @@ export function Collapsible (options) {
   clickableElement.forEach((item,index) => {
     item.addEventListener('click', () => {
       let contentStyle = collapsibleContent[index].style;
+      let shouldSwapTexts = !!ctaWrapper.querySelector(`${options?.textSelector}-text`); 
       let initialText = ctaWrapper.querySelector(`${options?.textSelector}-text.initial`);
       let secondaryText = ctaWrapper.querySelector(`${options?.textSelector}-text.secondary`);
       let arrowIcon = ctaWrapper.querySelector('.tyk-icon');
 
       if(contentStyle.display === 'none' || window.getComputedStyle(collapsibleContent[index], null).display === 'none') {
         contentStyle.display = 'block';
-        if(initialText) {
+        arrowIcon?.classList.replace('tykon-arrowup', 'tykon-arrowdown');
+
+        if(shouldSwapTexts) {
           initialText.style.display = 'inline';
           secondaryText.style.display = 'none';
         }
-        arrowIcon?.classList.replace('tykon-arrowup', 'tykon-arrowdown')
       } else {
         contentStyle.display = 'none';
-        if(initialText) {
+        arrowIcon?.classList.replace('tykon-arrowdown', 'tykon-arrowup');
+
+        if(shouldSwapTexts) {
           initialText.style.display = 'none';
           secondaryText.style.display = 'inline';
         }
-        arrowIcon?.classList.replace('tykon-arrowdown', 'tykon-arrowup')
       }
     });
   });

@@ -3,6 +3,7 @@ module github.com/TykTechnologies/raava-admin
 go 1.13
 
 require (
+	github.com/TykTechnologies/media v0.0.0-20211027141625-cb85b604d4f5 // indirect
 	github.com/aws/aws-sdk-go v1.38.63 // indirect
 	github.com/fatih/color v1.9.0
 	github.com/gorilla/sessions v1.2.1 // indirect

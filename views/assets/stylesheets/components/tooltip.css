@@ -16,10 +16,14 @@
   border-bottom: 10px solid transparent;
 }
 
+.large-right-border.mdl-tooltip:before {
+  right: 98%;
+}
+
 .resource-details .mdl-tooltip:before{
   right: 99%;
 }
 
 .help-icon {
-  align-self: self-end;
+  align-self: center;
 }

@@ -45,20 +45,41 @@
   margin-left: 5px;
 }
 
-.qor-section-columns-2 .qor-field,
-.qor-section-columns-2 .tyk-form-group {
-  width: 50%;
-  float: left;
-  padding-right: 40px;
-  box-sizing: border-box;
+.qor-section-columns-2,
+.qor-section-columns-3,
+.qor-section-columns-4,
+.qor-section-columns-5 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.qor-section-columns-4 .qor-field,
-.qor-section-columns-4 .tyk-form-group {
-  width: 25%;
-  float: left;
-  padding-right: 10px;
-  box-sizing: border-box;
+.qor-section-columns-2 .qor-field {
+  padding-right: 0;
+}
+
+.qor-section-columns-3 > div {
+  flex-basis: 33.333%;
+}
+
+.qor-section-columns-2 > div {
+  flex-basis: 50%;
+}
+
+.qor-section-columns-4 > div {
+  flex-basis: 25%;
+}
+
+.qor-section-columns-5 > div {
+  flex-basis: 20%;
+}
+
+.tyk-form-group + .tyk-form-group:not(:first-child),
+.qor-section-columns-2 > div:not(:first-child),
+.qor-section-columns-3 > div:not(:first-child),
+.qor-section-columns-4 > div:not(:first-child) {
+  padding-left: 10px;
 }
 
 /*

@@ -49,6 +49,10 @@
   margin-left: 5px;
 }
 
+.qor-slideout__title .help-icon {
+  display: none;
+}
+
 /*
   Media Queries 
 */

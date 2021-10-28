@@ -6,7 +6,8 @@
         <img src="./assets/images/help.svg" id="tooltip-icon-{{page_title}}" />
       </span>
       <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{page_title}}">
-        {{ .Resource.Tooltip }}
+        <p class="bubble-arrow"></p>
+        <p class="tooltip-text">{{ .Resource.Tooltip }}</p>
       </div>
     {{end}}
   {{end}}

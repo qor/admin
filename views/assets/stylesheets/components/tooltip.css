@@ -1,27 +1,22 @@
 .mdl-tooltip {
+  display: flex;
+  flex-direction: row;
   background: var(--secondary-dark);
   border-radius: var(--default-border-radius);
   color: white;
-  max-width: 100%;
+  max-width: 50%;
+  align-items: center;
 }
-.mdl-tooltip:before {
-  content: "";
-  position: absolute;
-  right: 96%;
-  top: 13px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-right: 16px solid var(--secondary-dark);
-  border-bottom: 10px solid transparent;
+.bubble-arrow {
+  display: inline-flex;
+  border-top: 15px solid transparent;
+  border-right: 15px solid var(--secondary-dark);
+  border-bottom: 15px solid transparent;
+  margin-left: -25px;
 }
 
-.large-right-border.mdl-tooltip:before {
-  right: 98%;
-}
-
-.resource-details .mdl-tooltip:before{
-  right: 99%;
+.tooltip-text {
+  margin-left: 5px;
 }
 
 .help-icon {

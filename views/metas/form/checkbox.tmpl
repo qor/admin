@@ -13,13 +13,14 @@
         {{meta_label .Meta}}
         {{if has_change_permission .Meta}}<input type="hidden" name="{{.InputName}}" value="false">{{end}}
       </label>
-      {{if .Meta.Tooltip }}
-      <span class="help-icon">
-        <img src="./assets/images/help.svg" id="tooltip-icon-{{.InputId}}" />
-      </span>
-      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{.InputId}}">
-        {{ .Meta.Tooltip }}
-      </div>
+        {{if .Meta.Tooltip }}
+        <span class="help-icon">
+          <img src="./assets/images/help.svg" id="tooltip-icon-{{.InputId}}" />
+        </span>
+        <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{.InputId}}">
+          <p class="bubble-arrow"></p>
+          <p class="tooltip-text">{{ .Meta.Tooltip }}</p>
+        </div>
       {{end}}
     </div>
   </div>

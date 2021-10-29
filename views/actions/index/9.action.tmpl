@@ -20,7 +20,7 @@
 
 {{$collection_actions := (allowed_actions $context.Resource.GetActions "collection")}}
 {{if gt (len $collection_actions) 0 }}
-  <div class="qor-actions qor-collection-actions" style="float: right">
+  <div class="qor-actions qor-collection-actions">
     {{range $action := $collection_actions}}
       {{render_with "shared/action_item" (to_map "Action" $action "Result" $result "Context" $context "Resource" $resource "Multiple" true)}}
     {{end}}

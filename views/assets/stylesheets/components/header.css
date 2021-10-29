@@ -1,7 +1,7 @@
 .qor-layout .mdl-layout__header,
 .qor-layout .mdl-layout__tab-bar,
 .qor-slideout__header {
-  background-color: var(--default-text-color);
+  background-color: var(--secondary-dark);
 }
 
 .content-header {
@@ -22,6 +22,10 @@
   background: transparent;
 }
 
+.qor-actions.qor-collection-actions {
+  margin-left: auto;
+}
+
 .mdl-layout__header-row {
   justify-content: space-between;
   padding-right: 50px;
@@ -37,9 +41,13 @@
 }
 
 .mdl-layout__header-row__container > a {
-  font-size: var(--size-md);
+  font-size: 16px;
   color: var(--white);
   text-decoration: none;
+}
+
+.mdl-layout__header-row__container > a > i {
+  font-size: 14px;
 }
 
 .mdl-layout__header-row__container > a:hover {
@@ -61,6 +69,15 @@
 .mdl-layout-description {
   font-size: 13px;
 }
+
+.resource-details.with-tooltip.with-description .mdl-layout-description {
+  flex-basis: 53%;
+}
+
+.resource-details.with-tooltip.with-description .mdl-layout-title {
+  flex-basis: 33.333%;
+}
+
 
 .header-cta {
   margin-left: auto;
@@ -135,6 +152,10 @@ a.qor-slideout__fullscreen > i.tyk-icon + .tyk-icon {
 
 .is-singleton .qor-form__actions {
   display: none;
+}
+
+.resource-details {
+  display: block;
 }
 
 /*

@@ -65,7 +65,9 @@
                 </a>
               {{else}}
                 {{ $section :=  url_for .Resource}}
-                <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save header-cta" type="submit" form="{{$section}}">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
+                {{ if and (ne $section "/admin/api_products") (ne $section "/admin/plans") }}
+                  <button class="tyk-button  tyk-button--success tyk-button--md qor-button--save header-cta" type="submit" form="{{$section}}">{{t "qor_admin.form.save_changes" "Save Changes"}}</button>
+                {{end}}
               {{end}}
           </div>
         {{end}}

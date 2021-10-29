@@ -1,84 +1,128 @@
 {{$current_values := raw_value_of .ResourceValue .Meta }}
 
 {{if $current_values}}
-<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
-  <label for="{{.InputId}}-URL">URL:</label>
-  <div class="qor-field__show">{{$current_values.URL}}</div>
-  <div class="tyk-form-control__wrapper">
-    <input
-     autocomplete="off"
-     class="tyk-form-control"
-     name="{{.InputName}}"
-     type="text"
-     id="{{.InputId}}-URL"
-     value="{{$current_values.URL}}"
-    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
-    />
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+    <div class="input-label-wrapper">
+      <label for="{{.InputId}}-URL">URL</label>
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-url" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-url">
+        <span class="bubble-arrow"></span>
+        <p class="tooltip-text">The URL refers to the provider host URL for tyk-pro.</p>
+      </div>
+    </div>
+    <div class="qor-field__show">{{$current_values.URL}}</div>
+    <div class="tyk-form-control__wrapper">
+      <input
+      autocomplete="off"
+      class="tyk-form-control"
+      name="{{.InputName}}"
+      type="text"
+      id="{{.InputId}}-URL"
+      value="{{$current_values.URL}}"
+      {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+      />
+    </div>
   </div>
-</div>
 
-<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
-  <label for="{{.InputId}}-Secret">Secret:</label>
-  <div class="qor-field__show">{{$current_values.Secret}}</div>
-  <div class="tyk-form-control__wrapper">
-    <input
-     autocomplete="off"
-     class="tyk-form-control"
-     name="{{.InputName}}"
-     type="text"
-     id="{{.InputId}}-Secret"
-     value="{{$current_values.Secret}}"
-    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
-    />
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+    <div class="input-label-wrapper">
+      <label for="{{.InputId}}-Secret">Secret</label>
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-secret" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-secret">
+        <span class="bubble-arrow"></span>
+        <p class="tooltip-text">The secret can be fetched from the Tyk dashboard within the user profile. The secret is the same as the API Access Credentials.</p>
+      </div>
+    </div>
+    <div class="qor-field__show">{{$current_values.Secret}}</div>
+    <div class="tyk-form-control__wrapper">
+      <input
+      autocomplete="off"
+      class="tyk-form-control"
+      name="{{.InputName}}"
+      type="text"
+      id="{{.InputId}}-Secret"
+      value="{{$current_values.Secret}}"
+      {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+      />
+    </div>
   </div>
-</div>
 
-<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
-  <label for="{{.InputId}}-OrgID">Organisation ID:</label>
-  <div class="qor-field__show">{{$current_values.OrgID}}</div>
-  <div class="tyk-form-control__wrapper">
-    <input
-     autocomplete="off"
-     class="tyk-form-control"
-     name="{{.InputName}}"
-     type="text"
-     id="{{.InputId}}-OrgID"
-     value="{{$current_values.OrgID}}"
-    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
-    />
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+    <div class="input-label-wrapper">
+      <label for="{{.InputId}}-OrgID">Organisation ID</label>
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-orgid" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-orgid">
+        <span class="bubble-arrow"></span>
+        <p class="tooltip-text">The org id can be fetched from the Tyk dashboard within the user profile under Organisation ID.</p>
+      </div>
+    </div>
+    <div class="qor-field__show">{{$current_values.OrgID}}</div>
+    <div class="tyk-form-control__wrapper">
+      <input
+      autocomplete="off"
+      class="tyk-form-control"
+      name="{{.InputName}}"
+      type="text"
+      id="{{.InputId}}-OrgID"
+      value="{{$current_values.OrgID}}"
+      {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+      />
+    </div>
   </div>
-</div>
 
-<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
-  <label for="{{.InputId}}-PoliciesTagsFlat">Policies Tags:</label>
-  <div class="qor-field__show">{{$current_values.PoliciesTagsFlat}}</div>
-  <div class="tyk-form-control__wrapper">
-    <input
-     autocomplete="off"
-     class="tyk-form-control"
-     name="{{.InputName}}"
-     type="text"
-     id="{{.InputId}}-PoliciesTagsFlat"
-     value="{{$current_values.PoliciesTagsFlat}}"
-    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
-    />
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+    <div class="input-label-wrapper">
+      <label for="{{.InputId}}-PoliciesTagsFlat">Policies Tags</label>
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-tags" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-tags">
+        <span class="bubble-arrow"></span>
+        <p class="tooltip-text">Tags is a way to specify which policies you want to import from Tyk pro. The tag with the one set up the policy section within Tyk Pro.</p>
+      </div>
+    </div>
+    <div class="qor-field__show">{{$current_values.PoliciesTagsFlat}}</div>
+    <div class="tyk-form-control__wrapper">
+      <input
+      autocomplete="off"
+      class="tyk-form-control"
+      name="{{.InputName}}"
+      type="text"
+      id="{{.InputId}}-PoliciesTagsFlat"
+      value="{{$current_values.PoliciesTagsFlat}}"
+      {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+      />
+    </div>
   </div>
-</div>
 
-<div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
-  <label for="{{.InputId}}-Gateway">Gateway:</label>
-  <div class="qor-field__show">{{$current_values.Gateway}}</div>
-  <div class="tyk-form-control__wrapper">
-    <input
-     autocomplete="off"
-     class="tyk-form-control"
-     name="{{.InputName}}"
-     type="text"
-     id="{{.InputId}}-Gateway"
-     value="{{$current_values.Gateway}}"
-    {{if (not (has_change_permission .Meta)) }}disabled{{end}}
-    />
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+    <div class="input-label-wrapper">
+      <label for="{{.InputId}}-Gateway">Gateway</label>
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-gateway" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-gateway">
+        <span class="bubble-arrow"></span>
+        <p class="tooltip-text">The gateway URL refers to which URL the portal developers will send the queries and use the access credentials.</p>
+      </div>
+    </div>
+    <div class="qor-field__show">{{$current_values.Gateway}}</div>
+    <div class="tyk-form-control__wrapper">
+      <input
+      autocomplete="off"
+      class="tyk-form-control"
+      name="{{.InputName}}"
+      type="text"
+      id="{{.InputId}}-Gateway"
+      value="{{$current_values.Gateway}}"
+      {{if (not (has_change_permission .Meta)) }}disabled{{end}}
+      />
+    </div>
   </div>
-</div>
-
 {{end}}

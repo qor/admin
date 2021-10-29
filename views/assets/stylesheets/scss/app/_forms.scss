@@ -410,7 +410,8 @@ button.qor-fieldset__add,
 
 // Section
 // ------------------------
-.qor-section-columns-2 .qor-field {
+.qor-section-columns-2 .qor-field,
+.qor-section-columns-2 .tyk-form-group {
     width: 50%;
     float: left;
     padding-right: 40px;
@@ -425,6 +426,14 @@ button.qor-fieldset__add,
     width: 33.33%;
     float: left;
     padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.qor-section-columns-4 .qor-field,
+.qor-section-columns-4 .tyk-form-group {
+    width: 25%;
+    float: left;
+    padding-right: 10px;
     box-sizing: border-box;
 }
 

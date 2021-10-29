@@ -4,12 +4,13 @@
       {{meta_label .Meta}}
     </label>
     {{if .Meta.Tooltip }}
-    <span class="help-icon rich-editor">
-      <img src="./assets/images/help.svg" id="tooltip-icon-{{.InputId}}" />
-    </span>
-    <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{.InputId}}">
-      {{ .Meta.Tooltip }}
-    </div>
+      <span class="help-icon">
+        <img src="./assets/images/help.svg" id="tooltip-icon-{{.InputId}}" />
+      </span>
+      <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" data-mdl-for="tooltip-icon-{{.InputId}}">
+        <p class="bubble-arrow"></p>
+        <p class="tooltip-text">{{ .Meta.Tooltip }}</p>
+      </div>
   {{end}}
   </div>
 

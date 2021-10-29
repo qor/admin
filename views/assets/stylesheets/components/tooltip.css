@@ -1,7 +1,24 @@
 .mdl-tooltip {
-  background-color: var(--primary-light);
-  border: 2px solid var(--primary-base);
+  display: flex;
+  flex-direction: row;
+  background: var(--secondary-dark);
   border-radius: var(--default-border-radius);
-  padding: 20px;
-  color: var(--default-text-color);
+  color: white;
+  max-width: 50%;
+  align-items: center;
+}
+.bubble-arrow {
+  display: inline-flex;
+  border-top: 15px solid transparent;
+  border-right: 15px solid var(--secondary-dark);
+  border-bottom: 15px solid transparent;
+  margin-left: -25px;
+}
+
+.tooltip-text {
+  margin-left: 5px;
+}
+
+.help-icon {
+  align-self: center;
 }

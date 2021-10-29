@@ -41,8 +41,16 @@
   cursor: pointer;
 }
 
+.toggle-help-section__cta-text.secondary {
+  display: none;
+}
+
 .toggle-help-section .tykon {
   margin-left: 5px;
+}
+
+.qor-slideout__title .help-icon {
+  display: none;
 }
 
 /*

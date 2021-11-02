@@ -16,13 +16,13 @@
 
 {{if (and $action.URL (eq $action.Method "GET"))}}
   {{if (or (eq $action.URLOpenType "bottomsheet") (eq $action.URLOpenType "slideout"))}}
-    <button class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md qor-action-button{{end}} qor-action-button--link" data-url="{{template "url" .}}" data-open-type="{{$action.URLOpenType}}">
+    <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md qor-action-button{{end}} qor-action-button--link" data-url="{{template "url" .}}" data-open-type="{{$action.URLOpenType}}">
       {{t (printf "%v.actions.%v" $resource.ToParam $action.Label) $action.Label}}
-    </button>
+    </a>
   {{else}}
-    <button class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md qor-action-button{{end}} qor-action-button--link" href="{{template "url" .}}" {{if $action.URLOpenType}}data-open-type="{{$action.URLOpenType}}"{{end}}>
+    <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--success tyk-button--md qor-action-button{{end}} qor-action-button--link" href="{{template "url" .}}" {{if $action.URLOpenType}}data-open-type="{{$action.URLOpenType}}"{{end}} {{if eq $action.URLOpenType "_blank"}}target="_blank"{{end}}>
       {{t (printf "%v.actions.%v" $resource.ToParam $action.Label) $action.Label}}
-    </button>
+    </a>
   {{end}}
 {{else}}
   <a class="{{if ne (print .Mode) "menu_item"}}tyk-button tyk-button--{{if eq .Action.Label "Reject" }}danger {{else if eq .Action.Label "Send Invite"}}primary-outline {{else}}success {{ end -}}tyk-button--md {{end -}} qor-action-button" type="button"

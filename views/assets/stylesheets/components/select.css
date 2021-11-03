@@ -3,7 +3,8 @@
 .select2-container--default.select2-container--open .select2-selection--single,
 .select2-container--default.select2-container--open .select2-selection--multiple,
 .select2-container--default.select2-container--open .select2-selection--single,
-.select2-container--default.select2-container--open .select2-selection--multiple {
+.select2-container--default.select2-container--open .select2-selection--multiple,
+.qor-selector-toggle {
   font-family: "OpenSans-Regular";
   font-size: var(--size-sm);
   line-height: 19px;
@@ -24,7 +25,7 @@
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
-.select2-container--default.select2-container--focus .select2-selection--multiple {
+.select2-container--default.select2-container--focus .select2-selection--multiple, {
   border-radius: var(--default-border-radius);
   border: var(--success-border);
 }
@@ -79,4 +80,57 @@
 
 .select2-selection__arrow {
   display: none;
+}
+
+/* QoR Selector */
+
+.qor-selector-toggle {
+  padding-inline: 10px;
+  padding-block: 0;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.qor-selector-toggle>.material-icons {
+  vertical-align: middle;
+}
+
+.qor-selector-menu {
+  padding: 0;
+  z-index: 9999;
+  border-radius: var(--default-border-radius);
+  border: var(--default-border);
+  box-shadow: none;
+  width: 200px;
+  top: 40px;
+}
+
+.qor-selector-arrow {
+  margin-left: auto;
+}
+
+.qor-selector-menu > li:not(:last-child) {
+  border-bottom: var(--default-border);
+  color: var(--default-text-color);
+}
+
+.qor-selector-menu > li:hover {
+  background: var(--primary-light);
+  cursor: pointer;
+}
+
+.qor-selector-toggle.active {
+  border-radius: var(--default-border-radius);
+  border: var(--default-border);
+  color: var(--default-text-color);
+  padding-right: 5px;
+}
+
+.qor-selector-toggle.clearable>.qor-selector-clear {
+  background-color: var(--primary-light);
+  color: var(--default-text-color);
+  border-radius: 50%;
+  padding-left: 0;
 }

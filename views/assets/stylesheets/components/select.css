@@ -5,7 +5,7 @@
 .select2-container--default.select2-container--open .select2-selection--single,
 .select2-container--default.select2-container--open .select2-selection--multiple,
 .qor-selector-toggle {
-  font-family: "OpenSans-Regular";
+  font-family: 'OpenSans-Regular';
   font-size: var(--size-sm);
   line-height: 19px;
   border: var(--default-border);
@@ -14,18 +14,18 @@
   display: block;
   height: 39px;
   padding: 4px 10px 10px 10px;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   width: 100%;
   border-radius: var(--default-border-radius);
 }
 
 .select2-container--default .select2-search--inline .select2-search__field {
-	font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans-Regular';
 }
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
-.select2-container--default.select2-container--focus .select2-selection--multiple, {
+.select2-container--default.select2-container--focus .select2-selection--multiple {
   border-radius: var(--default-border-radius);
   border: var(--success-border);
 }
@@ -56,8 +56,6 @@
   border-bottom-right-radius: var(--default-border-radius);
 }
 
-
-
 .select2-container--open .select2-dropdown--above,
 .select2-container--open .select2-dropdown--below {
   border-radius: var(--default-border-radius);
@@ -73,7 +71,7 @@
   right: 15px;
 }
 
-.select2-container--default .select2-results__option[aria-selected=true] {
+.select2-container--default .select2-results__option[aria-selected='true'] {
   background-color: var(--default-light);
   color: var(--white);
 }
@@ -93,7 +91,7 @@
   align-items: center;
 }
 
-.qor-selector-toggle>.material-icons {
+.qor-selector-toggle > .material-icons {
   vertical-align: middle;
 }
 
@@ -128,9 +126,13 @@
   padding-right: 5px;
 }
 
-.qor-selector-toggle.clearable>.qor-selector-clear {
+.qor-selector-toggle.clearable > .qor-selector-clear {
   background-color: var(--primary-light);
   color: var(--default-text-color);
   border-radius: 50%;
   padding-left: 0;
+}
+
+.qor-actions.qor-bottomsheet__filter {
+  float: right;
 }

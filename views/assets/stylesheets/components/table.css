@@ -65,7 +65,10 @@
 	color: var(--default-text-color);
 }
 
-
+.mdl-menu.mdl-menu--bottom-right.mdl-js-menu {
+  display: flex;
+  flex-direction: column-reverse;
+}
 
 /* Change the delete icon  */
 

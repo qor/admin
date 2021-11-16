@@ -9,6 +9,12 @@
       {{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .Description) .Description}}
     </label>
   {{end}}
+  {{ if .Note}}
+    <div class="alert alert-info" role="alert">
+      <i class="tyk-icon tykon tykon-warning "></i>
+      <div class="alert__content">{{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .Note) .Note}}</div>
+    </div>
+  {{end}}
 
   <div {{if .Title}}class="qor-fieldset"{{end}}>
     {{range .Rows}}

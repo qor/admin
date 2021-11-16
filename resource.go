@@ -721,6 +721,7 @@ func (res *Resource) allowedSections(sections []*Section, context *Context, role
 			Resource:    section.Resource,
 			Title:       section.Title,
 			Description: section.Description,
+			Note:        section.Note,
 			Tooltip:     section.Tooltip,
 			Separator:   section.Separator,
 		}

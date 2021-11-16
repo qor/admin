@@ -47,3 +47,43 @@
   border-radius: 50%;
   color: white;
 }
+
+.alert {
+  border-radius: var(--default-border-radius);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.alert__content {
+  flex-grow: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.alert-info {
+  background-color: var(--default-light);
+  color: var(--default-text-color);
+  border: 1px solid #7A79A1;
+}
+
+.alert > .tyk-icon:first-child {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: white;
+}
+
+.alert-info > .tyk-icon:first-child {
+  background-color: var(--default-text-color);
+}
+
+.alert > .tyk-icon:first-child:before {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}

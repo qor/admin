@@ -30,6 +30,7 @@ type Section struct {
 	Tooltip     string
 	Separator   bool
 	Rows        [][]string
+	Note        string
 }
 
 // String stringify section
@@ -79,6 +80,7 @@ func uniqueSection(section *Section, hasColumns *[]string) *Section {
 	newSection := Section{
 		Title:       section.Title,
 		Description: section.Description,
+		Note:        section.Note,
 		Tooltip:     section.Tooltip,
 		Separator:   section.Separator,
 	}

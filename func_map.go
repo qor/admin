@@ -504,6 +504,7 @@ func (context *Context) renderSections(value interface{}, sections []*Section, p
 				"Section":     section,
 				"Title":       template.HTML(section.Title),
 				"Description": template.HTML(section.Description),
+				"Note":        template.HTML(section.Note),
 				"Rows":        rows,
 			}
 			if content, err := context.Asset("metas/section.tmpl"); err == nil {

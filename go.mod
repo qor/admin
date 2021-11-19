@@ -3,7 +3,6 @@ module github.com/TykTechnologies/raava-admin
 go 1.13
 
 require (
-	github.com/TykTechnologies/media v0.0.0-20211027141625-cb85b604d4f5 // indirect
 	github.com/aws/aws-sdk-go v1.38.63 // indirect
 	github.com/fatih/color v1.9.0
 	github.com/gorilla/sessions v1.2.1 // indirect
@@ -19,6 +18,7 @@ require (
 	github.com/qor/responder v0.0.0-20171031032654-b6def473574f
 	github.com/qor/roles v0.0.0-20171127035124-d6375609fe3e
 	github.com/qor/session v0.0.0-20170907035918-8206b0adab70
+	github.com/qor/validations v0.0.0-20171228122639-f364bca61b46
 	github.com/theplant/cldr v0.0.0-20190423050709-9f76f7ce4ee8
 	github.com/theplant/htmltestingutils v0.0.0-20190423050759-0e06de7b6967
 	github.com/theplant/testingutils v0.0.0-20190603093022-26d8b4d95c61

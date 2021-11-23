@@ -1,6 +1,6 @@
 {{$syncSuffix := "SyncWithSlug"}}
 {{$syncInputId := (printf "%v%v" .InputId $syncSuffix)}}
-{{$syncLabel := (printf "%v from %v" "Sync" .Label)}}
+{{$syncLabel := (printf "%v with %v" "Sync URL" .Label)}}
 
 {{$slugSuffix := "WithSlug"}}
 {{$slugMeta := .BaseResource.GetMeta (print .Meta.Name $slugSuffix) }}

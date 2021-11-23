@@ -10,24 +10,56 @@
 {{$slugLabel := $slugMeta.Label}}
 
 <div class="qor-slug qor-field" data-toggle="qor.slug">
-  <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield qor-textfield--static-label">
-    <input class="mdl-textfield__input qor-slug-input" type="text" id="{{.InputId}}" name="{{.InputName}}" {{if .Value}}value="{{.Value}}"{{end}} {{if not (has_update_permission .Meta)}}disabled{{end}}>
-    <label class="mdl-textfield__label" for="{{.InputId}}">{{t (printf "%v.attributes.%v" .BaseResource.ToParam .Label) .Label}}</label>
+  <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+    <div class="input-label-wrapper">
+      <label for="{{.InputId}}">{{t (printf "%v.attributes.%v" .BaseResource.ToParam .Label) .Label}}</label>
+    </div>
+    <div class="tyk-form-control__wrapper">
+      <input
+        type="text"
+        class="tyk-form-control"
+        id="{{.InputId}}"
+        name="{{.InputName}}"
+        {{if .Value}} value="{{.Value}}" {{end}}
+        {{if not (has_update_permission .Meta)}}disabled{{end}}
+      >
+    </div>
   </div>
 
   <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--8-col">
-      <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield qor-textfield--static-label">
-        <input class="mdl-textfield__input qor-slug-show" type="text" id="{{$slugInputId}}" name="{{$slugInputName}}" {{if $slugValue}}value="{{$slugValue}}"{{end}} {{if not (has_update_permission $slugMeta)}}disabled{{end}}>
-        <label class="mdl-textfield__label" for="{{.InputId}}">{{t (printf "%v.attributes.%v" .BaseResource.ToParam $slugLabel) $slugLabel}}</label>
+    <div class="mdl-cell mdl-cell--6-col">
+      <div class="tyk-form-group tyk-form-group--default tyk-form-group--rounded-corners">
+        <div class="input-label-wrapper">
+          <label for="{{.InputId}}">{{t (printf "%v.attributes.%v" .BaseResource.ToParam $slugLabel) $slugLabel}}</label>
+        </div>
+        <div class="tyk-form-control__wrapper">
+          <input
+            type="text"
+            class="tyk-form-control"
+            id="{{$slugInputId}}"
+            name="{{$slugInputName}}"
+            {{if $slugValue}} value="{{$slugValue}}" {{end}}
+            {{if not (has_update_permission $slugMeta)}}disabled{{end}}
+          >
+        </div>
       </div>
     </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="qor-slug-actions">
-        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="{{$syncInputId}}">
-          <input type="checkbox" id="{{$syncInputId}}" class="mdl-checkbox__input qor-slug-trigger" value="true" type="checkbox" {{if is_new_record .ResourceValue}}checked{{end}} {{if not (has_update_permission $slugMeta)}}disabled{{end}}>
-          <span class="mdl-checkbox__label">{{t (printf "%v.actions.%v" .BaseResource.ToParam $syncLabel) $syncLabel}}</span>
-        </label>
+    <div class="mdl-cell mdl-cell--6-col">
+      <div class="tyk-checkbox">
+        <div class="tyk-form-control__wrapper">
+          <div class="input-label-wrapper">
+            <label>
+              <input
+                type="checkbox"
+                id="{{$syncInputId}}"
+                value="true"
+                type="checkbox"
+                {{if is_new_record .ResourceValue}}checked{{end}} {{if not (has_update_permission $slugMeta)}}disabled{{end}}
+              >
+              <span>{{t (printf "%v.actions.%v" .BaseResource.ToParam $syncLabel) $syncLabel}}</span>
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </div>

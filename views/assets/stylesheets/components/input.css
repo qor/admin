@@ -12,6 +12,16 @@
   padding-left: 5px;
 }
 
+.mdl-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tyk-form-group {
+  width: 100%;
+}
+
 
 /* Search input */
 

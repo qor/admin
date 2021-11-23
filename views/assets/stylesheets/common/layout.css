@@ -79,12 +79,12 @@
     flex-basis: 20%;
 }
 
-.tyk-form-group+.tyk-form-group:not(:first-child),
+/* .tyk-form-group+.tyk-form-group:not(:first-child),
 .qor-section-columns-2>div:not(:first-child),
 .qor-section-columns-3>div:not(:first-child),
 .qor-section-columns-4>div:not(:first-child) {
     padding-left: 10px;
-}
+} */
 
 .qor-slideout__title .help-icon {
     display: none;

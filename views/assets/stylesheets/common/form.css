@@ -18,6 +18,10 @@
     padding-inline: 20px;
 }
 
+.qor-form-section-rows .qor-fieldset {
+  padding-left: 0;
+}
+
 .qor-section-columns-2 .qor-field,
 .qor-section-columns-2 .tyk-form-group,
 .qor-section-columns-3 .qor-field,

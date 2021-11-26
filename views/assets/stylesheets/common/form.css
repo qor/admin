@@ -179,3 +179,16 @@
 .bottom-separator>.qor-fieldset {
     border-bottom: 1px solid var(--default-light);
 }
+
+.qor-slideout-open .qor-form-section.clearfix .qor-fieldset {
+    border: var(--default-border);
+    border-radius: var(--default-border-radius);
+    padding: var(--size-xs);
+    margin-left: var(--size-xs);
+    margin-right: 4px;
+}
+
+.qor-fieldset > .qor-form-section-rows > .qor-field:nth-child(n+2) {
+    border-left: 2px solid var(--default-light);
+    padding-left: var(--size-md);
+}

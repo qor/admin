@@ -134,7 +134,7 @@
 }
 
 .is-singleton .qor-form .qor-field__label.qor-form-section-title {
-	font-family: "smoolthan_bold";
+	font-family: "smoolthan_bold", sans-serif;
 	font-size: 20px;
 }
 

@@ -1,3 +1,10 @@
+{{ $emptySection := false }}
+{{ range .Rows }}
+  <!-- This comparison is the only way so far to identify if a section has no data -->
+  {{ if eq .ColumnsHTML "\n\n\n<div class=\"qor-field collection-edit qor-fieldset-container\" >\n  <label class=\"qor-field__label\" for=\"client_11_access_credentials\">\n     \n  </label>\n\n  <div class=\"qor-field__block\">\n    \n    \n\n    \n  </div>\n</div>\n" }}
+    {{ $emptySection = true }}
+  {{ end }}
+{{ end }}
 <div {{if .Section.Separator}}class="qor-form-section clearfix bottom-separator"{{else}}class="qor-form-section clearfix"{{end}} data-section-title="{{.Title}}">
   {{if .Title}}
     <label class="qor-field__label qor-form-section-title">
@@ -11,16 +18,23 @@
   {{end}}
   {{ if .Note}}
     <div class="alert alert-info" role="alert">
-      <i class="tyk-icon tykon tykon-warning "></i>
+      <i class="tyk-icon tykon tykon-warning"></i>
       <div class="alert__content">{{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .Note) .Note}}</div>
     </div>
   {{end}}
-
-  <div {{if .Title}}class="qor-fieldset"{{end}}>
+  {{ if $emptySection }}
+    <div class="alert alert-info" role="alert">
+      <i class="tyk-icon tykon tykon-warning"></i>
+      <div class="alert__content">{{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .EmptySectionNote) .EmptySectionNote}}</div>
+    </div>
+  {{end}}
+  {{ if not $emptySection }}
+  <div {{if .Title }}class="qor-fieldset"{{end}}>
     {{range .Rows}}
       <div class="qor-form-section-rows qor-section-columns-{{.Length}} clearfix">
         {{.ColumnsHTML}}
       </div>
     {{end}}
   </div>
+  {{end}}
 </div>

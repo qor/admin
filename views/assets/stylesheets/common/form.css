@@ -185,11 +185,16 @@
 	margin-right: 4px;
 }
 
-.qor-fieldset > .qor-form-section-rows > .qor-field:nth-child(n + 2) {
+.qor-form-section-rows > .qor-field:nth-child(n + 2) {
 	border-left: 2px solid var(--default-light);
 	padding-left: var(--size-md);
 }
 
 .qor-form-section > .qor-form-section {
 	padding-inline: 0;
+}
+
+/* To remove border from nested fieldsets */
+.qor-field.collection-edit.qor-fieldset-container > .qor-field__block > .qor-fieldset {
+	border: none;
 }

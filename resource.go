@@ -718,12 +718,13 @@ func (res *Resource) allowedSections(sections []*Section, context *Context, role
 	var newSections []*Section
 	for _, section := range sections {
 		newSection := Section{
-			Resource:    section.Resource,
-			Title:       section.Title,
-			Description: section.Description,
-			Note:        section.Note,
-			Tooltip:     section.Tooltip,
-			Separator:   section.Separator,
+			Resource:         section.Resource,
+			Title:            section.Title,
+			Description:      section.Description,
+			Note:             section.Note,
+			Tooltip:          section.Tooltip,
+			Separator:        section.Separator,
+			EmptySectionNote: section.EmptySectionNote,
 		}
 		var editableRows [][]string
 		for _, row := range section.Rows {

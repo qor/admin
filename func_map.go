@@ -107,7 +107,7 @@ func (context *Context) FuncMap() template.FuncMap {
 		"has_filter": func() bool {
 			query := context.Request.URL.Query()
 			for key := range query {
-				if regexp.MustCompile("filter[(\\w+)]").MatchString(key) && query.Get(key) != "" {
+				if regexp.MustCompile(`filter[(\w+)]`).MatchString(key) && query.Get(key) != "" {
 					return true
 				}
 			}
@@ -197,12 +197,12 @@ func (context *Context) NewResourceContext(name ...interface{}) *Context {
 	clone := &Context{Context: context.Context.Clone(), Admin: context.Admin, Result: context.Result, Action: context.Action}
 	if len(name) > 0 {
 		if str, ok := name[0].(string); ok {
-			clone.setResource(context.Admin.GetResource(str))
+			_ = clone.setResource(context.Admin.GetResource(str))
 		} else if res, ok := name[0].(*Resource); ok {
-			clone.setResource(res)
+			_ = clone.setResource(res)
 		}
 	} else {
-		clone.setResource(context.Resource)
+		_ = clone.setResource(context.Resource)
 	}
 	return clone
 }
@@ -495,21 +495,22 @@ func (context *Context) renderSections(value interface{}, sections []*Section, p
 				ColumnsHTML template.HTML
 			}{
 				Length:      len(column),
-				ColumnsHTML: template.HTML(string(columnsHTML.Bytes())),
+				ColumnsHTML: template.HTML(columnsHTML.String()),
 			})
 		}
 
 		if len(rows) > 0 {
 			var data = map[string]interface{}{
-				"Section":     section,
-				"Title":       template.HTML(section.Title),
-				"Description": template.HTML(section.Description),
-				"Note":        template.HTML(section.Note),
-				"Rows":        rows,
+				"Section":          section,
+				"Title":            template.HTML(section.Title),
+				"Description":      template.HTML(section.Description),
+				"Note":             template.HTML(section.Note),
+				"Rows":             rows,
+				"EmptySectionNote": template.HTML(section.EmptySectionNote),
 			}
 			if content, err := context.Asset("metas/section.tmpl"); err == nil {
 				if tmpl, err := template.New("section").Funcs(context.FuncMap()).Parse(string(content)); err == nil {
-					tmpl.Execute(writer, data)
+					_ = tmpl.Execute(writer, data)
 				}
 			}
 		}
@@ -554,7 +555,7 @@ func (context *Context) renderFilter(filter *Filter) template.HTML {
 }
 
 func (context *Context) savedFilters() (filters []SavedFilter) {
-	context.Admin.SettingsStorage.Get("saved_filters", &filters, context)
+	_ = context.Admin.SettingsStorage.Get("saved_filters", &filters, context)
 	return
 }
 
@@ -1068,7 +1069,7 @@ func (context *Context) loadActions(action string) template.HTML {
 
 	// before files have higher priority
 	for _, actionFile := range actionFiles {
-		base := regexp.MustCompile("^\\d+\\.").ReplaceAllString(path.Base(actionFile), "")
+		base := regexp.MustCompile(`^\d+\.`).ReplaceAllString(path.Base(actionFile), "")
 
 		if _, ok := actions[base]; !ok {
 			actionKeys = append(actionKeys, path.Base(actionFile))
@@ -1088,7 +1089,7 @@ func (context *Context) loadActions(action string) template.HTML {
 			}
 		}()
 
-		base := regexp.MustCompile("^\\d+\\.").ReplaceAllString(key, "")
+		base := regexp.MustCompile(`^\d+\.`).ReplaceAllString(key, "")
 		if content, err := context.Asset(actions[base]); err == nil {
 			if tmpl, err := template.New(filepath.Base(actions[base])).Funcs(context.FuncMap()).Parse(string(content)); err == nil {
 				if err := tmpl.Execute(result, context); err != nil {

@@ -44,12 +44,25 @@ function hideHelpSection() {
   localStorage.setItem('hideHelpSection', 'hidden');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  let overviewToggleButton = document.querySelector('.toggle-help-section');
-  let overviewToggleSection = document.querySelector('.help-section');
+document.addEventListener(
+  'DOMContentLoaded',
+  function () {
+    let overviewToggleButton = document.querySelector('.toggle-help-section');
+    let overviewToggleSection = document.querySelector('.help-section');
 
-  if(localStorage.getItem('hideHelpSection') === 'hidden') {
-    overviewToggleButton.style.display = 'none';
-    overviewToggleSection.style.display = 'none';
-  }
-}, false);
+    if (localStorage.getItem('hideHelpSection') === 'hidden') {
+      overviewToggleButton.style.display = 'none';
+      overviewToggleSection.style.display = 'none';
+    }
+  },
+  false
+);
+
+function revealValue(elemId, emelValueId) {
+  const codeRefEl = document.getElementById(elemId);
+  const codeRefElValue = document.getElementById(emelValueId);
+  console.log(elemId)
+  console.log(emelValueId)
+  if (codeRefEl.value === codeRefElValue.value) codeRefEl.value = '******';
+  else codeRefEl.value = codeRefElValue.value
+}

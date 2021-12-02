@@ -81,16 +81,16 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 736px) {
-.qor-search .qor-search__label {
-    top: 16px !important;
+	.qor-search .qor-search__label {
+		top: 16px !important;
+	}
 }
-
 /*
-	End 
+	End
 */
 
 /*
-	Media Queries 
+	Media Queries
 */
 
 @media only screen and (min-width: 320px) and (max-width: 732px) {
@@ -100,5 +100,5 @@
 }
 
 /*
-	End 
+	End
 */

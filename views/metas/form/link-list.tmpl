@@ -1,13 +1,15 @@
-{{ $links := raw_value_of .ResourceValue .Meta }}
+{{ $linkSections := raw_value_of .ResourceValue .Meta }}
 <div class="qor-field">
+{{ range $i, $linkSection := $linkSections }}
   <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
-    <label class="qor-field__label mdl-textfield__label" for="{{.InputId}}">
-      {{meta_label .Meta}}
+    <label class="qor-field__label mdl-textfield__label">
+      {{$linkSection.Title}}
     </label>
-    {{ range $links }}
+    {{ range $linkSection.Links }}
       <br>
       <a href="{{ .URL }}" target="_blank">{{ .Label }}</a>
       <br>
     {{ end }}
   </div>
+{{ end }}
 </div>

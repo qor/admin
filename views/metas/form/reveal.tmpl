@@ -4,12 +4,12 @@
   <div class="reveal-input-container tyk-form-control__wrapper">
     <input name="{{.InputName}}_reveal_value" id="{{.InputId}}_reveal_value" type="hidden" value="{{.Value}}">
     <input
-    autocomplete="off"
-    class="tyk-form-control"
-    name="{{.InputName}}_reveal"
-    id="{{.InputId}}_reveal"
-    value="******"
-    {{if not (has_change_permission .Meta)}}disabled{{end}}
+      autocomplete="off"
+      class="tyk-form-control"
+      name="{{.InputName}}_reveal"
+      id="{{.InputId}}_reveal"
+      value="******"
+      {{if not (has_change_permission .Meta)}}disabled{{end}}
     />
     <i onclick="revealValue('{{.InputId}}_reveal','{{.InputId}}_reveal_value')" class="tyk-icon tykon tykon-search reveal-input-icon"></i>
     <i onclick="copyToClipboard('{{.InputId}}_reveal_value')" class="tyk-icon tykon tykon-copy code-reference-copy-icon"></i>

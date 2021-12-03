@@ -27,6 +27,10 @@ import (
 	"github.com/qor/session"
 )
 
+const (
+	EmptyCollectionEditSection = `<div\s+class="qor-field collection-edit qor-fieldset-container"\s+>\s+<label\s+class="qor-field__label"\s+for="\w+">\s+<\/label>\s+<div\s+class="qor-field__block"\s{0,}?>\s+<\/div>\s+<\/div>`
+)
+
 // FuncMap funcs map for current context
 func (context *Context) FuncMap() template.FuncMap {
 	funcMap := template.FuncMap{
@@ -500,13 +504,20 @@ func (context *Context) renderSections(value interface{}, sections []*Section, p
 		}
 
 		if len(rows) > 0 {
+			var emptySection template.HTML
+			for _, row := range rows {
+				if regexp.MustCompile(EmptyCollectionEditSection).MatchString(string(row.ColumnsHTML)) {
+					emptySection = template.HTML(section.EmptySectionNote)
+					break
+				}
+			}
 			var data = map[string]interface{}{
 				"Section":          section,
 				"Title":            template.HTML(section.Title),
 				"Description":      template.HTML(section.Description),
 				"Note":             template.HTML(section.Note),
 				"Rows":             rows,
-				"EmptySectionNote": template.HTML(section.EmptySectionNote),
+				"EmptySectionNote": emptySection,
 			}
 			if content, err := context.Asset("metas/section.tmpl"); err == nil {
 				if tmpl, err := template.New("section").Funcs(context.FuncMap()).Parse(string(content)); err == nil {

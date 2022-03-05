@@ -179,7 +179,7 @@ func (admin *Admin) NewServeMux(prefix string) http.Handler {
 							}
 						}
 					}
-					context.Writer.Write([]byte("Could not authorize you because 'CSRF detected'"))
+					http.Error(context.Writer, "Could not authorize you because 'CSRF detected'", http.StatusForbidden)
 					return
 				}
 			}

@@ -3,6 +3,7 @@ package admin
 import (
 	"html/template"
 	"log"
+	"os"
 	"path/filepath"
 	"reflect"
 
@@ -112,8 +113,11 @@ func (admin *Admin) RegisterViewPath(pth string) {
 	var err error
 	if err = admin.AssetFS.RegisterPath(filepath.Join(utils.AppRoot, "vendor", pth)); err != nil {
 		for _, gopath := range utils.GOPATH() {
-			if err = admin.AssetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(pth))); err == nil {
-				break
+			startDir, _ := os.Getwd()
+			if modPath := findGoModFile(startDir); modPath != "" {
+				if err = admin.AssetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(modPath, pth))); err == nil {
+					break
+				}
 			}
 
 			if err = admin.AssetFS.RegisterPath(filepath.Join(gopath, "src", pth)); err == nil {

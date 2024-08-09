@@ -2,8 +2,8 @@ package admin
 
 import (
 	"html/template"
-	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
 	"reflect"
 	"strings"
@@ -45,8 +45,11 @@ func RegisterViewPath(pth string) {
 	for _, assetFS := range globalAssetFSes {
 		if err = assetFS.RegisterPath(filepath.Join(utils.AppRoot, "vendor", pth)); err != nil {
 			for _, gopath := range utils.GOPATH() {
-				if err = assetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(pth))); err == nil {
-					break
+				startDir, _ := os.Getwd()
+				if modPath := findGoModFile(startDir); modPath != "" {
+					if err = assetFS.RegisterPath(filepath.Join(gopath, getDepVersionFromMod(modPath, pth))); err == nil {
+						break
+					}
 				}
 
 				if err = assetFS.RegisterPath(filepath.Join(gopath, "src", pth)); err == nil {
@@ -64,9 +67,9 @@ func equal(a, b interface{}) bool {
 	return reflect.DeepEqual(a, b)
 }
 
-func getDepVersionFromMod(pth string) string {
+func getDepVersionFromMod(modPath, pth string) string {
 	if len(goModDeps) == 0 {
-		if cont, err := ioutil.ReadFile("go.mod"); err == nil {
+		if cont, err := os.ReadFile(modPath); err == nil {
 			goModDeps = strings.Split(string(cont), "\n")
 		}
 	}
@@ -81,5 +84,24 @@ func getDepVersionFromMod(pth string) string {
 		return pth
 	}
 
-	return getDepVersionFromMod(pth[:strings.LastIndex(pth, "/")]) + pth[strings.LastIndex(pth, "/"):]
+	return getDepVersionFromMod(modPath, pth[:strings.LastIndex(pth, "/")]) + pth[strings.LastIndex(pth, "/"):]
+}
+
+func findGoModFile(startDir string) string {
+	currentDir := startDir
+
+	for {
+		goModPath := filepath.Join(currentDir, "go.mod")
+		if _, err := os.Stat(goModPath); err == nil {
+			return goModPath
+		}
+
+		parentDir := filepath.Dir(currentDir)
+		if parentDir == currentDir {
+			break
+		}
+		currentDir = parentDir
+	}
+
+	return ""
 }

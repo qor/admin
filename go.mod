@@ -2,8 +2,6 @@ module github.com/qor/admin
 
 go 1.23.0
 
-toolchain go1.24.1
-
 require (
 	github.com/fatih/color v1.9.0
 	github.com/jinzhu/gorm v1.9.16

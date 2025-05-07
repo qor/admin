@@ -571,6 +571,8 @@
           function(confirm) {
             if (confirm) {
               this.hideSlideout();
+            }else {
+              $(CLASS_BODY_LOADING).remove();
             }
           }.bind(this)
         );

@@ -1,6 +1,6 @@
 language: go
 go:
-  - "1.13"
+  - "1.17"
 
 services:
   - mysql

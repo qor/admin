@@ -25,7 +25,7 @@ func TestGetDepVersionFromMod(t *testing.T) {
 		{view: "no/unknown/nonexistent", want: "no/unknown/nonexistent"},
 	}
 	for _, v := range cases {
-		if got := getDepVersionFromMod(v.view); v.want != got {
+		if got := getDepVersionFromMod("", v.view); v.want != got {
 			t.Errorf("GetDepVersionFromMod-viewpath: %v, want: %v, got: %v", v.view, v.want, got)
 		} else {
 			fmt.Println(got)

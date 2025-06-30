@@ -45,7 +45,7 @@ $.fn.select2.ajaxCommonOptions = function(select2Data) {
             return {
                 keyword: params.term, // search term
                 page: params.page,
-                per_page: 20
+                per_page: 50
             };
         },
         processResults: function(data, params) {
@@ -63,7 +63,7 @@ $.fn.select2.ajaxCommonOptions = function(select2Data) {
             return {
                 results: processedData,
                 pagination: {
-                    more: processedData.length >= 20
+                    more: processedData.length >= 50
                 }
             };
         }

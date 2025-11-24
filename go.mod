@@ -1,6 +1,6 @@
 module github.com/qor/admin
 
-go 1.23.0
+go 1.24.0
 
 require (
 	github.com/fatih/color v1.9.0
@@ -43,6 +43,6 @@ require (
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/yosssi/gohtml v0.0.0-20200519115854-476f5b4b8047 // indirect
 	golang.org/x/image v0.18.0 // indirect
-	golang.org/x/net v0.39.0 // indirect
-	golang.org/x/sys v0.32.0 // indirect
+	golang.org/x/net v0.47.0 // indirect
+	golang.org/x/sys v0.38.0 // indirect
 )

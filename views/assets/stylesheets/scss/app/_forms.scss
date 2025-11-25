@@ -469,3 +469,11 @@ button.qor-fieldset__add,
     height: auto;
     margin-bottom: 12px;
 }
+
+.mdl-ripple {
+    /*
+        Fix ripple effect bug in Safari.
+        https://github.com/google/material-design-lite/issues/5281#issuecomment-554112619
+    */
+    opacity: 0.001;
+}
